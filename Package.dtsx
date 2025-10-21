@@ -11,8 +11,8 @@
   DTS:LocaleID="22538"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{57F9E294-FA86-4E8E-BA11-06D7C639DA2E}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{8C86DBD7-C9C3-47A2-B687-9BD64B29023E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1479,12 +1479,12 @@ FROM (
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DIMENSIONES PAISES\Conditional Split.Outputs[Case 1]"
+                  refId="Package\DIMENSIONES PAISES\Conditional Split.Outputs[DW IS NULL]"
                   description="Output 1 of the Conditional Split Transformation"
                   errorOrTruncationOperation="Computation"
                   errorRowDisposition="FailComponent"
                   exclusionGroup="1"
-                  name="Case 1"
+                  name="DW IS NULL"
                   synchronousInputId="Package\DIMENSIONES PAISES\Conditional Split.Inputs[Conditional Split Input]"
                   truncationRowDisposition="FailComponent">
                   <properties>
@@ -1568,12 +1568,12 @@ FROM (
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DIMENSIONES PAISES\Conditional Split 1.Outputs[Case 1]"
+                  refId="Package\DIMENSIONES PAISES\Conditional Split 1.Outputs[DW IS NULL]"
                   description="Output 1 of the Conditional Split Transformation"
                   errorOrTruncationOperation="Computation"
                   errorRowDisposition="FailComponent"
                   exclusionGroup="1"
-                  name="Case 1"
+                  name="DW IS NULL"
                   synchronousInputId="Package\DIMENSIONES PAISES\Conditional Split 1.Inputs[Conditional Split Input]"
                   truncationRowDisposition="FailComponent">
                   <properties>
@@ -1626,6 +1626,184 @@ FROM (
                       refId="Package\DIMENSIONES PAISES\Conditional Split 1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\DIMENSIONES PAISES\Conditional Split 1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIMENSIONES PAISES\Conditional Split 2"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split 2"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DIMENSIONES PAISES\Conditional Split 2.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIMENSIONES PAISES\Conditional Split 2.Inputs[Conditional Split Input].Columns[pais_key]"
+                      cachedDataType="i4"
+                      cachedName="pais_key"
+                      lineageId="Package\DIMENSIONES PAISES\Merge Join 2.Outputs[Merge Join Output].Columns[pais_key]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIMENSIONES PAISES\Conditional Split 2.Outputs[DW IS NULL]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="DW IS NULL"
+                  synchronousInputId="Package\DIMENSIONES PAISES\Conditional Split 2.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[ISNULL](#{Package\DIMENSIONES PAISES\Merge Join 2.Outputs[Merge Join Output].Columns[pais_key]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(pais_key)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DIMENSIONES PAISES\Conditional Split 2.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\DIMENSIONES PAISES\Conditional Split 2.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DIMENSIONES PAISES\Conditional Split 2.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\DIMENSIONES PAISES\Conditional Split 2.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\Conditional Split 2.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\Conditional Split 2.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\Conditional Split 2.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\Conditional Split 2.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIMENSIONES PAISES\Conditional Split 3"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split 3"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DIMENSIONES PAISES\Conditional Split 3.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIMENSIONES PAISES\Conditional Split 3.Inputs[Conditional Split Input].Columns[paisEnvio_key]"
+                      cachedDataType="i4"
+                      cachedName="paisEnvio_key"
+                      lineageId="Package\DIMENSIONES PAISES\Merge Join 3.Outputs[Merge Join Output].Columns[paisEnvio_key]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIMENSIONES PAISES\Conditional Split 3.Outputs[DW IS NULL]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="DW IS NULL"
+                  synchronousInputId="Package\DIMENSIONES PAISES\Conditional Split 3.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[ISNULL](#{Package\DIMENSIONES PAISES\Merge Join 3.Outputs[Merge Join Output].Columns[paisEnvio_key]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(paisEnvio_key)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DIMENSIONES PAISES\Conditional Split 3.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\DIMENSIONES PAISES\Conditional Split 3.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DIMENSIONES PAISES\Conditional Split 3.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\DIMENSIONES PAISES\Conditional Split 3.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\Conditional Split 3.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\Conditional Split 3.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\Conditional Split 3.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\Conditional Split 3.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1784,6 +1962,156 @@ FROM (
               </outputs>
             </component>
             <component
+              refId="Package\DIMENSIONES PAISES\Data Conversion 2"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion 2"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DIMENSIONES PAISES\Data Conversion 2.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIMENSIONES PAISES\Data Conversion 2.Inputs[Data Conversion Input].Columns[paisEmpleado_key]"
+                      cachedDataType="i8"
+                      cachedName="paisEmpleado_key"
+                      lineageId="Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE.Outputs[OLE DB Source Output].Columns[paisEmpleado_key]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIMENSIONES PAISES\Data Conversion 2.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\DIMENSIONES PAISES\Data Conversion 2.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\Data Conversion 2.Outputs[Data Conversion Output].Columns[INT_paisEmpleado_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DIMENSIONES PAISES\Data Conversion 2.Outputs[Data Conversion Output].Columns[INT_paisEmpleado_key]"
+                      name="INT_paisEmpleado_key"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE.Outputs[OLE DB Source Output].Columns[paisEmpleado_key]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DIMENSIONES PAISES\Data Conversion 2.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\DIMENSIONES PAISES\Data Conversion 2.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIMENSIONES PAISES\Data Conversion 3"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion 3"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DIMENSIONES PAISES\Data Conversion 3.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIMENSIONES PAISES\Data Conversion 3.Inputs[Data Conversion Input].Columns[paisEnvio_key]"
+                      cachedDataType="i8"
+                      cachedName="paisEnvio_key"
+                      lineageId="Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE.Outputs[OLE DB Source Output].Columns[paisEnvio_key]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIMENSIONES PAISES\Data Conversion 3.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\DIMENSIONES PAISES\Data Conversion 3.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\Data Conversion 3.Outputs[Data Conversion Output].Columns[INT_paisEnvio_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DIMENSIONES PAISES\Data Conversion 3.Outputs[Data Conversion Output].Columns[INT_paisEnvio_key]"
+                      name="INT_paisEnvio_key"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE.Outputs[OLE DB Source Output].Columns[paisEnvio_key]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DIMENSIONES PAISES\Data Conversion 3.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\DIMENSIONES PAISES\Data Conversion 3.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\Data Conversion 3.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\Data Conversion 3.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\Data Conversion 3.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\Data Conversion 3.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\DIMENSIONES PAISES\Derived Column"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -1910,13 +2238,13 @@ FROM (
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[ISNULL](#{Package\DIMENSIONES PAISES\CLIENTES DATABASE SOURCE.Outputs[OLE DB Source Output].Columns[nombre_pais]}) ? "Sin datos" : #{Package\DIMENSIONES PAISES\CLIENTES DATABASE SOURCE.Outputs[OLE DB Source Output].Columns[nombre_pais]}</property>
+                          name="Expression">[ISNULL](#{Package\DIMENSIONES PAISES\CLIENTES DATABASE SOURCE.Outputs[OLE DB Source Output].Columns[nombre_pais]}) ? "SIN DATOS" : #{Package\DIMENSIONES PAISES\CLIENTES DATABASE SOURCE.Outputs[OLE DB Source Output].Columns[nombre_pais]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">ISNULL(nombre_pais) ? "Sin datos" : nombre_pais</property>
+                          name="FriendlyExpression">ISNULL(nombre_pais) ? "SIN DATOS" : nombre_pais</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -1940,6 +2268,170 @@ FROM (
                       refId="Package\DIMENSIONES PAISES\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\DIMENSIONES PAISES\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIMENSIONES PAISES\Derived Column 2"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 2"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DIMENSIONES PAISES\Derived Column 2.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIMENSIONES PAISES\Derived Column 2.Inputs[Derived Column Input].Columns[nombre_pais]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="nombre_pais"
+                      lineageId="Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE.Outputs[OLE DB Source Output].Columns[nombre_pais]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIMENSIONES PAISES\Derived Column 2.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DIMENSIONES PAISES\Derived Column 2.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\Derived Column 2.Outputs[Derived Column Output].Columns[CLEAN_nombre_pais]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="15"
+                      lineageId="Package\DIMENSIONES PAISES\Derived Column 2.Outputs[Derived Column Output].Columns[CLEAN_nombre_pais]"
+                      name="CLEAN_nombre_pais"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE.Outputs[OLE DB Source Output].Columns[nombre_pais]}) ? "SIN DATOS" : #{Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE.Outputs[OLE DB Source Output].Columns[nombre_pais]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(nombre_pais) ? "SIN DATOS" : nombre_pais</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DIMENSIONES PAISES\Derived Column 2.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DIMENSIONES PAISES\Derived Column 2.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIMENSIONES PAISES\Derived Column 3"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 3"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DIMENSIONES PAISES\Derived Column 3.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIMENSIONES PAISES\Derived Column 3.Inputs[Derived Column Input].Columns[nombre_pais]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="nombre_pais"
+                      lineageId="Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE.Outputs[OLE DB Source Output].Columns[nombre_pais]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIMENSIONES PAISES\Derived Column 3.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DIMENSIONES PAISES\Derived Column 3.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\Derived Column 3.Outputs[Derived Column Output].Columns[CLEAN_nombre_pais]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="15"
+                      lineageId="Package\DIMENSIONES PAISES\Derived Column 3.Outputs[Derived Column Output].Columns[CLEAN_nombre_pais]"
+                      name="CLEAN_nombre_pais"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE.Outputs[OLE DB Source Output].Columns[nombre_pais]}) ? "SIN DATOS" : #{Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE.Outputs[OLE DB Source Output].Columns[nombre_pais]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(nombre_pais) ? "SIN DATOS" : nombre_pais</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DIMENSIONES PAISES\Derived Column 3.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DIMENSIONES PAISES\Derived Column 3.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\Derived Column 3.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\Derived Column 3.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\Derived Column 3.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\Derived Column 3.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -2051,6 +2543,228 @@ FROM (
                       refId="Package\DIMENSIONES PAISES\DimPaisClientes DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\DIMENSIONES PAISES\DimPaisClientes DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIMENSIONES PAISES\DimPaisEmpleados DATAWAREHOUSE SOURCE"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DimPaisEmpleados DATAWAREHOUSE SOURCE"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimPaisEmpleado]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIMENSIONES PAISES\DimPaisEmpleados DATAWAREHOUSE SOURCE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MAAWSA02LCXXXX.dw_kentfoods]"
+                  connectionManagerRefId="Package.ConnectionManagers[MAAWSA02LCXXXX.dw_kentfoods]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DIMENSIONES PAISES\DimPaisEmpleados DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\DimPaisEmpleados DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output].Columns[pais_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIMENSIONES PAISES\DimPaisEmpleados DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output].ExternalColumns[pais_key]"
+                      lineageId="Package\DIMENSIONES PAISES\DimPaisEmpleados DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output].Columns[pais_key]"
+                      name="pais_key"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIMENSIONES PAISES\DimPaisEmpleados DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output].ExternalColumns[pais_key]"
+                      dataType="i4"
+                      name="pais_key" />
+                    <externalMetadataColumn
+                      refId="Package\DIMENSIONES PAISES\DimPaisEmpleados DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output].ExternalColumns[nombre_pais]"
+                      dataType="wstr"
+                      length="15"
+                      name="nombre_pais" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DIMENSIONES PAISES\DimPaisEmpleados DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\DimPaisEmpleados DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Error Output].Columns[pais_key]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\DimPaisEmpleados DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Error Output].Columns[pais_key]"
+                      name="pais_key" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\DimPaisEmpleados DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\DimPaisEmpleados DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\DimPaisEmpleados DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\DimPaisEmpleados DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIMENSIONES PAISES\DimPaisEnvio DATAWAREHOUSE SOURCE"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DimPaisEnvio DATAWAREHOUSE SOURCE"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimPaisEnvio]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIMENSIONES PAISES\DimPaisEnvio DATAWAREHOUSE SOURCE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MAAWSA02LCXXXX.dw_kentfoods]"
+                  connectionManagerRefId="Package.ConnectionManagers[MAAWSA02LCXXXX.dw_kentfoods]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DIMENSIONES PAISES\DimPaisEnvio DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\DimPaisEnvio DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output].Columns[paisEnvio_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIMENSIONES PAISES\DimPaisEnvio DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output].ExternalColumns[paisEnvio_key]"
+                      lineageId="Package\DIMENSIONES PAISES\DimPaisEnvio DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output].Columns[paisEnvio_key]"
+                      name="paisEnvio_key"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIMENSIONES PAISES\DimPaisEnvio DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output].ExternalColumns[paisEnvio_key]"
+                      dataType="i4"
+                      name="paisEnvio_key" />
+                    <externalMetadataColumn
+                      refId="Package\DIMENSIONES PAISES\DimPaisEnvio DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output].ExternalColumns[nombre_pais]"
+                      dataType="wstr"
+                      length="15"
+                      name="nombre_pais" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DIMENSIONES PAISES\DimPaisEnvio DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\DimPaisEnvio DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Error Output].Columns[paisEnvio_key]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\DimPaisEnvio DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Error Output].Columns[paisEnvio_key]"
+                      name="paisEnvio_key" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\DimPaisEnvio DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\DimPaisEnvio DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\DimPaisEnvio DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\DimPaisEnvio DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -2312,6 +3026,139 @@ FROM (
               </outputs>
             </component>
             <component
+              refId="Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="EMPLEADOS DATABASE SOURCE"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+    ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS paisEmpleado_key,
+    P.Pais AS nombre_pais
+FROM (
+    SELECT DISTINCT Pais
+    FROM Empleados
+) AS P;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MAAWSA02LCXXXX.KentFoods]"
+                  connectionManagerRefId="Package.ConnectionManagers[MAAWSA02LCXXXX.KentFoods]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE.Outputs[OLE DB Source Output].Columns[paisEmpleado_key]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE.Outputs[OLE DB Source Output].ExternalColumns[paisEmpleado_key]"
+                      lineageId="Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE.Outputs[OLE DB Source Output].Columns[paisEmpleado_key]"
+                      name="paisEmpleado_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE.Outputs[OLE DB Source Output].Columns[nombre_pais]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE.Outputs[OLE DB Source Output].ExternalColumns[nombre_pais]"
+                      length="15"
+                      lineageId="Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE.Outputs[OLE DB Source Output].Columns[nombre_pais]"
+                      name="nombre_pais"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE.Outputs[OLE DB Source Output].ExternalColumns[paisEmpleado_key]"
+                      dataType="i8"
+                      name="paisEmpleado_key" />
+                    <externalMetadataColumn
+                      refId="Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE.Outputs[OLE DB Source Output].ExternalColumns[nombre_pais]"
+                      dataType="wstr"
+                      length="15"
+                      name="nombre_pais" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE.Outputs[OLE DB Source Error Output].Columns[paisEmpleado_key]"
+                      dataType="i8"
+                      lineageId="Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE.Outputs[OLE DB Source Error Output].Columns[paisEmpleado_key]"
+                      name="paisEmpleado_key" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE.Outputs[OLE DB Source Error Output].Columns[nombre_pais]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE.Outputs[OLE DB Source Error Output].Columns[nombre_pais]"
+                      name="nombre_pais" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\DIMENSIONES PAISES\Merge Join"
               componentClassID="Microsoft.MergeJoin"
               contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -2540,6 +3387,234 @@ FROM (
               </outputs>
             </component>
             <component
+              refId="Package\DIMENSIONES PAISES\Merge Join 2"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join 2"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DIMENSIONES PAISES\Merge Join 2.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIMENSIONES PAISES\Merge Join 2.Inputs[Merge Join Left Input].Columns[INT_paisEmpleado_key]"
+                      cachedDataType="i4"
+                      cachedName="INT_paisEmpleado_key"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DIMENSIONES PAISES\SORT DATABASE.Outputs[Sort Output].Columns[INT_paisEmpleado_key]" />
+                    <inputColumn
+                      refId="Package\DIMENSIONES PAISES\Merge Join 2.Inputs[Merge Join Left Input].Columns[CLEAN_nombre_pais]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="CLEAN_nombre_pais"
+                      lineageId="Package\DIMENSIONES PAISES\SORT DATABASE.Outputs[Sort Output].Columns[CLEAN_nombre_pais]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DIMENSIONES PAISES\Merge Join 2.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIMENSIONES PAISES\Merge Join 2.Inputs[Merge Join Right Input].Columns[pais_key]"
+                      cachedDataType="i4"
+                      cachedName="pais_key"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DIMENSIONES PAISES\SORT DATAWAREHOUSE.Outputs[Sort Output].Columns[pais_key]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIMENSIONES PAISES\Merge Join 2.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\Merge Join 2.Outputs[Merge Join Output].Columns[CLEAN_nombre_pais]"
+                      dataType="wstr"
+                      length="32"
+                      lineageId="Package\DIMENSIONES PAISES\Merge Join 2.Outputs[Merge Join Output].Columns[CLEAN_nombre_pais]"
+                      name="CLEAN_nombre_pais">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DIMENSIONES PAISES\Merge Join 2.Inputs[Merge Join Left Input].Columns[CLEAN_nombre_pais]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\Merge Join 2.Outputs[Merge Join Output].Columns[INT_paisEmpleado_key]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\Merge Join 2.Outputs[Merge Join Output].Columns[INT_paisEmpleado_key]"
+                      name="INT_paisEmpleado_key"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DIMENSIONES PAISES\Merge Join 2.Inputs[Merge Join Left Input].Columns[INT_paisEmpleado_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\Merge Join 2.Outputs[Merge Join Output].Columns[pais_key]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\Merge Join 2.Outputs[Merge Join Output].Columns[pais_key]"
+                      name="pais_key">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DIMENSIONES PAISES\Merge Join 2.Inputs[Merge Join Right Input].Columns[pais_key]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIMENSIONES PAISES\Merge Join 3"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join 3"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DIMENSIONES PAISES\Merge Join 3.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIMENSIONES PAISES\Merge Join 3.Inputs[Merge Join Left Input].Columns[INT_paisEnvio_key]"
+                      cachedDataType="i4"
+                      cachedName="INT_paisEnvio_key"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DIMENSIONES PAISES\SORT DATABASE ORDENES.Outputs[Sort Output].Columns[INT_paisEnvio_key]" />
+                    <inputColumn
+                      refId="Package\DIMENSIONES PAISES\Merge Join 3.Inputs[Merge Join Left Input].Columns[CLEAN_nombre_pais]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="CLEAN_nombre_pais"
+                      lineageId="Package\DIMENSIONES PAISES\SORT DATABASE ORDENES.Outputs[Sort Output].Columns[CLEAN_nombre_pais]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DIMENSIONES PAISES\Merge Join 3.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIMENSIONES PAISES\Merge Join 3.Inputs[Merge Join Right Input].Columns[paisEnvio_key]"
+                      cachedDataType="i4"
+                      cachedName="paisEnvio_key"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DIMENSIONES PAISES\SORT DW PAISENVIO.Outputs[Sort Output].Columns[paisEnvio_key]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIMENSIONES PAISES\Merge Join 3.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\Merge Join 3.Outputs[Merge Join Output].Columns[CLEAN_nombre_pais]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DIMENSIONES PAISES\Merge Join 3.Outputs[Merge Join Output].Columns[CLEAN_nombre_pais]"
+                      name="CLEAN_nombre_pais">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DIMENSIONES PAISES\Merge Join 3.Inputs[Merge Join Left Input].Columns[CLEAN_nombre_pais]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\Merge Join 3.Outputs[Merge Join Output].Columns[INT_paisEnvio_key]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\Merge Join 3.Outputs[Merge Join Output].Columns[INT_paisEnvio_key]"
+                      name="INT_paisEnvio_key"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DIMENSIONES PAISES\Merge Join 3.Inputs[Merge Join Left Input].Columns[INT_paisEnvio_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\Merge Join 3.Outputs[Merge Join Output].Columns[paisEnvio_key]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\Merge Join 3.Outputs[Merge Join Output].Columns[paisEnvio_key]"
+                      name="paisEnvio_key">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DIMENSIONES PAISES\Merge Join 3.Inputs[Merge Join Right Input].Columns[paisEnvio_key]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\DIMENSIONES PAISES\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -2658,6 +3733,391 @@ FROM (
                       refId="Package\DIMENSIONES PAISES\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\DIMENSIONES PAISES\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIMENSIONES PAISES\OLE DB Destination 1"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination 1"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimPaisEmpleado]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIMENSIONES PAISES\OLE DB Destination 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MAAWSA02LCXXXX.dw_kentfoods]"
+                  connectionManagerRefId="Package.ConnectionManagers[MAAWSA02LCXXXX.dw_kentfoods]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DIMENSIONES PAISES\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIMENSIONES PAISES\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[INT_paisEmpleado_key]"
+                      cachedDataType="i4"
+                      cachedName="INT_paisEmpleado_key"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\DIMENSIONES PAISES\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[pais_key]"
+                      lineageId="Package\DIMENSIONES PAISES\Merge Join 2.Outputs[Merge Join Output].Columns[INT_paisEmpleado_key]" />
+                    <inputColumn
+                      refId="Package\DIMENSIONES PAISES\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[CLEAN_nombre_pais]"
+                      cachedDataType="wstr"
+                      cachedLength="32"
+                      cachedName="CLEAN_nombre_pais"
+                      externalMetadataColumnId="Package\DIMENSIONES PAISES\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[nombre_pais]"
+                      lineageId="Package\DIMENSIONES PAISES\Merge Join 2.Outputs[Merge Join Output].Columns[CLEAN_nombre_pais]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIMENSIONES PAISES\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[pais_key]"
+                      dataType="i4"
+                      name="pais_key" />
+                    <externalMetadataColumn
+                      refId="Package\DIMENSIONES PAISES\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[nombre_pais]"
+                      dataType="wstr"
+                      length="15"
+                      name="nombre_pais" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIMENSIONES PAISES\OLE DB Destination 1.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DIMENSIONES PAISES\OLE DB Destination 1.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIMENSIONES PAISES\OLE DB Destination 2"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination 2"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimPaisEnvio]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIMENSIONES PAISES\OLE DB Destination 2.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MAAWSA02LCXXXX.dw_kentfoods]"
+                  connectionManagerRefId="Package.ConnectionManagers[MAAWSA02LCXXXX.dw_kentfoods]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DIMENSIONES PAISES\OLE DB Destination 2.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIMENSIONES PAISES\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[INT_paisEnvio_key]"
+                      cachedDataType="i4"
+                      cachedName="INT_paisEnvio_key"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\DIMENSIONES PAISES\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[paisEnvio_key]"
+                      lineageId="Package\DIMENSIONES PAISES\Merge Join 3.Outputs[Merge Join Output].Columns[INT_paisEnvio_key]" />
+                    <inputColumn
+                      refId="Package\DIMENSIONES PAISES\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[CLEAN_nombre_pais]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="CLEAN_nombre_pais"
+                      externalMetadataColumnId="Package\DIMENSIONES PAISES\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[nombre_pais]"
+                      lineageId="Package\DIMENSIONES PAISES\Merge Join 3.Outputs[Merge Join Output].Columns[CLEAN_nombre_pais]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIMENSIONES PAISES\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[paisEnvio_key]"
+                      dataType="i4"
+                      name="paisEnvio_key" />
+                    <externalMetadataColumn
+                      refId="Package\DIMENSIONES PAISES\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[nombre_pais]"
+                      dataType="wstr"
+                      length="15"
+                      name="nombre_pais" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIMENSIONES PAISES\OLE DB Destination 2.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DIMENSIONES PAISES\OLE DB Destination 2.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\OLE DB Destination 2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\OLE DB Destination 2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\OLE DB Destination 2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\OLE DB Destination 2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="ORDENES DATABASE SOURCE"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+    ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS paisEnvio_key,
+    P.PaisEnvio AS nombre_pais
+FROM (
+    SELECT DISTINCT PaisEnvio
+    FROM Ordenes
+) AS P;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MAAWSA02LCXXXX.KentFoods]"
+                  connectionManagerRefId="Package.ConnectionManagers[MAAWSA02LCXXXX.KentFoods]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE.Outputs[OLE DB Source Output].Columns[paisEnvio_key]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE.Outputs[OLE DB Source Output].ExternalColumns[paisEnvio_key]"
+                      lineageId="Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE.Outputs[OLE DB Source Output].Columns[paisEnvio_key]"
+                      name="paisEnvio_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE.Outputs[OLE DB Source Output].Columns[nombre_pais]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE.Outputs[OLE DB Source Output].ExternalColumns[nombre_pais]"
+                      length="15"
+                      lineageId="Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE.Outputs[OLE DB Source Output].Columns[nombre_pais]"
+                      name="nombre_pais"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE.Outputs[OLE DB Source Output].ExternalColumns[paisEnvio_key]"
+                      dataType="i8"
+                      name="paisEnvio_key" />
+                    <externalMetadataColumn
+                      refId="Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE.Outputs[OLE DB Source Output].ExternalColumns[nombre_pais]"
+                      dataType="wstr"
+                      length="15"
+                      name="nombre_pais" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE.Outputs[OLE DB Source Error Output].Columns[paisEnvio_key]"
+                      dataType="i8"
+                      lineageId="Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE.Outputs[OLE DB Source Error Output].Columns[paisEnvio_key]"
+                      name="paisEnvio_key" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE.Outputs[OLE DB Source Error Output].Columns[nombre_pais]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE.Outputs[OLE DB Source Error Output].Columns[nombre_pais]"
+                      name="nombre_pais" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -2799,6 +4259,105 @@ FROM (
               </outputs>
             </component>
             <component
+              refId="Package\DIMENSIONES PAISES\SORT DATABASE"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="SORT DATABASE"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DIMENSIONES PAISES\SORT DATABASE.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIMENSIONES PAISES\SORT DATABASE.Inputs[Sort Input].Columns[INT_paisEmpleado_key]"
+                      cachedDataType="i4"
+                      cachedName="INT_paisEmpleado_key"
+                      lineageId="Package\DIMENSIONES PAISES\Data Conversion 2.Outputs[Data Conversion Output].Columns[INT_paisEmpleado_key]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DIMENSIONES PAISES\SORT DATABASE.Inputs[Sort Input].Columns[CLEAN_nombre_pais]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="CLEAN_nombre_pais"
+                      lineageId="Package\DIMENSIONES PAISES\Derived Column 2.Outputs[Derived Column Output].Columns[CLEAN_nombre_pais]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIMENSIONES PAISES\SORT DATABASE.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\SORT DATABASE.Outputs[Sort Output].Columns[INT_paisEmpleado_key]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\SORT DATABASE.Outputs[Sort Output].Columns[INT_paisEmpleado_key]"
+                      name="INT_paisEmpleado_key"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DIMENSIONES PAISES\Data Conversion 2.Outputs[Data Conversion Output].Columns[INT_paisEmpleado_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\SORT DATABASE.Outputs[Sort Output].Columns[CLEAN_nombre_pais]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DIMENSIONES PAISES\SORT DATABASE.Outputs[Sort Output].Columns[CLEAN_nombre_pais]"
+                      name="CLEAN_nombre_pais">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DIMENSIONES PAISES\Derived Column 2.Outputs[Derived Column Output].Columns[CLEAN_nombre_pais]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\DIMENSIONES PAISES\SORT DATABASE CLIENTES"
               componentClassID="Microsoft.Sort"
               contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -2890,6 +4449,105 @@ FROM (
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
                           name="SortColumnId">#{Package\DIMENSIONES PAISES\Derived Column 1.Outputs[Derived Column Output].Columns[nombre_pais_derivada]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIMENSIONES PAISES\SORT DATABASE ORDENES"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="SORT DATABASE ORDENES"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DIMENSIONES PAISES\SORT DATABASE ORDENES.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIMENSIONES PAISES\SORT DATABASE ORDENES.Inputs[Sort Input].Columns[INT_paisEnvio_key]"
+                      cachedDataType="i4"
+                      cachedName="INT_paisEnvio_key"
+                      lineageId="Package\DIMENSIONES PAISES\Data Conversion 3.Outputs[Data Conversion Output].Columns[INT_paisEnvio_key]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DIMENSIONES PAISES\SORT DATABASE ORDENES.Inputs[Sort Input].Columns[CLEAN_nombre_pais]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="CLEAN_nombre_pais"
+                      lineageId="Package\DIMENSIONES PAISES\Derived Column 3.Outputs[Derived Column Output].Columns[CLEAN_nombre_pais]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIMENSIONES PAISES\SORT DATABASE ORDENES.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\SORT DATABASE ORDENES.Outputs[Sort Output].Columns[INT_paisEnvio_key]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\SORT DATABASE ORDENES.Outputs[Sort Output].Columns[INT_paisEnvio_key]"
+                      name="INT_paisEnvio_key"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DIMENSIONES PAISES\Data Conversion 3.Outputs[Data Conversion Output].Columns[INT_paisEnvio_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\SORT DATABASE ORDENES.Outputs[Sort Output].Columns[CLEAN_nombre_pais]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DIMENSIONES PAISES\SORT DATABASE ORDENES.Outputs[Sort Output].Columns[CLEAN_nombre_pais]"
+                      name="CLEAN_nombre_pais">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DIMENSIONES PAISES\Derived Column 3.Outputs[Derived Column Output].Columns[CLEAN_nombre_pais]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -2997,6 +4655,74 @@ FROM (
               </outputs>
             </component>
             <component
+              refId="Package\DIMENSIONES PAISES\SORT DATAWAREHOUSE"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="SORT DATAWAREHOUSE"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DIMENSIONES PAISES\SORT DATAWAREHOUSE.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIMENSIONES PAISES\SORT DATAWAREHOUSE.Inputs[Sort Input].Columns[pais_key]"
+                      cachedDataType="i4"
+                      cachedName="pais_key"
+                      lineageId="Package\DIMENSIONES PAISES\DimPaisEmpleados DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output].Columns[pais_key]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIMENSIONES PAISES\SORT DATAWAREHOUSE.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\SORT DATAWAREHOUSE.Outputs[Sort Output].Columns[pais_key]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\SORT DATAWAREHOUSE.Outputs[Sort Output].Columns[pais_key]"
+                      name="pais_key"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DIMENSIONES PAISES\DimPaisEmpleados DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output].Columns[pais_key]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\DIMENSIONES PAISES\SORT DW PAISCLIENTE"
               componentClassID="Microsoft.Sort"
               contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -3057,6 +4783,74 @@ FROM (
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
                           name="SortColumnId">#{Package\DIMENSIONES PAISES\DimPaisClientes DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output].Columns[paisCliente_key]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIMENSIONES PAISES\SORT DW PAISENVIO"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="SORT DW PAISENVIO"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DIMENSIONES PAISES\SORT DW PAISENVIO.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIMENSIONES PAISES\SORT DW PAISENVIO.Inputs[Sort Input].Columns[paisEnvio_key]"
+                      cachedDataType="i4"
+                      cachedName="paisEnvio_key"
+                      lineageId="Package\DIMENSIONES PAISES\DimPaisEnvio DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output].Columns[paisEnvio_key]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIMENSIONES PAISES\SORT DW PAISENVIO.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES PAISES\SORT DW PAISENVIO.Outputs[Sort Output].Columns[paisEnvio_key]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES PAISES\SORT DW PAISENVIO.Outputs[Sort Output].Columns[paisEnvio_key]"
+                      name="paisEnvio_key"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DIMENSIONES PAISES\DimPaisEnvio DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output].Columns[paisEnvio_key]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -3138,12 +4932,12 @@ FROM (
               refId="Package\DIMENSIONES PAISES.Paths[Case 1]"
               endId="Package\DIMENSIONES PAISES\DimPaisProveedor DESTINO.Inputs[OLE DB Destination Input]"
               name="Case 1"
-              startId="Package\DIMENSIONES PAISES\Conditional Split.Outputs[Case 1]" />
+              startId="Package\DIMENSIONES PAISES\Conditional Split.Outputs[DW IS NULL]" />
             <path
               refId="Package\DIMENSIONES PAISES.Paths[Case 11]"
               endId="Package\DIMENSIONES PAISES\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Case 1"
-              startId="Package\DIMENSIONES PAISES\Conditional Split 1.Outputs[Case 1]" />
+              startId="Package\DIMENSIONES PAISES\Conditional Split 1.Outputs[DW IS NULL]" />
             <path
               refId="Package\DIMENSIONES PAISES.Paths[Data Conversion Output]"
               endId="Package\DIMENSIONES PAISES\Derived Column.Inputs[Derived Column Input]"
@@ -3155,6 +4949,16 @@ FROM (
               name="Data Conversion Output"
               startId="Package\DIMENSIONES PAISES\Data Conversion 1.Outputs[Data Conversion Output]" />
             <path
+              refId="Package\DIMENSIONES PAISES.Paths[Data Conversion Output3]"
+              endId="Package\DIMENSIONES PAISES\Derived Column 3.Inputs[Derived Column Input]"
+              name="Data Conversion Output"
+              startId="Package\DIMENSIONES PAISES\Data Conversion 3.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\DIMENSIONES PAISES.Paths[Data Conversion Output2]"
+              endId="Package\DIMENSIONES PAISES\Derived Column 2.Inputs[Derived Column Input]"
+              name="Data Conversion Output"
+              startId="Package\DIMENSIONES PAISES\Data Conversion 2.Outputs[Data Conversion Output]" />
+            <path
               refId="Package\DIMENSIONES PAISES.Paths[Derived Column Output]"
               endId="Package\DIMENSIONES PAISES\SORT DATABASE PROVEEDORES.Inputs[Sort Input]"
               name="Derived Column Output"
@@ -3165,50 +4969,120 @@ FROM (
               name="Derived Column Output"
               startId="Package\DIMENSIONES PAISES\Derived Column 1.Outputs[Derived Column Output]" />
             <path
-              refId="Package\DIMENSIONES PAISES.Paths[Merge Join Output]"
-              endId="Package\DIMENSIONES PAISES\Conditional Split.Inputs[Conditional Split Input]"
+              refId="Package\DIMENSIONES PAISES.Paths[Derived Column Output3]"
+              endId="Package\DIMENSIONES PAISES\SORT DATABASE ORDENES.Inputs[Sort Input]"
+              name="Derived Column Output"
+              startId="Package\DIMENSIONES PAISES\Derived Column 3.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DIMENSIONES PAISES.Paths[Derived Column Output2]"
+              endId="Package\DIMENSIONES PAISES\SORT DATABASE.Inputs[Sort Input]"
+              name="Derived Column Output"
+              startId="Package\DIMENSIONES PAISES\Derived Column 2.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DIMENSIONES PAISES.Paths[DW IS NULL]"
+              endId="Package\DIMENSIONES PAISES\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+              name="DW IS NULL"
+              startId="Package\DIMENSIONES PAISES\Conditional Split 2.Outputs[DW IS NULL]" />
+            <path
+              refId="Package\DIMENSIONES PAISES.Paths[DW IS NULL1]"
+              endId="Package\DIMENSIONES PAISES\OLE DB Destination 2.Inputs[OLE DB Destination Input]"
+              name="DW IS NULL"
+              startId="Package\DIMENSIONES PAISES\Conditional Split 3.Outputs[DW IS NULL]" />
+            <path
+              refId="Package\DIMENSIONES PAISES.Paths[Merge Join Output3]"
+              endId="Package\DIMENSIONES PAISES\Conditional Split 3.Inputs[Conditional Split Input]"
               name="Merge Join Output"
-              startId="Package\DIMENSIONES PAISES\Merge Join.Outputs[Merge Join Output]" />
+              startId="Package\DIMENSIONES PAISES\Merge Join 3.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\DIMENSIONES PAISES.Paths[Merge Join Output2]"
+              endId="Package\DIMENSIONES PAISES\Conditional Split 2.Inputs[Conditional Split Input]"
+              name="Merge Join Output"
+              startId="Package\DIMENSIONES PAISES\Merge Join 2.Outputs[Merge Join Output]" />
             <path
               refId="Package\DIMENSIONES PAISES.Paths[Merge Join Output1]"
               endId="Package\DIMENSIONES PAISES\Conditional Split 1.Inputs[Conditional Split Input]"
               name="Merge Join Output"
               startId="Package\DIMENSIONES PAISES\Merge Join 1.Outputs[Merge Join Output]" />
             <path
-              refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output]"
-              endId="Package\DIMENSIONES PAISES\Data Conversion.Inputs[Data Conversion Input]"
-              name="OLE DB Source Output"
-              startId="Package\DIMENSIONES PAISES\PROVEEDORES DATABASE SOURCE.Outputs[OLE DB Source Output]" />
+              refId="Package\DIMENSIONES PAISES.Paths[Merge Join Output]"
+              endId="Package\DIMENSIONES PAISES\Conditional Split.Inputs[Conditional Split Input]"
+              name="Merge Join Output"
+              startId="Package\DIMENSIONES PAISES\Merge Join.Outputs[Merge Join Output]" />
             <path
-              refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output1]"
-              endId="Package\DIMENSIONES PAISES\SORT DW PAISPROVEEDOR.Inputs[Sort Input]"
+              refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output4]"
+              endId="Package\DIMENSIONES PAISES\Data Conversion 2.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
-              startId="Package\DIMENSIONES PAISES\DimPaisProveedor DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output]" />
+              startId="Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output2]"
               endId="Package\DIMENSIONES PAISES\Data Conversion 1.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
               startId="Package\DIMENSIONES PAISES\CLIENTES DATABASE SOURCE.Outputs[OLE DB Source Output]" />
             <path
+              refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output1]"
+              endId="Package\DIMENSIONES PAISES\SORT DW PAISPROVEEDOR.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIMENSIONES PAISES\DimPaisProveedor DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output5]"
+              endId="Package\DIMENSIONES PAISES\SORT DATAWAREHOUSE.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIMENSIONES PAISES\DimPaisEmpleados DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output7]"
+              endId="Package\DIMENSIONES PAISES\SORT DW PAISENVIO.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIMENSIONES PAISES\DimPaisEnvio DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output]" />
+            <path
               refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output3]"
               endId="Package\DIMENSIONES PAISES\SORT DW PAISCLIENTE.Inputs[Sort Input]"
               name="OLE DB Source Output"
               startId="Package\DIMENSIONES PAISES\DimPaisClientes DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output]"
+              endId="Package\DIMENSIONES PAISES\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIMENSIONES PAISES\PROVEEDORES DATABASE SOURCE.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output6]"
+              endId="Package\DIMENSIONES PAISES\Data Conversion 3.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\DIMENSIONES PAISES.Paths[Sort Output]"
               endId="Package\DIMENSIONES PAISES\Merge Join.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\DIMENSIONES PAISES\SORT DATABASE PROVEEDORES.Outputs[Sort Output]" />
             <path
-              refId="Package\DIMENSIONES PAISES.Paths[Sort Output1]"
-              endId="Package\DIMENSIONES PAISES\Merge Join.Inputs[Merge Join Right Input]"
+              refId="Package\DIMENSIONES PAISES.Paths[Sort Output7]"
+              endId="Package\DIMENSIONES PAISES\Merge Join 3.Inputs[Merge Join Right Input]"
               name="Sort Output"
-              startId="Package\DIMENSIONES PAISES\SORT DW PAISPROVEEDOR.Outputs[Sort Output]" />
+              startId="Package\DIMENSIONES PAISES\SORT DW PAISENVIO.Outputs[Sort Output]" />
+            <path
+              refId="Package\DIMENSIONES PAISES.Paths[Sort Output6]"
+              endId="Package\DIMENSIONES PAISES\Merge Join 3.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\DIMENSIONES PAISES\SORT DATABASE ORDENES.Outputs[Sort Output]" />
+            <path
+              refId="Package\DIMENSIONES PAISES.Paths[Sort Output5]"
+              endId="Package\DIMENSIONES PAISES\Merge Join 2.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\DIMENSIONES PAISES\SORT DATAWAREHOUSE.Outputs[Sort Output]" />
             <path
               refId="Package\DIMENSIONES PAISES.Paths[Sort Output2]"
               endId="Package\DIMENSIONES PAISES\Merge Join 1.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\DIMENSIONES PAISES\SORT DATABASE CLIENTES.Outputs[Sort Output]" />
+            <path
+              refId="Package\DIMENSIONES PAISES.Paths[Sort Output1]"
+              endId="Package\DIMENSIONES PAISES\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\DIMENSIONES PAISES\SORT DW PAISPROVEEDOR.Outputs[Sort Output]" />
+            <path
+              refId="Package\DIMENSIONES PAISES.Paths[Sort Output4]"
+              endId="Package\DIMENSIONES PAISES\Merge Join 2.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\DIMENSIONES PAISES\SORT DATABASE.Outputs[Sort Output]" />
             <path
               refId="Package\DIMENSIONES PAISES.Paths[Sort Output3]"
               endId="Package\DIMENSIONES PAISES\Merge Join 1.Inputs[Merge Join Right Input]"
@@ -3232,500 +5106,16 @@ FROM (
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="186,42"
-          Id="Package\DIMENSIONES PAISES"
-          TopLeft="551,104" />
-        <NodeLayout
           Size="176,42"
           Id="Package\Dimension Categoria"
-          TopLeft="212,105" />
+          TopLeft="207,154" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\DIMENSIONES PAISES"
+          TopLeft="489,124" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
-  <TaskHost
-    design-time-name="Package\DIMENSIONES PAISES">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="248,42"
-          Id="Package\DIMENSIONES PAISES\PROVEEDORES DATABASE SOURCE"
-          TopLeft="122.75,84.5" />
-        <NodeLayout
-          Size="299,42"
-          Id="Package\DIMENSIONES PAISES\DimPaisProveedor DATAWAREHOUSE SOURCE"
-          TopLeft="414,82.75" />
-        <NodeLayout
-          Size="156,42"
-          Id="Package\DIMENSIONES PAISES\Data Conversion"
-          TopLeft="165.75,168.5" />
-        <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output]"
-          TopLeft="245.25,126.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42"
-              Start="0,0"
-              End="0,34.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="211,42"
-          Id="Package\DIMENSIONES PAISES\SORT DW PAISPROVEEDOR"
-          TopLeft="454,330.5" />
-        <NodeLayout
-          Size="235,42"
-          Id="Package\DIMENSIONES PAISES\SORT DATABASE PROVEEDORES"
-          TopLeft="131.5,332.5" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\DIMENSIONES PAISES\Merge Join"
-          TopLeft="340,430" />
-        <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[Sort Output]"
-          TopLeft="249,374.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="135.666666666667,55.5"
-              Start="0,0"
-              End="135.666666666667,48">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.8951367781155" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.8951367781155"
-                    Point2="0,32.8951367781155"
-                    Point3="4,32.8951367781155" />
-                  <mssgle:LineSegment
-                    End="131.666666666667,32.8951367781155" />
-                  <mssgle:CubicBezierSegment
-                    Point1="131.666666666667,32.8951367781155"
-                    Point2="135.666666666667,32.8951367781155"
-                    Point3="135.666666666667,36.8951367781155" />
-                  <mssgle:LineSegment
-                    End="135.666666666667,48" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[Sort Output1]"
-          TopLeft="559.5,372.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-134.166666666667,57.5"
-              Start="0,0"
-              End="-134.166666666667,50">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.080547112462" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.080547112462"
-                    Point2="0,34.080547112462"
-                    Point3="-4,34.080547112462" />
-                  <mssgle:LineSegment
-                    End="-130.166666666667,34.080547112462" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-130.166666666667,34.080547112462"
-                    Point2="-134.166666666667,34.080547112462"
-                    Point3="-134.166666666667,38.080547112462" />
-                  <mssgle:LineSegment
-                    End="-134.166666666667,50" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output1]"
-          TopLeft="561.5,124.75">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,205.75"
-              Start="0,0"
-              End="0,198.25">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,198.25" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="155,42"
-          Id="Package\DIMENSIONES PAISES\Conditional Split"
-          TopLeft="327.25,515.75" />
-        <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[Merge Join Output]"
-          TopLeft="404.875,472">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43.7500000000001"
-              Start="0,0"
-              End="0,36.2500000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.2500000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="211,42"
-          Id="Package\DIMENSIONES PAISES\DimPaisProveedor DESTINO"
-          TopLeft="303.5,601.25" />
-        <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[Case 1]"
-          TopLeft="406.875,557.75">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43.4999999999999"
-              Start="0,0"
-              End="0,35.9999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.9999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-15.2180859375,13.2231445312499,30.436171875,9.5537109375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="154,42"
-          Id="Package\DIMENSIONES PAISES\Derived Column"
-          TopLeft="172.5,254.75" />
-        <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[Data Conversion Output]"
-          TopLeft="246.625,210.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44.25"
-              Start="0,0"
-              End="0,36.75">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.75" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[Derived Column Output]"
-          TopLeft="249.25,296.75">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,35.75"
-              Start="0,0"
-              End="0,28.25">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.25" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="223,42"
-          Id="Package\DIMENSIONES PAISES\CLIENTES DATABASE SOURCE"
-          TopLeft="756.25,82.5" />
-        <NodeLayout
-          Size="165,42"
-          Id="Package\DIMENSIONES PAISES\Data Conversion 1"
-          TopLeft="785,180" />
-        <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output2]"
-          TopLeft="867.625,124.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,55.5"
-              Start="0,0"
-              End="0,48">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,48" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\DIMENSIONES PAISES\Derived Column 1"
-          TopLeft="787.5,273.75" />
-        <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[Data Conversion Output1]"
-          TopLeft="868.25,222">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,51.75"
-              Start="0,0"
-              End="0,44.25">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,44.25" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="210,42"
-          Id="Package\DIMENSIONES PAISES\SORT DATABASE CLIENTES"
-          TopLeft="770,361.25" />
-        <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[Derived Column Output1]"
-          TopLeft="872,315.75">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45.5"
-              Start="0,0"
-              End="0,38">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="139,42"
-          Id="Package\DIMENSIONES PAISES\Merge Join 1"
-          TopLeft="966.25,442.5" />
-        <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[Sort Output2]"
-          TopLeft="875,403.25">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="138.916666666666,39.25"
-              Start="0,0"
-              End="138.916666666666,31.75">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.2820056899004" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.2820056899004"
-                    Point2="0,23.2820056899004"
-                    Point3="4,23.2820056899004" />
-                  <mssgle:LineSegment
-                    End="134.916666666666,23.2820056899004" />
-                  <mssgle:CubicBezierSegment
-                    Point1="134.916666666666,23.2820056899004"
-                    Point2="138.916666666666,23.2820056899004"
-                    Point3="138.916666666666,27.2820056899004" />
-                  <mssgle:LineSegment
-                    End="138.916666666666,31.75" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="288,42"
-          Id="Package\DIMENSIONES PAISES\DimPaisClientes DATAWAREHOUSE SOURCE"
-          TopLeft="1081.25,82.5" />
-        <NodeLayout
-          Size="192,42"
-          Id="Package\DIMENSIONES PAISES\SORT DW PAISCLIENTE"
-          TopLeft="1130,360" />
-        <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output3]"
-          TopLeft="1225.625,124.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,235.5"
-              Start="0,0"
-              End="0,228">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,228" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[Sort Output3]"
-          TopLeft="1226,402">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-168.416666666667,40.5"
-              Start="0,0"
-              End="-168.416666666667,33">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.0234708392603" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.0234708392603"
-                    Point2="0,24.0234708392603"
-                    Point3="-4,24.0234708392603" />
-                  <mssgle:LineSegment
-                    End="-164.416666666667,24.0234708392603" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-164.416666666667,24.0234708392603"
-                    Point2="-168.416666666667,24.0234708392603"
-                    Point3="-168.416666666667,28.0234708392603" />
-                  <mssgle:LineSegment
-                    End="-168.416666666667,33" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="164,42"
-          Id="Package\DIMENSIONES PAISES\Conditional Split 1"
-          TopLeft="957.5,512.5" />
-        <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[Merge Join Output1]"
-          TopLeft="1037.625,484.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28"
-              Start="0,0"
-              End="0,20.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="171,42"
-          Id="Package\DIMENSIONES PAISES\OLE DB Destination"
-          TopLeft="955,588.75" />
-        <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[Case 11]"
-          TopLeft="1040,554.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34.2500000000001"
-              Start="0,0"
-              End="0,26.7500000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.7500000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-15.2180859375,8.59814453125006,30.436171875,9.5537109375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
   <TaskHost
     design-time-name="Package\Dimension Categoria">
     <LayoutInfo>
@@ -3798,7 +5188,9 @@ FROM (
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3832,7 +5224,9 @@ FROM (
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3866,7 +5260,9 @@ FROM (
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3888,7 +5284,9 @@ FROM (
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3910,7 +5308,9 @@ FROM (
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3932,7 +5332,9 @@ FROM (
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3954,7 +5356,9 @@ FROM (
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4023,11 +5427,976 @@ FROM (
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DIMENSIONES PAISES">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="164,42"
+          Id="Package\DIMENSIONES PAISES\Conditional Split 1"
+          TopLeft="957.5,512.5" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\DIMENSIONES PAISES\OLE DB Destination"
+          TopLeft="955,588.75" />
+        <NodeLayout
+          Size="299,42"
+          Id="Package\DIMENSIONES PAISES\DimPaisProveedor DATAWAREHOUSE SOURCE"
+          TopLeft="414,82.75" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\DIMENSIONES PAISES\Derived Column"
+          TopLeft="172.5,254.75" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\DIMENSIONES PAISES\Conditional Split"
+          TopLeft="327.25,515.75" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\DIMENSIONES PAISES\Data Conversion 1"
+          TopLeft="785,180" />
+        <NodeLayout
+          Size="210,42"
+          Id="Package\DIMENSIONES PAISES\SORT DATABASE CLIENTES"
+          TopLeft="770,361.25" />
+        <NodeLayout
+          Size="248,42"
+          Id="Package\DIMENSIONES PAISES\PROVEEDORES DATABASE SOURCE"
+          TopLeft="122.75,84.5" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\DIMENSIONES PAISES\Merge Join 1"
+          TopLeft="966.25,442.5" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\DIMENSIONES PAISES\DimPaisProveedor DESTINO"
+          TopLeft="303.5,601.25" />
+        <NodeLayout
+          Size="288,42"
+          Id="Package\DIMENSIONES PAISES\DimPaisClientes DATAWAREHOUSE SOURCE"
+          TopLeft="1081.25,82.5" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\DIMENSIONES PAISES\Data Conversion"
+          TopLeft="165.75,168.5" />
+        <NodeLayout
+          Size="235,42"
+          Id="Package\DIMENSIONES PAISES\SORT DATABASE PROVEEDORES"
+          TopLeft="131.5,332.5" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\DIMENSIONES PAISES\SORT DW PAISPROVEEDOR"
+          TopLeft="454,330.5" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\DIMENSIONES PAISES\SORT DW PAISCLIENTE"
+          TopLeft="1130,360" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\DIMENSIONES PAISES\Derived Column 1"
+          TopLeft="787.5,273.75" />
+        <NodeLayout
+          Size="223,42"
+          Id="Package\DIMENSIONES PAISES\CLIENTES DATABASE SOURCE"
+          TopLeft="756.25,82.5" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\DIMENSIONES PAISES\Merge Join"
+          TopLeft="340,430" />
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[Sort Output3]"
+          TopLeft="1226,402">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-168.416666666667,40.5"
+              Start="0,0"
+              End="-168.416666666667,33">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.0234708392603" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.0234708392603"
+                    Point2="0,24.0234708392603"
+                    Point3="-4,24.0234708392603" />
+                  <mssgle:LineSegment
+                    End="-164.416666666667,24.0234708392603" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-164.416666666667,24.0234708392603"
+                    Point2="-168.416666666667,24.0234708392603"
+                    Point3="-168.416666666667,28.0234708392603" />
+                  <mssgle:LineSegment
+                    End="-168.416666666667,33" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[Sort Output2]"
+          TopLeft="875,403.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="138.916666666666,39.25"
+              Start="0,0"
+              End="138.916666666666,31.75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.2820056899004" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.2820056899004"
+                    Point2="0,23.2820056899004"
+                    Point3="4,23.2820056899004" />
+                  <mssgle:LineSegment
+                    End="134.916666666666,23.2820056899004" />
+                  <mssgle:CubicBezierSegment
+                    Point1="134.916666666666,23.2820056899004"
+                    Point2="138.916666666666,23.2820056899004"
+                    Point3="138.916666666666,27.2820056899004" />
+                  <mssgle:LineSegment
+                    End="138.916666666666,31.75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[Sort Output1]"
+          TopLeft="559.5,372.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-134.166666666667,57.5"
+              Start="0,0"
+              End="-134.166666666667,50">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.080547112462" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.080547112462"
+                    Point2="0,34.080547112462"
+                    Point3="-4,34.080547112462" />
+                  <mssgle:LineSegment
+                    End="-130.166666666667,34.080547112462" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-130.166666666667,34.080547112462"
+                    Point2="-134.166666666667,34.080547112462"
+                    Point3="-134.166666666667,38.080547112462" />
+                  <mssgle:LineSegment
+                    End="-134.166666666667,50" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[Sort Output]"
+          TopLeft="249,374.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="135.666666666667,55.5"
+              Start="0,0"
+              End="135.666666666667,48">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.8951367781155" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.8951367781155"
+                    Point2="0,32.8951367781155"
+                    Point3="4,32.8951367781155" />
+                  <mssgle:LineSegment
+                    End="131.666666666667,32.8951367781155" />
+                  <mssgle:CubicBezierSegment
+                    Point1="131.666666666667,32.8951367781155"
+                    Point2="135.666666666667,32.8951367781155"
+                    Point3="135.666666666667,36.8951367781155" />
+                  <mssgle:LineSegment
+                    End="135.666666666667,48" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output3]"
+          TopLeft="1225.625,124.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,235.5"
+              Start="0,0"
+              End="0,228">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,228" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output2]"
+          TopLeft="867.625,124.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.5"
+              Start="0,0"
+              End="0,48">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output1]"
+          TopLeft="561.5,124.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,205.75"
+              Start="0,0"
+              End="0,198.25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,198.25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output]"
+          TopLeft="245.25,126.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[Merge Join Output1]"
+          TopLeft="1037.625,484.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[Merge Join Output]"
+          TopLeft="404.875,472">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.7500000000001"
+              Start="0,0"
+              End="0,36.2500000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.2500000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[Derived Column Output1]"
+          TopLeft="872,315.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.5"
+              Start="0,0"
+              End="0,38">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[Derived Column Output]"
+          TopLeft="249.25,296.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.75"
+              Start="0,0"
+              End="0,28.25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[Data Conversion Output1]"
+          TopLeft="868.25,222">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.75"
+              Start="0,0"
+              End="0,44.25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[Data Conversion Output]"
+          TopLeft="246.625,210.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.25"
+              Start="0,0"
+              End="0,36.75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[Case 11]"
+          TopLeft="1040,554.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.2500000000001"
+              Start="0,0"
+              End="0,26.7500000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.7500000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.89193359375,8.59814453125005,55.7838671875,9.5537109375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[Case 1]"
+          TopLeft="406.875,557.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.4999999999999"
+              Start="0,0"
+              End="0,35.9999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.9999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.89193359375,13.22314453125,55.7838671875,9.5537109375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="235,42"
+          Id="Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE"
+          TopLeft="1469.77272727273,83.6363636363637" />
+        <NodeLayout
+          Size="302,42"
+          Id="Package\DIMENSIONES PAISES\DimPaisEmpleados DATAWAREHOUSE SOURCE"
+          TopLeft="1976.36363636364,85.4545454545455" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\DIMENSIONES PAISES\Derived Column 2"
+          TopLeft="1502.72727272727,263.636363636364" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\DIMENSIONES PAISES\Data Conversion 2"
+          TopLeft="1499.09090909091,160.909090909091" />
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output4]"
+          TopLeft="1584.43181818182,125.636363636364">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.2727272727272"
+              Start="0,0"
+              End="0,27.7727272727272">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.7727272727272" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[Data Conversion Output2]"
+          TopLeft="1582.90909090909,202.909090909091">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.7272727272727"
+              Start="0,0"
+              End="0,53.2272727272727">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.2272727272727" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="160,42"
+          Id="Package\DIMENSIONES PAISES\SORT DATABASE"
+          TopLeft="1511.81818181818,363.636363636364" />
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[Derived Column Output2]"
+          TopLeft="1588.02272727273,305.636363636364">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="197,42"
+          Id="Package\DIMENSIONES PAISES\SORT DATAWAREHOUSE"
+          TopLeft="2027.27272727273,350.909090909091" />
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output5]"
+          TopLeft="2126.56818181818,127.454545454545">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,223.454545454546"
+              Start="0,0"
+              End="0,215.954545454546">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,215.954545454546" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="139,42"
+          Id="Package\DIMENSIONES PAISES\Merge Join 2"
+          TopLeft="1777.27272727273,396.363636363636" />
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[Sort Output4]"
+          TopLeft="1671.81818181818,384.636363636364">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="105.454545454545,32.7272727272727"
+              Start="0,0"
+              End="97.9545454545453,32.7272727272727">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="48.7272727272726,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="48.7272727272726,0"
+                    Point2="52.7272727272726,0"
+                    Point3="52.7272727272726,4" />
+                  <mssgle:LineSegment
+                    End="52.7272727272726,28.7272727272727" />
+                  <mssgle:CubicBezierSegment
+                    Point1="52.7272727272726,28.7272727272727"
+                    Point2="52.7272727272726,32.7272727272727"
+                    Point3="56.7272727272726,32.7272727272727" />
+                  <mssgle:LineSegment
+                    End="97.9545454545453,32.7272727272727" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[Sort Output5]"
+          TopLeft="2027.27272727273,371.909090909091">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-111,45.4545454545454"
+              Start="0,0"
+              End="-103.5,45.4545454545454">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-51.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-51.5,0"
+                    Point2="-55.5,0"
+                    Point3="-55.5,4" />
+                  <mssgle:LineSegment
+                    End="-55.5,41.4545454545454" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-55.5,41.4545454545454"
+                    Point2="-55.5,45.4545454545454"
+                    Point3="-59.5,45.4545454545454" />
+                  <mssgle:LineSegment
+                    End="-103.5,45.4545454545454" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164,42"
+          Id="Package\DIMENSIONES PAISES\Conditional Split 2"
+          TopLeft="1771.81818181818,484.545454545455" />
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[Merge Join Output2]"
+          TopLeft="1850.29545454545,438.363636363636">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.1818181818182"
+              Start="0,0"
+              End="0,38.6818181818182">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.6818181818182" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="180,42"
+          Id="Package\DIMENSIONES PAISES\OLE DB Destination 1"
+          TopLeft="1770,579.090909090909" />
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[DW IS NULL]"
+          TopLeft="1856.90909090909,526.545454545455">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.5454545454545"
+              Start="0,0"
+              End="0,45.0454545454545">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.0454545454545" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.89193359375,17.7458718039773,55.7838671875,9.5537109375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="222,42"
+          Id="Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE"
+          TopLeft="2425.45454545455,79.0909090909091" />
+        <NodeLayout
+          Size="276,42"
+          Id="Package\DIMENSIONES PAISES\DimPaisEnvio DATAWAREHOUSE SOURCE"
+          TopLeft="2851.81818181818,84.5454545454546" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\DIMENSIONES PAISES\Data Conversion 3"
+          TopLeft="2452.72727272727,168.181818181818" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\DIMENSIONES PAISES\Derived Column 3"
+          TopLeft="2460,250.909090909091" />
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output6]"
+          TopLeft="2535.84090909091,121.090909090909">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.0909090909091"
+              Start="0,0"
+              End="0,39.5909090909091">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5909090909091" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[Data Conversion Output3]"
+          TopLeft="2538.36363636364,210.181818181818">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.7272727272728"
+              Start="0,0"
+              End="0,33.2272727272728">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.2272727272728" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="209,42"
+          Id="Package\DIMENSIONES PAISES\SORT DATABASE ORDENES"
+          TopLeft="2440.90909090909,339.090909090909" />
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[Derived Column Output3]"
+          TopLeft="2543.45454545455,292.909090909091">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.1818181818181"
+              Start="0,0"
+              End="0,38.6818181818181">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.6818181818181" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="182,42"
+          Id="Package\DIMENSIONES PAISES\SORT DW PAISENVIO"
+          TopLeft="2900.90909090909,339.090909090909" />
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output7]"
+          TopLeft="2990.86363636364,126.545454545455">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,212.545454545455"
+              Start="0,0"
+              End="0,205.045454545455">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,205.045454545455" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="139,42"
+          Id="Package\DIMENSIONES PAISES\Merge Join 3"
+          TopLeft="2709.09090909091,393.636363636364" />
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[Sort Output6]"
+          TopLeft="2649.90909090909,360.090909090909">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="59.181818181818,54.5454545454546"
+              Start="0,0"
+              End="51.681818181818,54.5454545454546">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="25.590909090909,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25.590909090909,0"
+                    Point2="29.590909090909,0"
+                    Point3="29.590909090909,4" />
+                  <mssgle:LineSegment
+                    End="29.590909090909,50.5454545454546" />
+                  <mssgle:CubicBezierSegment
+                    Point1="29.590909090909,50.5454545454546"
+                    Point2="29.590909090909,54.5454545454546"
+                    Point3="33.590909090909,54.5454545454546" />
+                  <mssgle:LineSegment
+                    End="51.681818181818,54.5454545454546" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[Sort Output7]"
+          TopLeft="2900.90909090909,360.090909090909">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-52.818181818182,54.5454545454544"
+              Start="0,0"
+              End="-45.318181818182,54.5454545454544">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-22.409090909091,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.409090909091,0"
+                    Point2="-26.409090909091,0"
+                    Point3="-26.409090909091,4" />
+                  <mssgle:LineSegment
+                    End="-26.409090909091,50.5454545454544" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-26.409090909091,50.5454545454544"
+                    Point2="-26.409090909091,54.5454545454544"
+                    Point3="-30.409090909091,54.5454545454544" />
+                  <mssgle:LineSegment
+                    End="-45.318181818182,54.5454545454544" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164,42"
+          Id="Package\DIMENSIONES PAISES\Conditional Split 3"
+          TopLeft="2701.81818181818,485.454545454545" />
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[Merge Join Output3]"
+          TopLeft="2781.20454545455,435.636363636364">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.8181818181816"
+              Start="0,0"
+              End="0,42.3181818181816">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.3181818181816" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="180,42"
+          Id="Package\DIMENSIONES PAISES\OLE DB Destination 2"
+          TopLeft="2693.63636363636,578.181818181818" />
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[DW IS NULL1]"
+          TopLeft="2783.72727272727,527.454545454545">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.7272727272727"
+              Start="0,0"
+              End="0,43.2272727272727">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.2272727272727" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.89193359375,16.8367808948864,55.7838671875,9.5537109375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DIMENSIONES PAISES\PROVEEDORES DATABASE SOURCE">
+    design-time-name="Package\DIMENSIONES PAISES\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -4045,7 +6414,28 @@ FROM (
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\DIMENSIONES PAISES\PROVEEDORES DATABASE SOURCE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\DIMENSIONES PAISES\DimPaisProveedor DESTINO">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIMENSIONES PAISES\DimPaisClientes DATAWAREHOUSE SOURCE">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4066,7 +6456,7 @@ FROM (
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DIMENSIONES PAISES\DimPaisClientes DATAWAREHOUSE SOURCE">
+    design-time-name="Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4079,7 +6469,54 @@ FROM (
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DIMENSIONES PAISES\OLE DB Destination">
+    design-time-name="Package\DIMENSIONES PAISES\DimPaisEmpleados DATAWAREHOUSE SOURCE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIMENSIONES PAISES\OLE DB Destination 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIMENSIONES PAISES\DimPaisEnvio DATAWAREHOUSE SOURCE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIMENSIONES PAISES\OLE DB Destination 2">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
