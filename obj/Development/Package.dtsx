@@ -11,8 +11,8 @@
   DTS:LocaleID="22538"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{3EA0CE6E-6BD7-4522-8366-F5A8F086594E}">
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{647DB0E5-F589-49BD-B930-154CC9F06B74}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1312,7 +1312,7 @@
       DTS:refId="Package\DIMENSIONES CIUDADES"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{BAE3B9A3-779C-468A-8893-413B03080CEB}"
+      DTS:DTSID="{BEE61E00-90D2-4A50-8ADA-57FF63C07FD8}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="DIMENSIONES CIUDADES"
@@ -1320,7 +1320,949 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <pipeline
-          version="1" />
+          version="1">
+          <components>
+            <component
+              refId="Package\DIMENSIONES CIUDADES\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DIMENSIONES CIUDADES\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIMENSIONES CIUDADES\Conditional Split.Inputs[Conditional Split Input].Columns[ciudadCliente_key]"
+                      cachedDataType="i4"
+                      cachedName="ciudadCliente_key"
+                      lineageId="Package\DIMENSIONES CIUDADES\Merge Join.Outputs[Merge Join Output].Columns[ciudadCliente_key]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIMENSIONES CIUDADES\Conditional Split.Outputs[DW IS NULL]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="DW IS NULL"
+                  synchronousInputId="Package\DIMENSIONES CIUDADES\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[ISNULL](#{Package\DIMENSIONES CIUDADES\Merge Join.Outputs[Merge Join Output].Columns[ciudadCliente_key]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(ciudadCliente_key)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DIMENSIONES CIUDADES\Conditional Split.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\DIMENSIONES CIUDADES\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DIMENSIONES CIUDADES\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\DIMENSIONES CIUDADES\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES CIUDADES\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES CIUDADES\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES CIUDADES\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES CIUDADES\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIMENSIONES CIUDADES\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DIMENSIONES CIUDADES\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIMENSIONES CIUDADES\Data Conversion.Inputs[Data Conversion Input].Columns[ciudadCliente_key]"
+                      cachedDataType="i8"
+                      cachedName="ciudadCliente_key"
+                      lineageId="Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES.Outputs[OLE DB Source Output].Columns[ciudadCliente_key]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIMENSIONES CIUDADES\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\DIMENSIONES CIUDADES\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES CIUDADES\Data Conversion.Outputs[Data Conversion Output].Columns[INT_ciudadCliente_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DIMENSIONES CIUDADES\Data Conversion.Outputs[Data Conversion Output].Columns[INT_ciudadCliente_key]"
+                      name="INT_ciudadCliente_key"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES.Outputs[OLE DB Source Output].Columns[ciudadCliente_key]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DIMENSIONES CIUDADES\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\DIMENSIONES CIUDADES\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES CIUDADES\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES CIUDADES\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES CIUDADES\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES CIUDADES\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DB CIUDADES CLIENTES"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+    ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS ciudadCliente_key,
+    C.Ciudad AS nombre_ciudad
+FROM (
+    SELECT DISTINCT Ciudad
+    FROM Clientes
+) AS C;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MAAWSA02LCXXXX.KentFoods]"
+                  connectionManagerRefId="Package.ConnectionManagers[MAAWSA02LCXXXX.KentFoods]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES.Outputs[OLE DB Source Output].Columns[ciudadCliente_key]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES.Outputs[OLE DB Source Output].ExternalColumns[ciudadCliente_key]"
+                      lineageId="Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES.Outputs[OLE DB Source Output].Columns[ciudadCliente_key]"
+                      name="ciudadCliente_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES.Outputs[OLE DB Source Output].Columns[nombre_ciudad]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES.Outputs[OLE DB Source Output].ExternalColumns[nombre_ciudad]"
+                      length="15"
+                      lineageId="Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES.Outputs[OLE DB Source Output].Columns[nombre_ciudad]"
+                      name="nombre_ciudad"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES.Outputs[OLE DB Source Output].ExternalColumns[ciudadCliente_key]"
+                      dataType="i8"
+                      name="ciudadCliente_key" />
+                    <externalMetadataColumn
+                      refId="Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES.Outputs[OLE DB Source Output].ExternalColumns[nombre_ciudad]"
+                      dataType="wstr"
+                      length="15"
+                      name="nombre_ciudad" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES.Outputs[OLE DB Source Error Output].Columns[ciudadCliente_key]"
+                      dataType="i8"
+                      lineageId="Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES.Outputs[OLE DB Source Error Output].Columns[ciudadCliente_key]"
+                      name="ciudadCliente_key" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES.Outputs[OLE DB Source Error Output].Columns[nombre_ciudad]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES.Outputs[OLE DB Source Error Output].Columns[nombre_ciudad]"
+                      name="nombre_ciudad" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIMENSIONES CIUDADES\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DIMENSIONES CIUDADES\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIMENSIONES CIUDADES\Derived Column.Inputs[Derived Column Input].Columns[nombre_ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="nombre_ciudad"
+                      lineageId="Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES.Outputs[OLE DB Source Output].Columns[nombre_ciudad]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIMENSIONES CIUDADES\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DIMENSIONES CIUDADES\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES CIUDADES\Derived Column.Outputs[Derived Column Output].Columns[CLEAN_nombre_ciudad]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="15"
+                      lineageId="Package\DIMENSIONES CIUDADES\Derived Column.Outputs[Derived Column Output].Columns[CLEAN_nombre_ciudad]"
+                      name="CLEAN_nombre_ciudad"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES.Outputs[OLE DB Source Output].Columns[nombre_ciudad]}) ? "SIN DATOS" : #{Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES.Outputs[OLE DB Source Output].Columns[nombre_ciudad]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(nombre_ciudad) ? "SIN DATOS" : nombre_ciudad</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DIMENSIONES CIUDADES\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DIMENSIONES CIUDADES\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES CIUDADES\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES CIUDADES\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES CIUDADES\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES CIUDADES\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIMENSIONES CIUDADES\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DIMENSIONES CIUDADES\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIMENSIONES CIUDADES\Merge Join.Inputs[Merge Join Left Input].Columns[INT_ciudadCliente_key]"
+                      cachedDataType="i4"
+                      cachedName="INT_ciudadCliente_key"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DIMENSIONES CIUDADES\SORT DB CLIENTES.Outputs[Sort Output].Columns[INT_ciudadCliente_key]" />
+                    <inputColumn
+                      refId="Package\DIMENSIONES CIUDADES\Merge Join.Inputs[Merge Join Left Input].Columns[CLEAN_nombre_ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="CLEAN_nombre_ciudad"
+                      lineageId="Package\DIMENSIONES CIUDADES\SORT DB CLIENTES.Outputs[Sort Output].Columns[CLEAN_nombre_ciudad]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DIMENSIONES CIUDADES\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIMENSIONES CIUDADES\Merge Join.Inputs[Merge Join Right Input].Columns[ciudadCliente_key]"
+                      cachedDataType="i4"
+                      cachedName="ciudadCliente_key"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DIMENSIONES CIUDADES\SORT DIMCIUDADCLIENTES.Outputs[Sort Output].Columns[ciudadCliente_key]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIMENSIONES CIUDADES\Merge Join.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES CIUDADES\Merge Join.Outputs[Merge Join Output].Columns[INT_ciudadCliente_key]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES CIUDADES\Merge Join.Outputs[Merge Join Output].Columns[INT_ciudadCliente_key]"
+                      name="INT_ciudadCliente_key"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DIMENSIONES CIUDADES\Merge Join.Inputs[Merge Join Left Input].Columns[INT_ciudadCliente_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DIMENSIONES CIUDADES\Merge Join.Outputs[Merge Join Output].Columns[CLEAN_nombre_ciudad]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DIMENSIONES CIUDADES\Merge Join.Outputs[Merge Join Output].Columns[CLEAN_nombre_ciudad]"
+                      name="CLEAN_nombre_ciudad">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DIMENSIONES CIUDADES\Merge Join.Inputs[Merge Join Left Input].Columns[CLEAN_nombre_ciudad]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DIMENSIONES CIUDADES\Merge Join.Outputs[Merge Join Output].Columns[ciudadCliente_key]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES CIUDADES\Merge Join.Outputs[Merge Join Output].Columns[ciudadCliente_key]"
+                      name="ciudadCliente_key">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DIMENSIONES CIUDADES\Merge Join.Inputs[Merge Join Right Input].Columns[ciudadCliente_key]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIMENSIONES CIUDADES\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimCiudadCliente]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIMENSIONES CIUDADES\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MAAWSA02LCXXXX.dw_kentfoods]"
+                  connectionManagerRefId="Package.ConnectionManagers[MAAWSA02LCXXXX.dw_kentfoods]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DIMENSIONES CIUDADES\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIMENSIONES CIUDADES\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[INT_ciudadCliente_key]"
+                      cachedDataType="i4"
+                      cachedName="INT_ciudadCliente_key"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\DIMENSIONES CIUDADES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ciudadCliente_key]"
+                      lineageId="Package\DIMENSIONES CIUDADES\Merge Join.Outputs[Merge Join Output].Columns[INT_ciudadCliente_key]" />
+                    <inputColumn
+                      refId="Package\DIMENSIONES CIUDADES\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CLEAN_nombre_ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="CLEAN_nombre_ciudad"
+                      externalMetadataColumnId="Package\DIMENSIONES CIUDADES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nombre_ciudad]"
+                      lineageId="Package\DIMENSIONES CIUDADES\Merge Join.Outputs[Merge Join Output].Columns[CLEAN_nombre_ciudad]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIMENSIONES CIUDADES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ciudadCliente_key]"
+                      dataType="i4"
+                      name="ciudadCliente_key" />
+                    <externalMetadataColumn
+                      refId="Package\DIMENSIONES CIUDADES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nombre_ciudad]"
+                      dataType="wstr"
+                      length="15"
+                      name="nombre_ciudad" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIMENSIONES CIUDADES\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DIMENSIONES CIUDADES\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES CIUDADES\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES CIUDADES\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES CIUDADES\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES CIUDADES\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIMENSIONES CIUDADES\SORT DB CLIENTES"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="SORT DB CLIENTES"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DIMENSIONES CIUDADES\SORT DB CLIENTES.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIMENSIONES CIUDADES\SORT DB CLIENTES.Inputs[Sort Input].Columns[INT_ciudadCliente_key]"
+                      cachedDataType="i4"
+                      cachedName="INT_ciudadCliente_key"
+                      lineageId="Package\DIMENSIONES CIUDADES\Data Conversion.Outputs[Data Conversion Output].Columns[INT_ciudadCliente_key]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DIMENSIONES CIUDADES\SORT DB CLIENTES.Inputs[Sort Input].Columns[CLEAN_nombre_ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="CLEAN_nombre_ciudad"
+                      lineageId="Package\DIMENSIONES CIUDADES\Derived Column.Outputs[Derived Column Output].Columns[CLEAN_nombre_ciudad]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIMENSIONES CIUDADES\SORT DB CLIENTES.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES CIUDADES\SORT DB CLIENTES.Outputs[Sort Output].Columns[INT_ciudadCliente_key]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES CIUDADES\SORT DB CLIENTES.Outputs[Sort Output].Columns[INT_ciudadCliente_key]"
+                      name="INT_ciudadCliente_key"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DIMENSIONES CIUDADES\Data Conversion.Outputs[Data Conversion Output].Columns[INT_ciudadCliente_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DIMENSIONES CIUDADES\SORT DB CLIENTES.Outputs[Sort Output].Columns[CLEAN_nombre_ciudad]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DIMENSIONES CIUDADES\SORT DB CLIENTES.Outputs[Sort Output].Columns[CLEAN_nombre_ciudad]"
+                      name="CLEAN_nombre_ciudad">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DIMENSIONES CIUDADES\Derived Column.Outputs[Derived Column Output].Columns[CLEAN_nombre_ciudad]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIMENSIONES CIUDADES\SORT DIMCIUDADCLIENTES"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="SORT DIMCIUDADCLIENTES"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DIMENSIONES CIUDADES\SORT DIMCIUDADCLIENTES.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIMENSIONES CIUDADES\SORT DIMCIUDADCLIENTES.Inputs[Sort Input].Columns[ciudadCliente_key]"
+                      cachedDataType="i4"
+                      cachedName="ciudadCliente_key"
+                      lineageId="Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADCLIENTE.Outputs[OLE DB Source Output].Columns[ciudadCliente_key]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIMENSIONES CIUDADES\SORT DIMCIUDADCLIENTES.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES CIUDADES\SORT DIMCIUDADCLIENTES.Outputs[Sort Output].Columns[ciudadCliente_key]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES CIUDADES\SORT DIMCIUDADCLIENTES.Outputs[Sort Output].Columns[ciudadCliente_key]"
+                      name="ciudadCliente_key"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADCLIENTE.Outputs[OLE DB Source Output].Columns[ciudadCliente_key]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADCLIENTE"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SOURCE DIMCIUDADCLIENTE"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimCiudadCliente]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADCLIENTE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MAAWSA02LCXXXX.dw_kentfoods]"
+                  connectionManagerRefId="Package.ConnectionManagers[MAAWSA02LCXXXX.dw_kentfoods]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADCLIENTE.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADCLIENTE.Outputs[OLE DB Source Output].Columns[ciudadCliente_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADCLIENTE.Outputs[OLE DB Source Output].ExternalColumns[ciudadCliente_key]"
+                      lineageId="Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADCLIENTE.Outputs[OLE DB Source Output].Columns[ciudadCliente_key]"
+                      name="ciudadCliente_key"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADCLIENTE.Outputs[OLE DB Source Output].ExternalColumns[ciudadCliente_key]"
+                      dataType="i4"
+                      name="ciudadCliente_key" />
+                    <externalMetadataColumn
+                      refId="Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADCLIENTE.Outputs[OLE DB Source Output].ExternalColumns[nombre_ciudad]"
+                      dataType="wstr"
+                      length="15"
+                      name="nombre_ciudad" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADCLIENTE.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADCLIENTE.Outputs[OLE DB Source Error Output].Columns[ciudadCliente_key]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADCLIENTE.Outputs[OLE DB Source Error Output].Columns[ciudadCliente_key]"
+                      name="ciudadCliente_key" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADCLIENTE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADCLIENTE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADCLIENTE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADCLIENTE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DIMENSIONES CIUDADES.Paths[Data Conversion Output]"
+              endId="Package\DIMENSIONES CIUDADES\Derived Column.Inputs[Derived Column Input]"
+              name="Data Conversion Output"
+              startId="Package\DIMENSIONES CIUDADES\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\DIMENSIONES CIUDADES.Paths[Derived Column Output]"
+              endId="Package\DIMENSIONES CIUDADES\SORT DB CLIENTES.Inputs[Sort Input]"
+              name="Derived Column Output"
+              startId="Package\DIMENSIONES CIUDADES\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DIMENSIONES CIUDADES.Paths[DW IS NULL]"
+              endId="Package\DIMENSIONES CIUDADES\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="DW IS NULL"
+              startId="Package\DIMENSIONES CIUDADES\Conditional Split.Outputs[DW IS NULL]" />
+            <path
+              refId="Package\DIMENSIONES CIUDADES.Paths[Merge Join Output]"
+              endId="Package\DIMENSIONES CIUDADES\Conditional Split.Inputs[Conditional Split Input]"
+              name="Merge Join Output"
+              startId="Package\DIMENSIONES CIUDADES\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output]"
+              endId="Package\DIMENSIONES CIUDADES\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output1]"
+              endId="Package\DIMENSIONES CIUDADES\SORT DIMCIUDADCLIENTES.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADCLIENTE.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output]"
+              endId="Package\DIMENSIONES CIUDADES\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\DIMENSIONES CIUDADES\SORT DB CLIENTES.Outputs[Sort Output]" />
+            <path
+              refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output1]"
+              endId="Package\DIMENSIONES CIUDADES\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\DIMENSIONES CIUDADES\SORT DIMCIUDADCLIENTES.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1364,8 +2306,11 @@
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
     ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS paisCliente_key,
-    Pais AS nombre_pais
-FROM Clientes;</property>
+    P.Pais AS nombre_pais
+FROM (
+    SELECT DISTINCT Pais
+    FROM Clientes
+) AS P;</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -3064,8 +4009,11 @@ FROM Clientes;</property>
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
     ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS paisEmpleado_key,
-    Pais AS nombre_pais
-FROM Empleados;</property>
+    P.Pais AS nombre_pais
+FROM (
+    SELECT DISTINCT Pais
+    FROM Empleados
+) AS P;</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -4028,8 +4976,11 @@ FROM Empleados;</property>
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
     ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS paisEnvio_key,
-    PaisEnvio AS nombre_pais
-FROM Ordenes;</property>
+    P.PaisEnvio AS nombre_pais
+FROM (
+    SELECT DISTINCT PaisEnvio
+    FROM Ordenes
+) AS P;</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -4158,8 +5109,11 @@ FROM Ordenes;</property>
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
     ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS paisProveedor_key,
-    Pais AS nombre_pais
-FROM Proveedores;</property>
+    P.Pais AS nombre_pais
+FROM (
+    SELECT DISTINCT Pais
+    FROM Proveedores
+) AS P;</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -5119,7 +6073,7 @@ FROM Proveedores;</property>
         <NodeLayout
           Size="202,42"
           Id="Package\DIMENSIONES CIUDADES"
-          TopLeft="614,209" />
+          TopLeft="683,265" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -6524,6 +7478,286 @@ FROM Proveedores;</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\DIMENSIONES PAISES\OLE DB Destination 2">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DIMENSIONES CIUDADES">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="196,42"
+          Id="Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES"
+          TopLeft="245,71" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\DIMENSIONES CIUDADES\Data Conversion"
+          TopLeft="261,157" />
+        <EdgeLayout
+          Id="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output]"
+          TopLeft="341,113">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154,42"
+          Id="Package\DIMENSIONES CIUDADES\Derived Column"
+          TopLeft="268,227" />
+        <EdgeLayout
+          Id="Package\DIMENSIONES CIUDADES.Paths[Data Conversion Output]"
+          TopLeft="342,199">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="172,42"
+          Id="Package\DIMENSIONES CIUDADES\SORT DB CLIENTES"
+          TopLeft="261,302" />
+        <EdgeLayout
+          Id="Package\DIMENSIONES CIUDADES.Paths[Derived Column Output]"
+          TopLeft="346,269">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="221,42"
+          Id="Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADCLIENTE"
+          TopLeft="538,74" />
+        <NodeLayout
+          Size="213,42"
+          Id="Package\DIMENSIONES CIUDADES\SORT DIMCIUDADCLIENTES"
+          TopLeft="545,298" />
+        <EdgeLayout
+          Id="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output1]"
+          TopLeft="650,116">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,182"
+              Start="0,0"
+              End="0,174.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,174.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="130,42"
+          Id="Package\DIMENSIONES CIUDADES\Merge Join"
+          TopLeft="419,385" />
+        <EdgeLayout
+          Id="Package\DIMENSIONES CIUDADES.Paths[Sort Output]"
+          TopLeft="347,344">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="116.666666666667,41"
+              Start="0,0"
+              End="116.666666666667,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.3009118541033" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.3009118541033"
+                    Point2="0,24.3009118541033"
+                    Point3="4,24.3009118541033" />
+                  <mssgle:LineSegment
+                    End="112.666666666667,24.3009118541033" />
+                  <mssgle:CubicBezierSegment
+                    Point1="112.666666666667,24.3009118541033"
+                    Point2="116.666666666667,24.3009118541033"
+                    Point3="116.666666666667,28.3009118541033" />
+                  <mssgle:LineSegment
+                    End="116.666666666667,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES CIUDADES.Paths[Sort Output1]"
+          TopLeft="651.5,340">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-147.166666666667,45"
+              Start="0,0"
+              End="-147.166666666667,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.6717325227964" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.6717325227964"
+                    Point2="0,26.6717325227964"
+                    Point3="-4,26.6717325227964" />
+                  <mssgle:LineSegment
+                    End="-143.166666666667,26.6717325227964" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-143.166666666667,26.6717325227964"
+                    Point2="-147.166666666667,26.6717325227964"
+                    Point3="-147.166666666667,30.6717325227964" />
+                  <mssgle:LineSegment
+                    End="-147.166666666667,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="155,42"
+          Id="Package\DIMENSIONES CIUDADES\Conditional Split"
+          TopLeft="403,457" />
+        <EdgeLayout
+          Id="Package\DIMENSIONES CIUDADES.Paths[Merge Join Output]"
+          TopLeft="482.25,427">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171,42"
+          Id="Package\DIMENSIONES CIUDADES\OLE DB Destination"
+          TopLeft="397,523" />
+        <EdgeLayout
+          Id="Package\DIMENSIONES CIUDADES.Paths[DW IS NULL]"
+          TopLeft="481.5,499">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24"
+              Start="0,0"
+              End="0,16.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.89193359375,3.47314453125,55.7838671875,9.5537109375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADCLIENTE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIMENSIONES CIUDADES\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
