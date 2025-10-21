@@ -11,8 +11,8 @@
   DTS:LocaleID="22538"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{9C56CABA-1881-4A16-97BC-BCB1591FA3EE}">
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{B3C36DC8-D2B3-47F2-8D6C-1F92B92331D1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1304,6 +1304,1806 @@
               endId="Package\Dimension Categoria\Merge Join.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\Dimension Categoria\Sort 1.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Dimension Cliente"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{DA34EBA7-313B-4605-9D0C-93EFDA93118E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dimension Cliente"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Dimension Cliente\Character Map"
+              componentClassID="Microsoft.CharacterMap"
+              contactInfo="Character Map;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Specifies the string operations to apply."
+              name="Character Map"
+              usesDispositions="true"
+              version="2">
+              <inputs>
+                <input
+                  refId="Package\Dimension Cliente\Character Map.Inputs[Character Map Input]"
+                  name="Character Map Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Character Map.Inputs[Character Map Input].Columns[clean_empresa]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="clean_empresa"
+                      errorOrTruncationOperation="Map Column"
+                      lineageId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_empresa]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          dataType="System.UInt32"
+                          name="MapFlags"
+                          typeConverter="LCMappingType">512</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Character Map.Inputs[Character Map Input].Columns[clean_contacto]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="clean_contacto"
+                      errorOrTruncationOperation="Map Column"
+                      lineageId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_contacto]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          dataType="System.UInt32"
+                          name="MapFlags"
+                          typeConverter="LCMappingType">512</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Character Map.Inputs[Character Map Input].Columns[clean_cargo]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="clean_cargo"
+                      errorOrTruncationOperation="Map Column"
+                      lineageId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_cargo]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          dataType="System.UInt32"
+                          name="MapFlags"
+                          typeConverter="LCMappingType">512</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Character Map.Inputs[Character Map Input].Columns[clean_direccion]"
+                      cachedDataType="wstr"
+                      cachedLength="60"
+                      cachedName="clean_direccion"
+                      errorOrTruncationOperation="Map Column"
+                      lineageId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_direccion]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          dataType="System.UInt32"
+                          name="MapFlags"
+                          typeConverter="LCMappingType">512</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Character Map.Inputs[Character Map Input].Columns[clean_telefono]"
+                      cachedDataType="wstr"
+                      cachedLength="24"
+                      cachedName="clean_telefono"
+                      errorOrTruncationOperation="Map Column"
+                      lineageId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_telefono]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          dataType="System.UInt32"
+                          name="MapFlags"
+                          typeConverter="LCMappingType">512</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Character Map.Inputs[Character Map Input].Columns[clean_codigo_postal]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="clean_codigo_postal"
+                      errorOrTruncationOperation="Map Column"
+                      lineageId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_codigo_postal]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          dataType="System.UInt32"
+                          name="MapFlags"
+                          typeConverter="LCMappingType">512</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dimension Cliente\Character Map.Outputs[Character Map Output]"
+                  exclusionGroup="1"
+                  name="Character Map Output"
+                  synchronousInputId="Package\Dimension Cliente\Character Map.Inputs[Character Map Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dimension Cliente\Character Map.Outputs[Character Map Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Character Map Error Output"
+                  synchronousInputId="Package\Dimension Cliente\Character Map.Inputs[Character Map Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Character Map.Outputs[Character Map Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Cliente\Character Map.Outputs[Character Map Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Character Map.Outputs[Character Map Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Cliente\Character Map.Outputs[Character Map Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dimension Cliente\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Dimension Cliente\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Conditional Split.Inputs[Conditional Split Input].Columns[cliente_key]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="cliente_key"
+                      lineageId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[cliente_key]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dimension Cliente\Conditional Split.Outputs[dw is null]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="dw is null"
+                  synchronousInputId="Package\Dimension Cliente\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[ISNULL](#{Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[cliente_key]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(cliente_key)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dimension Cliente\Conditional Split.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Dimension Cliente\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dimension Cliente\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Dimension Cliente\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Cliente\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Cliente\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dimension Cliente\DATABASE CLIENTES"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DATABASE CLIENTES"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Clientes]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+    C.ClienteID,
+    C.Empresa,
+    C.Contacto,
+    C.Cargo,
+    C.Direccion,
+    DC.ciudadCliente_key AS ciudadCliente_key,
+    C.CodigoPostal AS codigo_postal,
+    DP.paisCliente_key AS paisCliente_key,
+    C.Telefono
+FROM KentFoods.dbo.Clientes AS C
+LEFT JOIN DW_KENTFOODS.dbo.DimCiudadCliente AS DC
+    ON DC.nombre_ciudad = C.Ciudad
+LEFT JOIN DW_KENTFOODS.dbo.DimPaisCliente AS DP
+    ON DP.nombre_pais = C.Pais;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dimension Cliente\DATABASE CLIENTES.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MAAWSA02LCXXXX.KentFoods]"
+                  connectionManagerRefId="Package.ConnectionManagers[MAAWSA02LCXXXX.KentFoods]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[Empresa]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].ExternalColumns[Empresa]"
+                      length="40"
+                      lineageId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[Empresa]"
+                      name="Empresa"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[Contacto]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].ExternalColumns[Contacto]"
+                      length="30"
+                      lineageId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[Contacto]"
+                      name="Contacto"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[Cargo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].ExternalColumns[Cargo]"
+                      length="30"
+                      lineageId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[Cargo]"
+                      name="Cargo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[Direccion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].ExternalColumns[Direccion]"
+                      length="60"
+                      lineageId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[Direccion]"
+                      name="Direccion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[Telefono]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].ExternalColumns[Telefono]"
+                      length="24"
+                      lineageId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[Telefono]"
+                      name="Telefono"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[ciudadCliente_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].ExternalColumns[ciudadCliente_key]"
+                      lineageId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[ciudadCliente_key]"
+                      name="ciudadCliente_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[codigo_postal]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].ExternalColumns[codigo_postal]"
+                      length="10"
+                      lineageId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[codigo_postal]"
+                      name="codigo_postal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[paisCliente_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].ExternalColumns[paisCliente_key]"
+                      lineageId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[paisCliente_key]"
+                      name="paisCliente_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[ClienteID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].ExternalColumns[ClienteID]"
+                      length="5"
+                      lineageId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[ClienteID]"
+                      name="ClienteID"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].ExternalColumns[Empresa]"
+                      dataType="wstr"
+                      length="40"
+                      name="Empresa" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].ExternalColumns[Contacto]"
+                      dataType="wstr"
+                      length="30"
+                      name="Contacto" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].ExternalColumns[Cargo]"
+                      dataType="wstr"
+                      length="30"
+                      name="Cargo" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].ExternalColumns[Direccion]"
+                      dataType="wstr"
+                      length="60"
+                      name="Direccion" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].ExternalColumns[Telefono]"
+                      dataType="wstr"
+                      length="24"
+                      name="Telefono" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].ExternalColumns[ciudadCliente_key]"
+                      dataType="i4"
+                      name="ciudadCliente_key" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].ExternalColumns[codigo_postal]"
+                      dataType="wstr"
+                      length="10"
+                      name="codigo_postal" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].ExternalColumns[paisCliente_key]"
+                      dataType="i4"
+                      name="paisCliente_key" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].ExternalColumns[ClienteID]"
+                      dataType="wstr"
+                      length="5"
+                      name="ClienteID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Error Output].Columns[ClienteID]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Error Output].Columns[ClienteID]"
+                      name="ClienteID" />
+                    <outputColumn
+                      refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Error Output].Columns[Empresa]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Error Output].Columns[Empresa]"
+                      name="Empresa" />
+                    <outputColumn
+                      refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Error Output].Columns[Contacto]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Error Output].Columns[Contacto]"
+                      name="Contacto" />
+                    <outputColumn
+                      refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Error Output].Columns[Cargo]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Error Output].Columns[Cargo]"
+                      name="Cargo" />
+                    <outputColumn
+                      refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Error Output].Columns[Direccion]"
+                      dataType="wstr"
+                      length="60"
+                      lineageId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Error Output].Columns[Direccion]"
+                      name="Direccion" />
+                    <outputColumn
+                      refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Error Output].Columns[ciudadCliente_key]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Error Output].Columns[ciudadCliente_key]"
+                      name="ciudadCliente_key" />
+                    <outputColumn
+                      refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Error Output].Columns[codigo_postal]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Error Output].Columns[codigo_postal]"
+                      name="codigo_postal" />
+                    <outputColumn
+                      refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Error Output].Columns[paisCliente_key]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Error Output].Columns[paisCliente_key]"
+                      name="paisCliente_key" />
+                    <outputColumn
+                      refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Error Output].Columns[Telefono]"
+                      dataType="wstr"
+                      length="24"
+                      lineageId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Error Output].Columns[Telefono]"
+                      name="Telefono" />
+                    <outputColumn
+                      refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dimension Cliente\DATAWAREHOUSE SOURCE"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DATAWAREHOUSE SOURCE"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimCliente]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dimension Cliente\DATAWAREHOUSE SOURCE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MAAWSA02LCXXXX.dw_kentfoods]"
+                  connectionManagerRefId="Package.ConnectionManagers[MAAWSA02LCXXXX.dw_kentfoods]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Dimension Cliente\DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output].Columns[cliente_key]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension Cliente\DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output].ExternalColumns[cliente_key]"
+                      length="5"
+                      lineageId="Package\Dimension Cliente\DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output].Columns[cliente_key]"
+                      name="cliente_key"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dimension Cliente\DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output].ExternalColumns[cliente_key]"
+                      dataType="wstr"
+                      length="5"
+                      name="cliente_key" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Cliente\DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output].ExternalColumns[empresa]"
+                      dataType="wstr"
+                      length="40"
+                      name="empresa" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Cliente\DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output].ExternalColumns[contacto]"
+                      dataType="wstr"
+                      length="30"
+                      name="contacto" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Cliente\DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output].ExternalColumns[cargo]"
+                      dataType="wstr"
+                      length="30"
+                      name="cargo" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Cliente\DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output].ExternalColumns[direccion]"
+                      dataType="wstr"
+                      length="60"
+                      name="direccion" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Cliente\DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output].ExternalColumns[ciudadCliente_key]"
+                      dataType="i4"
+                      name="ciudadCliente_key" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Cliente\DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output].ExternalColumns[codigo_postal]"
+                      dataType="wstr"
+                      length="10"
+                      name="codigo_postal" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Cliente\DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output].ExternalColumns[paisCliente_key]"
+                      dataType="i4"
+                      name="paisCliente_key" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Cliente\DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output].ExternalColumns[telefono]"
+                      dataType="wstr"
+                      length="24"
+                      name="telefono" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Dimension Cliente\DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Cliente\DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dimension Cliente\DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Cliente\DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Dimension Cliente\DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Error Output].Columns[cliente_key]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\Dimension Cliente\DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Error Output].Columns[cliente_key]"
+                      name="cliente_key" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dimension Cliente\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Dimension Cliente\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Derived Column.Inputs[Derived Column Input].Columns[Empresa]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="Empresa"
+                      lineageId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[Empresa]" />
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Derived Column.Inputs[Derived Column Input].Columns[Contacto]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="Contacto"
+                      lineageId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[Contacto]" />
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Derived Column.Inputs[Derived Column Input].Columns[Cargo]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="Cargo"
+                      lineageId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[Cargo]" />
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Derived Column.Inputs[Derived Column Input].Columns[Direccion]"
+                      cachedDataType="wstr"
+                      cachedLength="60"
+                      cachedName="Direccion"
+                      lineageId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[Direccion]" />
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Derived Column.Inputs[Derived Column Input].Columns[Telefono]"
+                      cachedDataType="wstr"
+                      cachedLength="24"
+                      cachedName="Telefono"
+                      lineageId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[Telefono]" />
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Derived Column.Inputs[Derived Column Input].Columns[codigo_postal]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="codigo_postal"
+                      lineageId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[codigo_postal]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Dimension Cliente\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_empresa]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="40"
+                      lineageId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_empresa]"
+                      name="clean_empresa"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[Empresa]}) ? "SIN DATOS" : #{Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[Empresa]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(Empresa) ? "SIN DATOS" : Empresa</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_contacto]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="30"
+                      lineageId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_contacto]"
+                      name="clean_contacto"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[Contacto]}) ? "SIN DATOS" : #{Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[Contacto]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(Contacto) ? "SIN DATOS" : Contacto</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_cargo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="30"
+                      lineageId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_cargo]"
+                      name="clean_cargo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[Cargo]}) ? "SIN DATOS" : #{Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[Cargo]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(Cargo) ? "SIN DATOS" : Cargo</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_direccion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="60"
+                      lineageId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_direccion]"
+                      name="clean_direccion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[Direccion]}) ? "SIN DATOS" : #{Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[Direccion]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(Direccion) ? "SIN DATOS" : Direccion</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_telefono]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="24"
+                      lineageId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_telefono]"
+                      name="clean_telefono"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[Telefono]}) ? "SIN DATOS" : #{Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[Telefono]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(Telefono) ? "SIN DATOS" : Telefono</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_codigo_postal]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_codigo_postal]"
+                      name="clean_codigo_postal"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[codigo_postal]}) ? "SIN DATOS" : #{Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[codigo_postal]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(codigo_postal) ? "SIN DATOS" : codigo_postal</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Dimension Cliente\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dimension Cliente\DESTINO DIMCLIENTES"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DESTINO DIMCLIENTES"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimCliente]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MAAWSA02LCXXXX.dw_kentfoods]"
+                  connectionManagerRefId="Package.ConnectionManagers[MAAWSA02LCXXXX.dw_kentfoods]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input].Columns[ciudadCliente_key]"
+                      cachedDataType="i4"
+                      cachedName="ciudadCliente_key"
+                      externalMetadataColumnId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[ciudadCliente_key]"
+                      lineageId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[ciudadCliente_key]" />
+                    <inputColumn
+                      refId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input].Columns[paisCliente_key]"
+                      cachedDataType="i4"
+                      cachedName="paisCliente_key"
+                      externalMetadataColumnId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[paisCliente_key]"
+                      lineageId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[paisCliente_key]" />
+                    <inputColumn
+                      refId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input].Columns[ClienteID]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="ClienteID"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[cliente_key]"
+                      lineageId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[ClienteID]" />
+                    <inputColumn
+                      refId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input].Columns[clean_empresa]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="clean_empresa"
+                      externalMetadataColumnId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[empresa]"
+                      lineageId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[clean_empresa]" />
+                    <inputColumn
+                      refId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input].Columns[clean_contacto]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="clean_contacto"
+                      externalMetadataColumnId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[contacto]"
+                      lineageId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[clean_contacto]" />
+                    <inputColumn
+                      refId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input].Columns[clean_cargo]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="clean_cargo"
+                      externalMetadataColumnId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[cargo]"
+                      lineageId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[clean_cargo]" />
+                    <inputColumn
+                      refId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input].Columns[clean_direccion]"
+                      cachedDataType="wstr"
+                      cachedLength="60"
+                      cachedName="clean_direccion"
+                      externalMetadataColumnId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[direccion]"
+                      lineageId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[clean_direccion]" />
+                    <inputColumn
+                      refId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input].Columns[clean_codigo_postal]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="clean_codigo_postal"
+                      externalMetadataColumnId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[codigo_postal]"
+                      lineageId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[clean_codigo_postal]" />
+                    <inputColumn
+                      refId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input].Columns[clean_telefono]"
+                      cachedDataType="wstr"
+                      cachedLength="24"
+                      cachedName="clean_telefono"
+                      externalMetadataColumnId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[telefono]"
+                      lineageId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[clean_telefono]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[cliente_key]"
+                      dataType="wstr"
+                      length="5"
+                      name="cliente_key" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[empresa]"
+                      dataType="wstr"
+                      length="40"
+                      name="empresa" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[contacto]"
+                      dataType="wstr"
+                      length="30"
+                      name="contacto" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[cargo]"
+                      dataType="wstr"
+                      length="30"
+                      name="cargo" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[direccion]"
+                      dataType="wstr"
+                      length="60"
+                      name="direccion" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[ciudadCliente_key]"
+                      dataType="i4"
+                      name="ciudadCliente_key" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[codigo_postal]"
+                      dataType="wstr"
+                      length="10"
+                      name="codigo_postal" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[paisCliente_key]"
+                      dataType="i4"
+                      name="paisCliente_key" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[telefono]"
+                      dataType="wstr"
+                      length="24"
+                      name="telefono" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dimension Cliente\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Dimension Cliente\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Merge Join.Inputs[Merge Join Left Input].Columns[ClienteID]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="ClienteID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Dimension Cliente\Sort.Outputs[Sort Output].Columns[ClienteID]" />
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Merge Join.Inputs[Merge Join Left Input].Columns[ciudadCliente_key]"
+                      cachedDataType="i4"
+                      cachedName="ciudadCliente_key"
+                      lineageId="Package\Dimension Cliente\Sort.Outputs[Sort Output].Columns[ciudadCliente_key]" />
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Merge Join.Inputs[Merge Join Left Input].Columns[paisCliente_key]"
+                      cachedDataType="i4"
+                      cachedName="paisCliente_key"
+                      lineageId="Package\Dimension Cliente\Sort.Outputs[Sort Output].Columns[paisCliente_key]" />
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Merge Join.Inputs[Merge Join Left Input].Columns[clean_empresa]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="clean_empresa"
+                      lineageId="Package\Dimension Cliente\Sort.Outputs[Sort Output].Columns[clean_empresa]" />
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Merge Join.Inputs[Merge Join Left Input].Columns[clean_contacto]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="clean_contacto"
+                      lineageId="Package\Dimension Cliente\Sort.Outputs[Sort Output].Columns[clean_contacto]" />
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Merge Join.Inputs[Merge Join Left Input].Columns[clean_cargo]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="clean_cargo"
+                      lineageId="Package\Dimension Cliente\Sort.Outputs[Sort Output].Columns[clean_cargo]" />
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Merge Join.Inputs[Merge Join Left Input].Columns[clean_direccion]"
+                      cachedDataType="wstr"
+                      cachedLength="60"
+                      cachedName="clean_direccion"
+                      lineageId="Package\Dimension Cliente\Sort.Outputs[Sort Output].Columns[clean_direccion]" />
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Merge Join.Inputs[Merge Join Left Input].Columns[clean_telefono]"
+                      cachedDataType="wstr"
+                      cachedLength="24"
+                      cachedName="clean_telefono"
+                      lineageId="Package\Dimension Cliente\Sort.Outputs[Sort Output].Columns[clean_telefono]" />
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Merge Join.Inputs[Merge Join Left Input].Columns[clean_codigo_postal]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="clean_codigo_postal"
+                      lineageId="Package\Dimension Cliente\Sort.Outputs[Sort Output].Columns[clean_codigo_postal]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Dimension Cliente\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Merge Join.Inputs[Merge Join Right Input].Columns[cliente_key]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="cliente_key"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Dimension Cliente\Sort 1.Outputs[Sort Output].Columns[cliente_key]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[ciudadCliente_key]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[ciudadCliente_key]"
+                      name="ciudadCliente_key">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Dimension Cliente\Merge Join.Inputs[Merge Join Left Input].Columns[ciudadCliente_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[paisCliente_key]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[paisCliente_key]"
+                      name="paisCliente_key">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Dimension Cliente\Merge Join.Inputs[Merge Join Left Input].Columns[paisCliente_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[clean_empresa]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[clean_empresa]"
+                      name="clean_empresa">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Dimension Cliente\Merge Join.Inputs[Merge Join Left Input].Columns[clean_empresa]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[clean_contacto]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[clean_contacto]"
+                      name="clean_contacto">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Dimension Cliente\Merge Join.Inputs[Merge Join Left Input].Columns[clean_contacto]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[clean_cargo]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[clean_cargo]"
+                      name="clean_cargo">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Dimension Cliente\Merge Join.Inputs[Merge Join Left Input].Columns[clean_cargo]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[clean_direccion]"
+                      dataType="wstr"
+                      length="60"
+                      lineageId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[clean_direccion]"
+                      name="clean_direccion">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Dimension Cliente\Merge Join.Inputs[Merge Join Left Input].Columns[clean_direccion]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[clean_telefono]"
+                      dataType="wstr"
+                      length="24"
+                      lineageId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[clean_telefono]"
+                      name="clean_telefono">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Dimension Cliente\Merge Join.Inputs[Merge Join Left Input].Columns[clean_telefono]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[clean_codigo_postal]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[clean_codigo_postal]"
+                      name="clean_codigo_postal">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Dimension Cliente\Merge Join.Inputs[Merge Join Left Input].Columns[clean_codigo_postal]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[ClienteID]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[ClienteID]"
+                      name="ClienteID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Dimension Cliente\Merge Join.Inputs[Merge Join Left Input].Columns[ClienteID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[cliente_key]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output].Columns[cliente_key]"
+                      name="cliente_key">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Dimension Cliente\Merge Join.Inputs[Merge Join Right Input].Columns[cliente_key]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dimension Cliente\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Dimension Cliente\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Sort.Inputs[Sort Input].Columns[ciudadCliente_key]"
+                      cachedDataType="i4"
+                      cachedName="ciudadCliente_key"
+                      lineageId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[ciudadCliente_key]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Sort.Inputs[Sort Input].Columns[paisCliente_key]"
+                      cachedDataType="i4"
+                      cachedName="paisCliente_key"
+                      lineageId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[paisCliente_key]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Sort.Inputs[Sort Input].Columns[clean_empresa]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="clean_empresa"
+                      lineageId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_empresa]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Sort.Inputs[Sort Input].Columns[clean_contacto]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="clean_contacto"
+                      lineageId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_contacto]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Sort.Inputs[Sort Input].Columns[clean_cargo]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="clean_cargo"
+                      lineageId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_cargo]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Sort.Inputs[Sort Input].Columns[clean_direccion]"
+                      cachedDataType="wstr"
+                      cachedLength="60"
+                      cachedName="clean_direccion"
+                      lineageId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_direccion]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Sort.Inputs[Sort Input].Columns[clean_telefono]"
+                      cachedDataType="wstr"
+                      cachedLength="24"
+                      cachedName="clean_telefono"
+                      lineageId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_telefono]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Sort.Inputs[Sort Input].Columns[clean_codigo_postal]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="clean_codigo_postal"
+                      lineageId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_codigo_postal]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Sort.Inputs[Sort Input].Columns[ClienteID]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="ClienteID"
+                      lineageId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[ClienteID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dimension Cliente\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Sort.Outputs[Sort Output].Columns[ciudadCliente_key]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Cliente\Sort.Outputs[Sort Output].Columns[ciudadCliente_key]"
+                      name="ciudadCliente_key">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[ciudadCliente_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Sort.Outputs[Sort Output].Columns[paisCliente_key]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Cliente\Sort.Outputs[Sort Output].Columns[paisCliente_key]"
+                      name="paisCliente_key">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[paisCliente_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Sort.Outputs[Sort Output].Columns[clean_empresa]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Dimension Cliente\Sort.Outputs[Sort Output].Columns[clean_empresa]"
+                      name="clean_empresa">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_empresa]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Sort.Outputs[Sort Output].Columns[clean_contacto]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\Dimension Cliente\Sort.Outputs[Sort Output].Columns[clean_contacto]"
+                      name="clean_contacto">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_contacto]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Sort.Outputs[Sort Output].Columns[clean_cargo]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\Dimension Cliente\Sort.Outputs[Sort Output].Columns[clean_cargo]"
+                      name="clean_cargo">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_cargo]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Sort.Outputs[Sort Output].Columns[clean_direccion]"
+                      dataType="wstr"
+                      length="60"
+                      lineageId="Package\Dimension Cliente\Sort.Outputs[Sort Output].Columns[clean_direccion]"
+                      name="clean_direccion">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_direccion]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Sort.Outputs[Sort Output].Columns[clean_telefono]"
+                      dataType="wstr"
+                      length="24"
+                      lineageId="Package\Dimension Cliente\Sort.Outputs[Sort Output].Columns[clean_telefono]"
+                      name="clean_telefono">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_telefono]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Sort.Outputs[Sort Output].Columns[clean_codigo_postal]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Dimension Cliente\Sort.Outputs[Sort Output].Columns[clean_codigo_postal]"
+                      name="clean_codigo_postal">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output].Columns[clean_codigo_postal]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Sort.Outputs[Sort Output].Columns[ClienteID]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\Dimension Cliente\Sort.Outputs[Sort Output].Columns[ClienteID]"
+                      name="ClienteID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output].Columns[ClienteID]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dimension Cliente\Sort 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Dimension Cliente\Sort 1.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dimension Cliente\Sort 1.Inputs[Sort Input].Columns[cliente_key]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="cliente_key"
+                      lineageId="Package\Dimension Cliente\DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output].Columns[cliente_key]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dimension Cliente\Sort 1.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimension Cliente\Sort 1.Outputs[Sort Output].Columns[cliente_key]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\Dimension Cliente\Sort 1.Outputs[Sort Output].Columns[cliente_key]"
+                      name="cliente_key"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Dimension Cliente\DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output].Columns[cliente_key]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Dimension Cliente.Paths[Character Map Output]"
+              endId="Package\Dimension Cliente\Sort.Inputs[Sort Input]"
+              name="Character Map Output"
+              startId="Package\Dimension Cliente\Character Map.Outputs[Character Map Output]" />
+            <path
+              refId="Package\Dimension Cliente.Paths[Derived Column Output]"
+              endId="Package\Dimension Cliente\Character Map.Inputs[Character Map Input]"
+              name="Derived Column Output"
+              startId="Package\Dimension Cliente\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Dimension Cliente.Paths[dw is null]"
+              endId="Package\Dimension Cliente\DESTINO DIMCLIENTES.Inputs[OLE DB Destination Input]"
+              name="dw is null"
+              startId="Package\Dimension Cliente\Conditional Split.Outputs[dw is null]" />
+            <path
+              refId="Package\Dimension Cliente.Paths[Merge Join Output]"
+              endId="Package\Dimension Cliente\Conditional Split.Inputs[Conditional Split Input]"
+              name="Merge Join Output"
+              startId="Package\Dimension Cliente\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Dimension Cliente.Paths[OLE DB Source Output]"
+              endId="Package\Dimension Cliente\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Dimension Cliente\DATABASE CLIENTES.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Dimension Cliente.Paths[OLE DB Source Output1]"
+              endId="Package\Dimension Cliente\Sort 1.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Dimension Cliente\DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Dimension Cliente.Paths[Sort Output]"
+              endId="Package\Dimension Cliente\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Dimension Cliente\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\Dimension Cliente.Paths[Sort Output1]"
+              endId="Package\Dimension Cliente\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Dimension Cliente\Sort 1.Outputs[Sort Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -8861,6 +10661,32 @@ FROM (
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{168FE8CE-74CE-4C71-A00F-187E40583397}"
+      DTS:From="Package\DIMENSIONES PAISES"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DIMENSIONES CIUDADES" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{96EFD998-FBAB-45C5-AC8E-4C747C4F1D20}"
+      DTS:From="Package\DIMENSIONES CIUDADES"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Dimension Categoria" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{E8B04782-D991-40A3-854E-39EEE5A7CC61}"
+      DTS:From="Package\Dimension Categoria"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Dimension Cliente" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -8872,19 +10698,89 @@ FROM (
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="176,42"
           Id="Package\Dimension Categoria"
-          TopLeft="207,154" />
+          TopLeft="498,337" />
         <NodeLayout
           Size="202,42"
           Id="Package\DIMENSIONES CIUDADES"
-          TopLeft="683,265" />
+          TopLeft="478,229" />
         <NodeLayout
           Size="186,42"
           Id="Package\DIMENSIONES PAISES"
           TopLeft="489,124" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="580.5,166">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63"
+              Start="0,0"
+              End="0,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="582.5,271">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66"
+              Start="0,0"
+              End="0,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Dimension Cliente"
+          TopLeft="505,430" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="586.25,379">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51"
+              Start="0,0"
+              End="0,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -8904,7 +10800,7 @@ FROM (
         <NodeLayout
           Size="171,42"
           Id="Package\Dimension Categoria\OLE DB Destination"
-          TopLeft="560,661" />
+          TopLeft="563,640" />
         <NodeLayout
           Size="107,42"
           Id="Package\Dimension Categoria\Sort 1"
@@ -8960,9 +10856,7 @@ FROM (
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8996,9 +10890,7 @@ FROM (
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9032,9 +10924,7 @@ FROM (
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9056,9 +10946,7 @@ FROM (
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9080,9 +10968,7 @@ FROM (
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9104,9 +10990,7 @@ FROM (
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9128,32 +11012,30 @@ FROM (
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Dimension Categoria.Paths[Case 1]"
-          TopLeft="645,599">
+          TopLeft="646.5,599">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,62"
+              EndConnector="0,41"
               Start="0,0"
-              End="0,54.5">
+              End="0,33.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,54.5" />
+                    End="0,33.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-47.22263671875,21.41845703125,94.4452734375,11.6630859375"
+              BoundingBox="-47.22263671875,10.91845703125,94.4452734375,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -10922,7 +12804,7 @@ FROM (
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-27.89193359375,16.8367808948864,55.7838671875,9.5537109375"
+              BoundingBox="-27.89193359375,16.8367808948863,55.7838671875,9.5537109375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -10946,7 +12828,7 @@ FROM (
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-27.89193359375,17.7458718039773,55.7838671875,9.5537109375"
+              BoundingBox="-27.89193359375,17.7458718039772,55.7838671875,9.5537109375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -11409,6 +13291,303 @@ FROM (
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\DIMENSIONES CIUDADES\source dimciudadenvio">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Dimension Cliente">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Dimension Cliente\DATABASE CLIENTES"
+          TopLeft="239,103" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Dimension Cliente\Derived Column"
+          TopLeft="252,194" />
+        <EdgeLayout
+          Id="Package\Dimension Cliente.Paths[OLE DB Source Output]"
+          TopLeft="329,145">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49"
+              Start="0,0"
+              End="0,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Dimension Cliente\Character Map"
+          TopLeft="253,283" />
+        <EdgeLayout
+          Id="Package\Dimension Cliente.Paths[Derived Column Output]"
+          TopLeft="327.75,236">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Dimension Cliente\Sort 1"
+          TopLeft="552,397" />
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Dimension Cliente\DATAWAREHOUSE SOURCE"
+          TopLeft="503,114" />
+        <EdgeLayout
+          Id="Package\Dimension Cliente.Paths[OLE DB Source Output1]"
+          TopLeft="606.75,156">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,241"
+              Start="0,0"
+              End="0,233.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,233.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Dimension Cliente\Sort"
+          TopLeft="339,406" />
+        <EdgeLayout
+          Id="Package\Dimension Cliente.Paths[Character Map Output]"
+          TopLeft="326.5,325">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="61.5,81"
+              Start="0,0"
+              End="61.5,73.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.5"
+                    Point2="0,40.5"
+                    Point3="4,40.5" />
+                  <mssgle:LineSegment
+                    End="57.5,40.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="57.5,40.5"
+                    Point2="61.5,40.5"
+                    Point3="61.5,44.5" />
+                  <mssgle:LineSegment
+                    End="61.5,73.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Dimension Cliente\Merge Join"
+          TopLeft="421,475" />
+        <EdgeLayout
+          Id="Package\Dimension Cliente.Paths[Sort Output]"
+          TopLeft="388,448">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="77.6666666666667,27"
+              Start="0,0"
+              End="77.6666666666667,19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.0030395136778" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.0030395136778"
+                    Point2="0,16.0030395136778"
+                    Point3="4,16.0030395136778" />
+                  <mssgle:LineSegment
+                    End="73.6666666666667,16.0030395136778" />
+                  <mssgle:CubicBezierSegment
+                    Point1="73.6666666666667,16.0030395136778"
+                    Point2="77.6666666666667,16.0030395136778"
+                    Point3="77.6666666666667,20.0030395136778" />
+                  <mssgle:LineSegment
+                    End="77.6666666666667,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimension Cliente.Paths[Sort Output1]"
+          TopLeft="605.5,439">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-99.1666666666667,36"
+              Start="0,0"
+              End="-99.1666666666667,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.3373860182371" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.3373860182371"
+                    Point2="0,21.3373860182371"
+                    Point3="-4,21.3373860182371" />
+                  <mssgle:LineSegment
+                    End="-95.1666666666667,21.3373860182371" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-95.1666666666667,21.3373860182371"
+                    Point2="-99.1666666666667,21.3373860182371"
+                    Point3="-99.1666666666667,25.3373860182371" />
+                  <mssgle:LineSegment
+                    End="-99.1666666666667,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Dimension Cliente\Conditional Split"
+          TopLeft="415,560" />
+        <EdgeLayout
+          Id="Package\Dimension Cliente.Paths[Merge Join Output]"
+          TopLeft="489.25,517">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Dimension Cliente\DESTINO DIMCLIENTES"
+          TopLeft="395,649" />
+        <EdgeLayout
+          Id="Package\Dimension Cliente.Paths[dw is null]"
+          TopLeft="492,602">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-21.36173828125,14.87548828125,42.7234765625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimension Cliente\DATABASE CLIENTES">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimension Cliente\DATAWAREHOUSE SOURCE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimension Cliente\DESTINO DIMCLIENTES">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
