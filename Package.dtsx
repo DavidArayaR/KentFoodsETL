@@ -11,8 +11,8 @@
   DTS:LocaleID="22538"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="51"
-  DTS:VersionGUID="{D828568A-5E26-4A67-A399-8851E7C48866}">
+  DTS:VersionBuild="53"
+  DTS:VersionGUID="{6AC1DE1D-9CDD-42EA-907A-515091AF2F71}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -17803,99 +17803,99 @@ FROM (
               startId="Package\DIMENSIONES CIUDADES\Conditional Split.Outputs[DW IS NULL]" />
             <path
               refId="Package\DIMENSIONES CIUDADES.Paths[Merge Join Output2]"
-              endId="Package\DIMENSIONES CIUDADES\Conditional Split 3.Inputs[Conditional Split Input]"
-              name="Merge Join Output"
-              startId="Package\DIMENSIONES CIUDADES\Merge Join 3.Outputs[Merge Join Output]" />
-            <path
-              refId="Package\DIMENSIONES CIUDADES.Paths[Merge Join Output3]"
-              endId="Package\DIMENSIONES CIUDADES\Conditional Split 1.Inputs[Conditional Split Input]"
-              name="Merge Join Output"
-              startId="Package\DIMENSIONES CIUDADES\Merge Join 1.Outputs[Merge Join Output]" />
-            <path
-              refId="Package\DIMENSIONES CIUDADES.Paths[Merge Join Output]"
               endId="Package\DIMENSIONES CIUDADES\Conditional Split.Inputs[Conditional Split Input]"
               name="Merge Join Output"
               startId="Package\DIMENSIONES CIUDADES\Merge Join.Outputs[Merge Join Output]" />
             <path
-              refId="Package\DIMENSIONES CIUDADES.Paths[Merge Join Output1]"
+              refId="Package\DIMENSIONES CIUDADES.Paths[Merge Join Output3]"
               endId="Package\DIMENSIONES CIUDADES\Conditional Split 2.Inputs[Conditional Split Input]"
               name="Merge Join Output"
               startId="Package\DIMENSIONES CIUDADES\Merge Join 2.Outputs[Merge Join Output]" />
             <path
+              refId="Package\DIMENSIONES CIUDADES.Paths[Merge Join Output]"
+              endId="Package\DIMENSIONES CIUDADES\Conditional Split 3.Inputs[Conditional Split Input]"
+              name="Merge Join Output"
+              startId="Package\DIMENSIONES CIUDADES\Merge Join 3.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\DIMENSIONES CIUDADES.Paths[Merge Join Output1]"
+              endId="Package\DIMENSIONES CIUDADES\Conditional Split 1.Inputs[Conditional Split Input]"
+              name="Merge Join Output"
+              startId="Package\DIMENSIONES CIUDADES\Merge Join 1.Outputs[Merge Join Output]" />
+            <path
               refId="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output7]"
-              endId="Package\DIMENSIONES CIUDADES\SORT DIMCIUDADCLIENTES.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADCLIENTE.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output5]"
-              endId="Package\DIMENSIONES CIUDADES\sort dimciudadenvio.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\DIMENSIONES CIUDADES\source dimciudadenvio.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output4]"
-              endId="Package\DIMENSIONES CIUDADES\Data Conversion 2.Inputs[Data Conversion Input]"
-              name="OLE DB Source Output"
-              startId="Package\DIMENSIONES CIUDADES\DB SOURCE PROVEEDORES.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output6]"
-              endId="Package\DIMENSIONES CIUDADES\Sort.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADEMPLEADO.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output2]"
-              endId="Package\DIMENSIONES CIUDADES\sort dimciudadproveedor.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADPROVEEDOR.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output1]"
-              endId="Package\DIMENSIONES CIUDADES\Data Conversion 1.Inputs[Data Conversion Input]"
-              name="OLE DB Source Output"
-              startId="Package\DIMENSIONES CIUDADES\DB CIUDADES EMPLEADOS.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output]"
-              endId="Package\DIMENSIONES CIUDADES\Data Conversion 3.Inputs[Data Conversion Input]"
-              name="OLE DB Source Output"
-              startId="Package\DIMENSIONES CIUDADES\db source ordenes.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output3]"
               endId="Package\DIMENSIONES CIUDADES\Data Conversion.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
               startId="Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES.Outputs[OLE DB Source Output]" />
             <path
+              refId="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output5]"
+              endId="Package\DIMENSIONES CIUDADES\Data Conversion 1.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIMENSIONES CIUDADES\DB CIUDADES EMPLEADOS.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output4]"
+              endId="Package\DIMENSIONES CIUDADES\sort dimciudadproveedor.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADPROVEEDOR.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output6]"
+              endId="Package\DIMENSIONES CIUDADES\Data Conversion 3.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIMENSIONES CIUDADES\db source ordenes.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output2]"
+              endId="Package\DIMENSIONES CIUDADES\Data Conversion 2.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIMENSIONES CIUDADES\DB SOURCE PROVEEDORES.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output1]"
+              endId="Package\DIMENSIONES CIUDADES\sort dimciudadenvio.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIMENSIONES CIUDADES\source dimciudadenvio.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output]"
+              endId="Package\DIMENSIONES CIUDADES\SORT DIMCIUDADCLIENTES.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADCLIENTE.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output3]"
+              endId="Package\DIMENSIONES CIUDADES\Sort.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADEMPLEADO.Outputs[OLE DB Source Output]" />
+            <path
               refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output6]"
+              endId="Package\DIMENSIONES CIUDADES\Merge Join 3.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\DIMENSIONES CIUDADES\sort db ordenes.Outputs[Sort Output]" />
+            <path
+              refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output]"
               endId="Package\DIMENSIONES CIUDADES\Merge Join 2.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\DIMENSIONES CIUDADES\sort db proveedores.Outputs[Sort Output]" />
             <path
-              refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output]"
+              refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output1]"
               endId="Package\DIMENSIONES CIUDADES\Merge Join.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\DIMENSIONES CIUDADES\SORT DB CLIENTES.Outputs[Sort Output]" />
             <path
-              refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output1]"
+              refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output2]"
               endId="Package\DIMENSIONES CIUDADES\Merge Join 3.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\DIMENSIONES CIUDADES\sort dimciudadenvio.Outputs[Sort Output]" />
             <path
-              refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output2]"
+              refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output3]"
               endId="Package\DIMENSIONES CIUDADES\Merge Join 1.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\DIMENSIONES CIUDADES\Sort.Outputs[Sort Output]" />
             <path
-              refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output3]"
+              refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output4]"
               endId="Package\DIMENSIONES CIUDADES\Merge Join 1.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\DIMENSIONES CIUDADES\SORT DB EMPLEADOS.Outputs[Sort Output]" />
             <path
-              refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output4]"
+              refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output5]"
               endId="Package\DIMENSIONES CIUDADES\Merge Join 2.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\DIMENSIONES CIUDADES\sort dimciudadproveedor.Outputs[Sort Output]" />
-            <path
-              refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output5]"
-              endId="Package\DIMENSIONES CIUDADES\Merge Join 3.Inputs[Merge Join Left Input]"
-              name="Sort Output"
-              startId="Package\DIMENSIONES CIUDADES\sort db ordenes.Outputs[Sort Output]" />
             <path
               refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output7]"
               endId="Package\DIMENSIONES CIUDADES\Merge Join.Inputs[Merge Join Right Input]"
@@ -21587,99 +21587,99 @@ FROM (
               startId="Package\DIMENSIONES PAISES\Conditional Split 3.Outputs[DW IS NULL]" />
             <path
               refId="Package\DIMENSIONES PAISES.Paths[Merge Join Output2]"
-              endId="Package\DIMENSIONES PAISES\Conditional Split 1.Inputs[Conditional Split Input]"
-              name="Merge Join Output"
-              startId="Package\DIMENSIONES PAISES\Merge Join 1.Outputs[Merge Join Output]" />
-            <path
-              refId="Package\DIMENSIONES PAISES.Paths[Merge Join Output3]"
-              endId="Package\DIMENSIONES PAISES\Conditional Split.Inputs[Conditional Split Input]"
-              name="Merge Join Output"
-              startId="Package\DIMENSIONES PAISES\Merge Join.Outputs[Merge Join Output]" />
-            <path
-              refId="Package\DIMENSIONES PAISES.Paths[Merge Join Output]"
               endId="Package\DIMENSIONES PAISES\Conditional Split 3.Inputs[Conditional Split Input]"
               name="Merge Join Output"
               startId="Package\DIMENSIONES PAISES\Merge Join 3.Outputs[Merge Join Output]" />
             <path
-              refId="Package\DIMENSIONES PAISES.Paths[Merge Join Output1]"
+              refId="Package\DIMENSIONES PAISES.Paths[Merge Join Output3]"
               endId="Package\DIMENSIONES PAISES\Conditional Split 2.Inputs[Conditional Split Input]"
               name="Merge Join Output"
               startId="Package\DIMENSIONES PAISES\Merge Join 2.Outputs[Merge Join Output]" />
             <path
+              refId="Package\DIMENSIONES PAISES.Paths[Merge Join Output]"
+              endId="Package\DIMENSIONES PAISES\Conditional Split 1.Inputs[Conditional Split Input]"
+              name="Merge Join Output"
+              startId="Package\DIMENSIONES PAISES\Merge Join 1.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\DIMENSIONES PAISES.Paths[Merge Join Output1]"
+              endId="Package\DIMENSIONES PAISES\Conditional Split.Inputs[Conditional Split Input]"
+              name="Merge Join Output"
+              startId="Package\DIMENSIONES PAISES\Merge Join.Outputs[Merge Join Output]" />
+            <path
               refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output7]"
-              endId="Package\DIMENSIONES PAISES\Data Conversion.Inputs[Data Conversion Input]"
-              name="OLE DB Source Output"
-              startId="Package\DIMENSIONES PAISES\PROVEEDORES DATABASE SOURCE.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output5]"
-              endId="Package\DIMENSIONES PAISES\SORT DW PAISCLIENTE.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\DIMENSIONES PAISES\DimPaisClientes DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output4]"
-              endId="Package\DIMENSIONES PAISES\SORT DW PAISENVIO.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\DIMENSIONES PAISES\DimPaisEnvio DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output6]"
-              endId="Package\DIMENSIONES PAISES\Data Conversion 3.Inputs[Data Conversion Input]"
-              name="OLE DB Source Output"
-              startId="Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output2]"
-              endId="Package\DIMENSIONES PAISES\SORT DW PAISPROVEEDOR.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\DIMENSIONES PAISES\DimPaisProveedor DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output1]"
-              endId="Package\DIMENSIONES PAISES\Data Conversion 1.Inputs[Data Conversion Input]"
-              name="OLE DB Source Output"
-              startId="Package\DIMENSIONES PAISES\CLIENTES DATABASE SOURCE.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output]"
-              endId="Package\DIMENSIONES PAISES\SORT DATAWAREHOUSE.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\DIMENSIONES PAISES\DimPaisEmpleados DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output3]"
               endId="Package\DIMENSIONES PAISES\Data Conversion 2.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
               startId="Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE.Outputs[OLE DB Source Output]" />
             <path
+              refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output5]"
+              endId="Package\DIMENSIONES PAISES\Data Conversion 1.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIMENSIONES PAISES\CLIENTES DATABASE SOURCE.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output4]"
+              endId="Package\DIMENSIONES PAISES\SORT DW PAISPROVEEDOR.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIMENSIONES PAISES\DimPaisProveedor DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output6]"
+              endId="Package\DIMENSIONES PAISES\SORT DATAWAREHOUSE.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIMENSIONES PAISES\DimPaisEmpleados DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output2]"
+              endId="Package\DIMENSIONES PAISES\SORT DW PAISENVIO.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIMENSIONES PAISES\DimPaisEnvio DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output1]"
+              endId="Package\DIMENSIONES PAISES\SORT DW PAISCLIENTE.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIMENSIONES PAISES\DimPaisClientes DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output]"
+              endId="Package\DIMENSIONES PAISES\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIMENSIONES PAISES\PROVEEDORES DATABASE SOURCE.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output3]"
+              endId="Package\DIMENSIONES PAISES\Data Conversion 3.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE.Outputs[OLE DB Source Output]" />
+            <path
               refId="Package\DIMENSIONES PAISES.Paths[Sort Output6]"
+              endId="Package\DIMENSIONES PAISES\Merge Join 2.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\DIMENSIONES PAISES\SORT DATABASE.Outputs[Sort Output]" />
+            <path
+              refId="Package\DIMENSIONES PAISES.Paths[Sort Output]"
               endId="Package\DIMENSIONES PAISES\Merge Join.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\DIMENSIONES PAISES\SORT DATABASE PROVEEDORES.Outputs[Sort Output]" />
             <path
-              refId="Package\DIMENSIONES PAISES.Paths[Sort Output]"
+              refId="Package\DIMENSIONES PAISES.Paths[Sort Output1]"
               endId="Package\DIMENSIONES PAISES\Merge Join 3.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\DIMENSIONES PAISES\SORT DW PAISENVIO.Outputs[Sort Output]" />
             <path
-              refId="Package\DIMENSIONES PAISES.Paths[Sort Output1]"
+              refId="Package\DIMENSIONES PAISES.Paths[Sort Output2]"
               endId="Package\DIMENSIONES PAISES\Merge Join 3.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\DIMENSIONES PAISES\SORT DATABASE ORDENES.Outputs[Sort Output]" />
             <path
-              refId="Package\DIMENSIONES PAISES.Paths[Sort Output2]"
+              refId="Package\DIMENSIONES PAISES.Paths[Sort Output3]"
               endId="Package\DIMENSIONES PAISES\Merge Join 2.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\DIMENSIONES PAISES\SORT DATAWAREHOUSE.Outputs[Sort Output]" />
             <path
-              refId="Package\DIMENSIONES PAISES.Paths[Sort Output3]"
+              refId="Package\DIMENSIONES PAISES.Paths[Sort Output4]"
               endId="Package\DIMENSIONES PAISES\Merge Join 1.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\DIMENSIONES PAISES\SORT DATABASE CLIENTES.Outputs[Sort Output]" />
             <path
-              refId="Package\DIMENSIONES PAISES.Paths[Sort Output4]"
+              refId="Package\DIMENSIONES PAISES.Paths[Sort Output5]"
               endId="Package\DIMENSIONES PAISES\Merge Join.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\DIMENSIONES PAISES\SORT DW PAISPROVEEDOR.Outputs[Sort Output]" />
-            <path
-              refId="Package\DIMENSIONES PAISES.Paths[Sort Output5]"
-              endId="Package\DIMENSIONES PAISES\Merge Join 2.Inputs[Merge Join Left Input]"
-              name="Sort Output"
-              startId="Package\DIMENSIONES PAISES\SORT DATABASE.Outputs[Sort Output]" />
             <path
               refId="Package\DIMENSIONES PAISES.Paths[Sort Output7]"
               endId="Package\DIMENSIONES PAISES\Merge Join 1.Inputs[Merge Join Right Input]"
@@ -22501,7 +22501,6 @@ FO_UNICAS AS (
     GROUP BY CAST(SUBSTRING(fecha_orden_key, 5, 8) AS VARCHAR(8))
 )
 SELECT
-    -- ✅ Clave compuesta con formato 001_10248
     CONCAT(
         RIGHT('000' + CAST(ROW_NUMBER() OVER (PARTITION BY O.OrdenID ORDER BY DO.ProductoID) AS VARCHAR(3)), 3),
         '_',
@@ -23764,6 +23763,10 @@ ORDER BY O.OrdenID, fact_key;</property>
           Size="186,42"
           Id="Package\DIMENSIONES PAISES"
           TopLeft="193,91" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\FACT Detalle Orden"
+          TopLeft="962,594" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="379,112">
@@ -23822,6 +23825,28 @@ ORDER BY O.OrdenID, fact_key;</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,72.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 11]"
+          TopLeft="1048.75,494">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,100"
+              Start="0,0"
+              End="0,92.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,92.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -24020,44 +24045,6 @@ ORDER BY O.OrdenID, fact_key;</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="77.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="172,42"
-          Id="Package\FACT Detalle Orden"
-          TopLeft="615,491" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 11]"
-          TopLeft="963,473">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-176,39"
-              Start="0,0"
-              End="-168.5,39">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-84,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-84,0"
-                    Point2="-88,0"
-                    Point3="-88,4" />
-                  <mssgle:LineSegment
-                    End="-88,35" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-88,35"
-                    Point2="-88,39"
-                    Point3="-92,39" />
-                  <mssgle:LineSegment
-                    End="-168.5,39" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -26665,9 +26652,7 @@ ORDER BY O.OrdenID, fact_key;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26701,9 +26686,7 @@ ORDER BY O.OrdenID, fact_key;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26737,9 +26720,7 @@ ORDER BY O.OrdenID, fact_key;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26773,9 +26754,7 @@ ORDER BY O.OrdenID, fact_key;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26809,9 +26788,7 @@ ORDER BY O.OrdenID, fact_key;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26845,9 +26822,7 @@ ORDER BY O.OrdenID, fact_key;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26881,9 +26856,7 @@ ORDER BY O.OrdenID, fact_key;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27372,42 +27345,6 @@ ORDER BY O.OrdenID, fact_key;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DIMENSIONES CIUDADES.Paths[Sort Output6]"
-          TopLeft="1550.5,411">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="163.166666666667,27"
-              Start="0,0"
-              End="163.166666666667,19.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.0156472261735" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.0156472261735"
-                    Point2="0,16.0156472261735"
-                    Point3="4,16.0156472261735" />
-                  <mssgle:LineSegment
-                    End="159.166666666667,16.0156472261735" />
-                  <mssgle:CubicBezierSegment
-                    Point1="159.166666666667,16.0156472261735"
-                    Point2="163.166666666667,16.0156472261735"
-                    Point3="163.166666666667,20.0156472261735" />
-                  <mssgle:LineSegment
-                    End="163.166666666667,19.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DIMENSIONES CIUDADES.Paths[Sort Output5]"
           TopLeft="2313.5,401.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27443,7 +27380,7 @@ ORDER BY O.OrdenID, fact_key;</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DIMENSIONES CIUDADES.Paths[Sort Output4]"
+          Id="Package\DIMENSIONES CIUDADES.Paths[Sort Output5]"
           TopLeft="1926,413">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27479,7 +27416,7 @@ ORDER BY O.OrdenID, fact_key;</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DIMENSIONES CIUDADES.Paths[Sort Output3]"
+          Id="Package\DIMENSIONES CIUDADES.Paths[Sort Output4]"
           TopLeft="936,387">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27515,7 +27452,7 @@ ORDER BY O.OrdenID, fact_key;</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DIMENSIONES CIUDADES.Paths[Sort Output2]"
+          Id="Package\DIMENSIONES CIUDADES.Paths[Sort Output3]"
           TopLeft="1155,378">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27551,7 +27488,7 @@ ORDER BY O.OrdenID, fact_key;</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DIMENSIONES CIUDADES.Paths[Sort Output1]"
+          Id="Package\DIMENSIONES CIUDADES.Paths[Sort Output2]"
           TopLeft="2669.5,402.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27587,7 +27524,7 @@ ORDER BY O.OrdenID, fact_key;</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DIMENSIONES CIUDADES.Paths[Sort Output]"
+          Id="Package\DIMENSIONES CIUDADES.Paths[Sort Output1]"
           TopLeft="169,347">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27623,19 +27560,55 @@ ORDER BY O.OrdenID, fact_key;</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output7]"
-          TopLeft="472,119">
+          Id="Package\DIMENSIONES CIUDADES.Paths[Sort Output]"
+          TopLeft="1550.5,411">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,182"
+              EndConnector="163.166666666667,27"
               Start="0,0"
-              End="0,174.5">
+              End="163.166666666667,19.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,174.5" />
+                    End="0,12.0156472261735" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.0156472261735"
+                    Point2="0,16.0156472261735"
+                    Point3="4,16.0156472261735" />
+                  <mssgle:LineSegment
+                    End="159.166666666667,16.0156472261735" />
+                  <mssgle:CubicBezierSegment
+                    Point1="159.166666666667,16.0156472261735"
+                    Point2="163.166666666667,16.0156472261735"
+                    Point3="163.166666666667,20.0156472261735" />
+                  <mssgle:LineSegment
+                    End="163.166666666667,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output7]"
+          TopLeft="163,116">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -27648,6 +27621,78 @@ ORDER BY O.OrdenID, fact_key;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output6]"
+          TopLeft="2290.58333333333,126.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58.6666666666667"
+              Start="0,0"
+              End="0,51.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output5]"
+          TopLeft="835.25,116">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56"
+              Start="0,0"
+              End="0,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output4]"
+          TopLeft="1927.75,112">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,259"
+              Start="0,0"
+              End="0,251.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,251.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output3]"
           TopLeft="1200.5,113">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27671,7 +27716,31 @@ ORDER BY O.OrdenID, fact_key;</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output5]"
+          Id="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output2]"
+          TopLeft="1547.25,116">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output1]"
           TopLeft="2643,131">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27707,115 +27776,19 @@ ORDER BY O.OrdenID, fact_key;</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output4]"
-          TopLeft="1547.25,116">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,48"
-              Start="0,0"
-              End="0,40.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output3]"
-          TopLeft="163,116">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44"
-              Start="0,0"
-              End="0,36.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output2]"
-          TopLeft="1927.75,112">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,259"
-              Start="0,0"
-              End="0,251.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,251.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output1]"
-          TopLeft="835.25,116">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,56"
-              Start="0,0"
-              End="0,48.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,48.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output]"
-          TopLeft="2290.58333333333,126.333333333333">
+          TopLeft="472,119">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,58.6666666666667"
+              EndConnector="0,182"
               Start="0,0"
-              End="0,51.1666666666667">
+              End="0,174.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.1666666666667" />
+                    End="0,174.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -27828,54 +27801,6 @@ ORDER BY O.OrdenID, fact_key;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DIMENSIONES CIUDADES.Paths[Merge Join Output3]"
-          TopLeft="1051.75,438">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,33"
-              Start="0,0"
-              End="0,25.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DIMENSIONES CIUDADES.Paths[Merge Join Output2]"
-          TopLeft="2475.75,482">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28.8333333333333"
-              Start="0,0"
-              End="0,21.3333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.3333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DIMENSIONES CIUDADES.Paths[Merge Join Output1]"
           TopLeft="1736.75,480">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27899,7 +27824,7 @@ ORDER BY O.OrdenID, fact_key;</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DIMENSIONES CIUDADES.Paths[Merge Join Output]"
+          Id="Package\DIMENSIONES CIUDADES.Paths[Merge Join Output2]"
           TopLeft="304.25,430">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27912,6 +27837,54 @@ ORDER BY O.OrdenID, fact_key;</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES CIUDADES.Paths[Merge Join Output1]"
+          TopLeft="1051.75,438">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES CIUDADES.Paths[Merge Join Output]"
+          TopLeft="2475.75,482">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.8333333333333"
+              Start="0,0"
+              End="0,21.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.3333333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -28412,42 +28385,6 @@ ORDER BY O.OrdenID, fact_key;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DIMENSIONES PAISES.Paths[Sort Output6]"
-          TopLeft="249,374.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="135.666666666667,55.5"
-              Start="0,0"
-              End="135.666666666667,48">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.8951367781155" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.8951367781155"
-                    Point2="0,32.8951367781155"
-                    Point3="4,32.8951367781155" />
-                  <mssgle:LineSegment
-                    End="131.666666666667,32.8951367781155" />
-                  <mssgle:CubicBezierSegment
-                    Point1="131.666666666667,32.8951367781155"
-                    Point2="135.666666666667,32.8951367781155"
-                    Point3="135.666666666667,36.8951367781155" />
-                  <mssgle:LineSegment
-                    End="135.666666666667,48" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[Sort Output5]"
           TopLeft="1671.81818181818,384.636363636364">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -28483,7 +28420,7 @@ ORDER BY O.OrdenID, fact_key;</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[Sort Output4]"
+          Id="Package\DIMENSIONES PAISES.Paths[Sort Output5]"
           TopLeft="559.5,372.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -28519,7 +28456,7 @@ ORDER BY O.OrdenID, fact_key;</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[Sort Output3]"
+          Id="Package\DIMENSIONES PAISES.Paths[Sort Output4]"
           TopLeft="875,403.25">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -28555,7 +28492,7 @@ ORDER BY O.OrdenID, fact_key;</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[Sort Output2]"
+          Id="Package\DIMENSIONES PAISES.Paths[Sort Output3]"
           TopLeft="2027.27272727273,371.909090909091">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -28591,7 +28528,7 @@ ORDER BY O.OrdenID, fact_key;</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[Sort Output1]"
+          Id="Package\DIMENSIONES PAISES.Paths[Sort Output2]"
           TopLeft="2649.90909090909,360.090909090909">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -28627,7 +28564,7 @@ ORDER BY O.OrdenID, fact_key;</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[Sort Output]"
+          Id="Package\DIMENSIONES PAISES.Paths[Sort Output1]"
           TopLeft="2900.90909090909,360.090909090909">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -28663,103 +28600,43 @@ ORDER BY O.OrdenID, fact_key;</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[Sort Output]"
+          TopLeft="249,374.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="135.666666666667,55.5"
+              Start="0,0"
+              End="135.666666666667,48">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.8951367781155" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.8951367781155"
+                    Point2="0,32.8951367781155"
+                    Point3="4,32.8951367781155" />
+                  <mssgle:LineSegment
+                    End="131.666666666667,32.8951367781155" />
+                  <mssgle:CubicBezierSegment
+                    Point1="131.666666666667,32.8951367781155"
+                    Point2="135.666666666667,32.8951367781155"
+                    Point3="135.666666666667,36.8951367781155" />
+                  <mssgle:LineSegment
+                    End="135.666666666667,48" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output7]"
-          TopLeft="245.25,126.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42"
-              Start="0,0"
-              End="0,34.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output6]"
-          TopLeft="2535.84090909091,121.090909090909">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,47.0909090909091"
-              Start="0,0"
-              End="0,39.5909090909091">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.5909090909091" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output5]"
-          TopLeft="1225.625,124.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,235.5"
-              Start="0,0"
-              End="0,228">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,228" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output4]"
-          TopLeft="2990.86363636364,126.545454545455">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,212.545454545455"
-              Start="0,0"
-              End="0,205.045454545455">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,205.045454545455" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output3]"
           TopLeft="1584.43181818182,125.636363636364">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -28783,55 +28660,7 @@ ORDER BY O.OrdenID, fact_key;</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output2]"
-          TopLeft="561.5,124.75">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,205.75"
-              Start="0,0"
-              End="0,198.25">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,198.25" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output1]"
-          TopLeft="867.625,124.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,55.5"
-              Start="0,0"
-              End="0,48">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,48" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output]"
+          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output6]"
           TopLeft="2126.56818181818,127.454545454545">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -28855,55 +28684,151 @@ ORDER BY O.OrdenID, fact_key;</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output5]"
+          TopLeft="867.625,124.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.5"
+              Start="0,0"
+              End="0,48">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output4]"
+          TopLeft="561.5,124.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,205.75"
+              Start="0,0"
+              End="0,198.25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,198.25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output3]"
+          TopLeft="2535.84090909091,121.090909090909">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.0909090909091"
+              Start="0,0"
+              End="0,39.5909090909091">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5909090909091" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output2]"
+          TopLeft="2990.86363636364,126.545454545455">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,212.545454545455"
+              Start="0,0"
+              End="0,205.045454545455">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,205.045454545455" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output1]"
+          TopLeft="1225.625,124.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,235.5"
+              Start="0,0"
+              End="0,228">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,228" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output]"
+          TopLeft="245.25,126.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\DIMENSIONES PAISES.Paths[Merge Join Output3]"
-          TopLeft="404.875,472">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43.7500000000001"
-              Start="0,0"
-              End="0,36.2500000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.2500000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[Merge Join Output2]"
-          TopLeft="1037.625,484.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28"
-              Start="0,0"
-              End="0,20.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[Merge Join Output1]"
           TopLeft="1850.29545454545,438.363636363636">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -28927,7 +28852,7 @@ ORDER BY O.OrdenID, fact_key;</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[Merge Join Output]"
+          Id="Package\DIMENSIONES PAISES.Paths[Merge Join Output2]"
           TopLeft="2781.20454545455,435.636363636364">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -28940,6 +28865,54 @@ ORDER BY O.OrdenID, fact_key;</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,42.3181818181816" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[Merge Join Output1]"
+          TopLeft="404.875,472">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.7500000000001"
+              Start="0,0"
+              End="0,36.2500000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.2500000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[Merge Join Output]"
+          TopLeft="1037.625,484.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -29247,133 +29220,37 @@ ORDER BY O.OrdenID, fact_key;</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="150,42"
-          Id="Package\FACT Detalle Orden\OLE DB Source"
-          TopLeft="479,97" />
+          Size="156,42"
+          Id="Package\FACT Detalle Orden\Data Conversion"
+          TopLeft="481,190" />
         <NodeLayout
-          Size="98,42"
-          Id="Package\FACT Detalle Orden\Sort"
-          TopLeft="512,297" />
+          Size="107,42"
+          Id="Package\FACT Detalle Orden\Sort 1"
+          TopLeft="936,286" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\FACT Detalle Orden\OLE DB Destination"
+          TopLeft="713,524" />
         <NodeLayout
           Size="159,42"
           Id="Package\FACT Detalle Orden\OLE DB Source 1"
           TopLeft="916,174" />
         <NodeLayout
-          Size="107,42"
-          Id="Package\FACT Detalle Orden\Sort 1"
-          TopLeft="936,286" />
-        <EdgeLayout
-          Id="Package\FACT Detalle Orden.Paths[OLE DB Source Output]"
-          TopLeft="992.5,216">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,70"
-              Start="0,0"
-              End="0,62.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,62.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="130,42"
+          Id="Package\FACT Detalle Orden\Merge Join"
+          TopLeft="714,317" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\FACT Detalle Orden\Sort"
+          TopLeft="512,297" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\FACT Detalle Orden\OLE DB Source"
+          TopLeft="479,97" />
         <NodeLayout
           Size="155,42"
           Id="Package\FACT Detalle Orden\Conditional Split"
           TopLeft="706,425" />
-        <NodeLayout
-          Size="156,42"
-          Id="Package\FACT Detalle Orden\Data Conversion"
-          TopLeft="481,190" />
-        <EdgeLayout
-          Id="Package\FACT Detalle Orden.Paths[OLE DB Source Output1]"
-          TopLeft="556.5,139">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,51"
-              Start="0,0"
-              End="0,43.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FACT Detalle Orden.Paths[Data Conversion Output]"
-          TopLeft="560,232">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,65"
-              Start="0,0"
-              End="0,57.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,57.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="130,42"
-          Id="Package\FACT Detalle Orden\Merge Join"
-          TopLeft="714,317" />
-        <EdgeLayout
-          Id="Package\FACT Detalle Orden.Paths[Sort Output]"
-          TopLeft="610,318">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="104,20"
-              Start="0,0"
-              End="96.5,20">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="48,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="48,0"
-                    Point2="52,0"
-                    Point3="52,4" />
-                  <mssgle:LineSegment
-                    End="52,16" />
-                  <mssgle:CubicBezierSegment
-                    Point1="52,16"
-                    Point2="52,20"
-                    Point3="56,20" />
-                  <mssgle:LineSegment
-                    End="96.5,20" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\FACT Detalle Orden.Paths[Sort Output1]"
           TopLeft="936,307">
@@ -29409,6 +29286,84 @@ ORDER BY O.OrdenID, fact_key;</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\FACT Detalle Orden.Paths[Sort Output]"
+          TopLeft="610,318">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="104,20"
+              Start="0,0"
+              End="96.5,20">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="48,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="48,0"
+                    Point2="52,0"
+                    Point3="52,4" />
+                  <mssgle:LineSegment
+                    End="52,16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="52,16"
+                    Point2="52,20"
+                    Point3="56,20" />
+                  <mssgle:LineSegment
+                    End="96.5,20" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FACT Detalle Orden.Paths[OLE DB Source Output1]"
+          TopLeft="556.5,139">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51"
+              Start="0,0"
+              End="0,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FACT Detalle Orden.Paths[OLE DB Source Output]"
+          TopLeft="992.5,216">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,70"
+              Start="0,0"
+              End="0,62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\FACT Detalle Orden.Paths[Merge Join Output]"
           TopLeft="781.25,359">
           <EdgeLayout.Curve>
@@ -29430,10 +29385,6 @@ ORDER BY O.OrdenID, fact_key;</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="171,42"
-          Id="Package\FACT Detalle Orden\OLE DB Destination"
-          TopLeft="713,524" />
         <EdgeLayout
           Id="Package\FACT Detalle Orden.Paths[dw isnull]"
           TopLeft="783.5,467">
@@ -29470,14 +29421,41 @@ ORDER BY O.OrdenID, fact_key;</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FACT Detalle Orden.Paths[Data Conversion Output]"
+          TopLeft="560,232">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65"
+              Start="0,0"
+              End="0,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\FACT Detalle Orden\OLE DB Source">
+    design-time-name="Package\FACT Detalle Orden\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -29495,15 +29473,10 @@ ORDER BY O.OrdenID, fact_key;</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\FACT Detalle Orden\OLE DB Destination">
+    design-time-name="Package\FACT Detalle Orden\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
