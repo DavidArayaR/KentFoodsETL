@@ -11,8 +11,8 @@
   DTS:LocaleID="22538"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="48"
-  DTS:VersionGUID="{CF716653-A053-476E-BB7E-73123F918260}">
+  DTS:VersionBuild="51"
+  DTS:VersionGUID="{D828568A-5E26-4A67-A399-8851E7C48866}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -17823,9 +17823,9 @@ FROM (
               startId="Package\DIMENSIONES CIUDADES\Merge Join 2.Outputs[Merge Join Output]" />
             <path
               refId="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output7]"
-              endId="Package\DIMENSIONES CIUDADES\Sort.Inputs[Sort Input]"
+              endId="Package\DIMENSIONES CIUDADES\SORT DIMCIUDADCLIENTES.Inputs[Sort Input]"
               name="OLE DB Source Output"
-              startId="Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADEMPLEADO.Outputs[OLE DB Source Output]" />
+              startId="Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADCLIENTE.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output5]"
               endId="Package\DIMENSIONES CIUDADES\sort dimciudadenvio.Inputs[Sort Input]"
@@ -17838,9 +17838,9 @@ FROM (
               startId="Package\DIMENSIONES CIUDADES\DB SOURCE PROVEEDORES.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output6]"
-              endId="Package\DIMENSIONES CIUDADES\SORT DIMCIUDADCLIENTES.Inputs[Sort Input]"
+              endId="Package\DIMENSIONES CIUDADES\Sort.Inputs[Sort Input]"
               name="OLE DB Source Output"
-              startId="Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADCLIENTE.Outputs[OLE DB Source Output]" />
+              startId="Package\DIMENSIONES CIUDADES\SOURCE DIMCIUDADEMPLEADO.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output2]"
               endId="Package\DIMENSIONES CIUDADES\sort dimciudadproveedor.Inputs[Sort Input]"
@@ -17853,49 +17853,49 @@ FROM (
               startId="Package\DIMENSIONES CIUDADES\DB CIUDADES EMPLEADOS.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output]"
-              endId="Package\DIMENSIONES CIUDADES\Data Conversion.Inputs[Data Conversion Input]"
-              name="OLE DB Source Output"
-              startId="Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output3]"
               endId="Package\DIMENSIONES CIUDADES\Data Conversion 3.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
               startId="Package\DIMENSIONES CIUDADES\db source ordenes.Outputs[OLE DB Source Output]" />
             <path
+              refId="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output3]"
+              endId="Package\DIMENSIONES CIUDADES\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIMENSIONES CIUDADES\DB CIUDADES CLIENTES.Outputs[OLE DB Source Output]" />
+            <path
               refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output6]"
-              endId="Package\DIMENSIONES CIUDADES\Merge Join 3.Inputs[Merge Join Right Input]"
-              name="Sort Output"
-              startId="Package\DIMENSIONES CIUDADES\sort dimciudadenvio.Outputs[Sort Output]" />
-            <path
-              refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output]"
-              endId="Package\DIMENSIONES CIUDADES\Merge Join 1.Inputs[Merge Join Right Input]"
-              name="Sort Output"
-              startId="Package\DIMENSIONES CIUDADES\Sort.Outputs[Sort Output]" />
-            <path
-              refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output1]"
-              endId="Package\DIMENSIONES CIUDADES\Merge Join 1.Inputs[Merge Join Left Input]"
-              name="Sort Output"
-              startId="Package\DIMENSIONES CIUDADES\SORT DB EMPLEADOS.Outputs[Sort Output]" />
-            <path
-              refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output2]"
-              endId="Package\DIMENSIONES CIUDADES\Merge Join 2.Inputs[Merge Join Right Input]"
-              name="Sort Output"
-              startId="Package\DIMENSIONES CIUDADES\sort dimciudadproveedor.Outputs[Sort Output]" />
-            <path
-              refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output3]"
-              endId="Package\DIMENSIONES CIUDADES\Merge Join 3.Inputs[Merge Join Left Input]"
-              name="Sort Output"
-              startId="Package\DIMENSIONES CIUDADES\sort db ordenes.Outputs[Sort Output]" />
-            <path
-              refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output4]"
               endId="Package\DIMENSIONES CIUDADES\Merge Join 2.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\DIMENSIONES CIUDADES\sort db proveedores.Outputs[Sort Output]" />
             <path
-              refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output5]"
+              refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output]"
               endId="Package\DIMENSIONES CIUDADES\Merge Join.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\DIMENSIONES CIUDADES\SORT DB CLIENTES.Outputs[Sort Output]" />
+            <path
+              refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output1]"
+              endId="Package\DIMENSIONES CIUDADES\Merge Join 3.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\DIMENSIONES CIUDADES\sort dimciudadenvio.Outputs[Sort Output]" />
+            <path
+              refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output2]"
+              endId="Package\DIMENSIONES CIUDADES\Merge Join 1.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\DIMENSIONES CIUDADES\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output3]"
+              endId="Package\DIMENSIONES CIUDADES\Merge Join 1.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\DIMENSIONES CIUDADES\SORT DB EMPLEADOS.Outputs[Sort Output]" />
+            <path
+              refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output4]"
+              endId="Package\DIMENSIONES CIUDADES\Merge Join 2.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\DIMENSIONES CIUDADES\sort dimciudadproveedor.Outputs[Sort Output]" />
+            <path
+              refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output5]"
+              endId="Package\DIMENSIONES CIUDADES\Merge Join 3.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\DIMENSIONES CIUDADES\sort db ordenes.Outputs[Sort Output]" />
             <path
               refId="Package\DIMENSIONES CIUDADES.Paths[Sort Output7]"
               endId="Package\DIMENSIONES CIUDADES\Merge Join.Inputs[Merge Join Right Input]"
@@ -21607,9 +21607,9 @@ FROM (
               startId="Package\DIMENSIONES PAISES\Merge Join 2.Outputs[Merge Join Output]" />
             <path
               refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output7]"
-              endId="Package\DIMENSIONES PAISES\Data Conversion 3.Inputs[Data Conversion Input]"
+              endId="Package\DIMENSIONES PAISES\Data Conversion.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
-              startId="Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE.Outputs[OLE DB Source Output]" />
+              startId="Package\DIMENSIONES PAISES\PROVEEDORES DATABASE SOURCE.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output5]"
               endId="Package\DIMENSIONES PAISES\SORT DW PAISCLIENTE.Inputs[Sort Input]"
@@ -21622,9 +21622,9 @@ FROM (
               startId="Package\DIMENSIONES PAISES\DimPaisEnvio DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output6]"
-              endId="Package\DIMENSIONES PAISES\Data Conversion.Inputs[Data Conversion Input]"
+              endId="Package\DIMENSIONES PAISES\Data Conversion 3.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
-              startId="Package\DIMENSIONES PAISES\PROVEEDORES DATABASE SOURCE.Outputs[OLE DB Source Output]" />
+              startId="Package\DIMENSIONES PAISES\ORDENES DATABASE SOURCE.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output2]"
               endId="Package\DIMENSIONES PAISES\SORT DW PAISPROVEEDOR.Inputs[Sort Input]"
@@ -21637,54 +21637,1958 @@ FROM (
               startId="Package\DIMENSIONES PAISES\CLIENTES DATABASE SOURCE.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output]"
-              endId="Package\DIMENSIONES PAISES\Data Conversion 2.Inputs[Data Conversion Input]"
-              name="OLE DB Source Output"
-              startId="Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output3]"
               endId="Package\DIMENSIONES PAISES\SORT DATAWAREHOUSE.Inputs[Sort Input]"
               name="OLE DB Source Output"
               startId="Package\DIMENSIONES PAISES\DimPaisEmpleados DATAWAREHOUSE SOURCE.Outputs[OLE DB Source Output]" />
             <path
+              refId="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output3]"
+              endId="Package\DIMENSIONES PAISES\Data Conversion 2.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIMENSIONES PAISES\EMPLEADOS DATABASE SOURCE.Outputs[OLE DB Source Output]" />
+            <path
               refId="Package\DIMENSIONES PAISES.Paths[Sort Output6]"
-              endId="Package\DIMENSIONES PAISES\Merge Join 3.Inputs[Merge Join Left Input]"
-              name="Sort Output"
-              startId="Package\DIMENSIONES PAISES\SORT DATABASE ORDENES.Outputs[Sort Output]" />
-            <path
-              refId="Package\DIMENSIONES PAISES.Paths[Sort Output]"
-              endId="Package\DIMENSIONES PAISES\Merge Join 2.Inputs[Merge Join Right Input]"
-              name="Sort Output"
-              startId="Package\DIMENSIONES PAISES\SORT DATAWAREHOUSE.Outputs[Sort Output]" />
-            <path
-              refId="Package\DIMENSIONES PAISES.Paths[Sort Output1]"
-              endId="Package\DIMENSIONES PAISES\Merge Join 1.Inputs[Merge Join Left Input]"
-              name="Sort Output"
-              startId="Package\DIMENSIONES PAISES\SORT DATABASE CLIENTES.Outputs[Sort Output]" />
-            <path
-              refId="Package\DIMENSIONES PAISES.Paths[Sort Output2]"
-              endId="Package\DIMENSIONES PAISES\Merge Join.Inputs[Merge Join Right Input]"
-              name="Sort Output"
-              startId="Package\DIMENSIONES PAISES\SORT DW PAISPROVEEDOR.Outputs[Sort Output]" />
-            <path
-              refId="Package\DIMENSIONES PAISES.Paths[Sort Output3]"
-              endId="Package\DIMENSIONES PAISES\Merge Join 2.Inputs[Merge Join Left Input]"
-              name="Sort Output"
-              startId="Package\DIMENSIONES PAISES\SORT DATABASE.Outputs[Sort Output]" />
-            <path
-              refId="Package\DIMENSIONES PAISES.Paths[Sort Output4]"
               endId="Package\DIMENSIONES PAISES\Merge Join.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\DIMENSIONES PAISES\SORT DATABASE PROVEEDORES.Outputs[Sort Output]" />
             <path
-              refId="Package\DIMENSIONES PAISES.Paths[Sort Output5]"
+              refId="Package\DIMENSIONES PAISES.Paths[Sort Output]"
               endId="Package\DIMENSIONES PAISES\Merge Join 3.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\DIMENSIONES PAISES\SORT DW PAISENVIO.Outputs[Sort Output]" />
+            <path
+              refId="Package\DIMENSIONES PAISES.Paths[Sort Output1]"
+              endId="Package\DIMENSIONES PAISES\Merge Join 3.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\DIMENSIONES PAISES\SORT DATABASE ORDENES.Outputs[Sort Output]" />
+            <path
+              refId="Package\DIMENSIONES PAISES.Paths[Sort Output2]"
+              endId="Package\DIMENSIONES PAISES\Merge Join 2.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\DIMENSIONES PAISES\SORT DATAWAREHOUSE.Outputs[Sort Output]" />
+            <path
+              refId="Package\DIMENSIONES PAISES.Paths[Sort Output3]"
+              endId="Package\DIMENSIONES PAISES\Merge Join 1.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\DIMENSIONES PAISES\SORT DATABASE CLIENTES.Outputs[Sort Output]" />
+            <path
+              refId="Package\DIMENSIONES PAISES.Paths[Sort Output4]"
+              endId="Package\DIMENSIONES PAISES\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\DIMENSIONES PAISES\SORT DW PAISPROVEEDOR.Outputs[Sort Output]" />
+            <path
+              refId="Package\DIMENSIONES PAISES.Paths[Sort Output5]"
+              endId="Package\DIMENSIONES PAISES\Merge Join 2.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\DIMENSIONES PAISES\SORT DATABASE.Outputs[Sort Output]" />
             <path
               refId="Package\DIMENSIONES PAISES.Paths[Sort Output7]"
               endId="Package\DIMENSIONES PAISES\Merge Join 1.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\DIMENSIONES PAISES\SORT DW PAISCLIENTE.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\FACT Detalle Orden"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{260B024A-EB3D-4079-BF90-D0642DB1A202}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FACT Detalle Orden"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\FACT Detalle Orden\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\FACT Detalle Orden\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Conditional Split.Inputs[Conditional Split Input].Columns[DetalleID]"
+                      cachedDataType="wstr"
+                      cachedLength="25"
+                      cachedName="DetalleID"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[DetalleID]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\FACT Detalle Orden\Conditional Split.Outputs[dw isnull]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="dw isnull"
+                  synchronousInputId="Package\FACT Detalle Orden\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[ISNULL](#{Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[DetalleID]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(DetalleID)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\FACT Detalle Orden\Conditional Split.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\FACT Detalle Orden\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\FACT Detalle Orden\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\FACT Detalle Orden\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\FACT Detalle Orden\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\FACT Detalle Orden\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\FACT Detalle Orden\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\FACT Detalle Orden\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Data Conversion.Inputs[Data Conversion Input].Columns[fact_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="14"
+                      cachedName="fact_id"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[fact_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\FACT Detalle Orden\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\FACT Detalle Orden\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Data Conversion.Outputs[Data Conversion Output].Columns[db_fact_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="14"
+                      lineageId="Package\FACT Detalle Orden\Data Conversion.Outputs[Data Conversion Output].Columns[db_fact_id]"
+                      name="db_fact_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[fact_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\FACT Detalle Orden\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\FACT Detalle Orden\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\FACT Detalle Orden\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\FACT Detalle Orden\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\FACT Detalle Orden\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input].Columns[db_fact_id]"
+                      cachedDataType="wstr"
+                      cachedLength="14"
+                      cachedName="db_fact_id"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[db_fact_id]" />
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input].Columns[orden_key]"
+                      cachedDataType="i4"
+                      cachedName="orden_key"
+                      lineageId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[orden_key]" />
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input].Columns[producto_key]"
+                      cachedDataType="i4"
+                      cachedName="producto_key"
+                      lineageId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[producto_key]" />
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input].Columns[cliente_key]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="cliente_key"
+                      lineageId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[cliente_key]" />
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input].Columns[empleado_key]"
+                      cachedDataType="i4"
+                      cachedName="empleado_key"
+                      lineageId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[empleado_key]" />
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input].Columns[transportista_key]"
+                      cachedDataType="i4"
+                      cachedName="transportista_key"
+                      lineageId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[transportista_key]" />
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input].Columns[fecha_envio_key]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="fecha_envio_key"
+                      lineageId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[fecha_envio_key]" />
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input].Columns[fecha_orden_key]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="fecha_orden_key"
+                      lineageId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[fecha_orden_key]" />
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input].Columns[ciudadEnvio_key]"
+                      cachedDataType="i4"
+                      cachedName="ciudadEnvio_key"
+                      lineageId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[ciudadEnvio_key]" />
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input].Columns[paisEnvio_key]"
+                      cachedDataType="i4"
+                      cachedName="paisEnvio_key"
+                      lineageId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[paisEnvio_key]" />
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input].Columns[PrecioUnitario]"
+                      cachedDataType="cy"
+                      cachedName="PrecioUnitario"
+                      lineageId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[PrecioUnitario]" />
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input].Columns[Cantidad]"
+                      cachedDataType="i2"
+                      cachedName="Cantidad"
+                      lineageId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[Cantidad]" />
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input].Columns[Descuento]"
+                      cachedDataType="r4"
+                      cachedName="Descuento"
+                      lineageId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[Descuento]" />
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input].Columns[total]"
+                      cachedDataType="r4"
+                      cachedName="total"
+                      lineageId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[total]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Right Input].Columns[DetalleID]"
+                      cachedDataType="wstr"
+                      cachedLength="25"
+                      cachedName="DetalleID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\FACT Detalle Orden\Sort 1.Outputs[Sort Output].Columns[DetalleID]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[orden_key]"
+                      dataType="i4"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[orden_key]"
+                      name="orden_key">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input].Columns[orden_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[producto_key]"
+                      dataType="i4"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[producto_key]"
+                      name="producto_key">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input].Columns[producto_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[cliente_key]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[cliente_key]"
+                      name="cliente_key">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input].Columns[cliente_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[empleado_key]"
+                      dataType="i4"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[empleado_key]"
+                      name="empleado_key">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input].Columns[empleado_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[transportista_key]"
+                      dataType="i4"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[transportista_key]"
+                      name="transportista_key">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input].Columns[transportista_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[fecha_envio_key]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[fecha_envio_key]"
+                      name="fecha_envio_key">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input].Columns[fecha_envio_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[fecha_orden_key]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[fecha_orden_key]"
+                      name="fecha_orden_key">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input].Columns[fecha_orden_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[ciudadEnvio_key]"
+                      dataType="i4"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[ciudadEnvio_key]"
+                      name="ciudadEnvio_key">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input].Columns[ciudadEnvio_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[paisEnvio_key]"
+                      dataType="i4"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[paisEnvio_key]"
+                      name="paisEnvio_key">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input].Columns[paisEnvio_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[PrecioUnitario]"
+                      dataType="cy"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[PrecioUnitario]"
+                      name="PrecioUnitario">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input].Columns[PrecioUnitario]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[Cantidad]"
+                      dataType="i2"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[Cantidad]"
+                      name="Cantidad">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input].Columns[Cantidad]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[Descuento]"
+                      dataType="r4"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[Descuento]"
+                      name="Descuento">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input].Columns[Descuento]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[total]"
+                      dataType="r4"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[total]"
+                      name="total">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input].Columns[total]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[db_fact_id]"
+                      dataType="wstr"
+                      length="14"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[db_fact_id]"
+                      name="db_fact_id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input].Columns[db_fact_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[DetalleID]"
+                      dataType="wstr"
+                      length="25"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[DetalleID]"
+                      name="DetalleID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Right Input].Columns[DetalleID]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\FACT Detalle Orden\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FactDetalleOrden]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\FACT Detalle Orden\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MAAWSA02LCXXXX.dw_kentfoods]"
+                  connectionManagerRefId="Package.ConnectionManagers[MAAWSA02LCXXXX.dw_kentfoods]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[orden_key]"
+                      cachedDataType="i4"
+                      cachedName="orden_key"
+                      externalMetadataColumnId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[orden_key]"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[orden_key]" />
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[producto_key]"
+                      cachedDataType="i4"
+                      cachedName="producto_key"
+                      externalMetadataColumnId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[producto_key]"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[producto_key]" />
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cliente_key]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="cliente_key"
+                      externalMetadataColumnId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cliente_key]"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[cliente_key]" />
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[empleado_key]"
+                      cachedDataType="i4"
+                      cachedName="empleado_key"
+                      externalMetadataColumnId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[empleado_key]"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[empleado_key]" />
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[transportista_key]"
+                      cachedDataType="i4"
+                      cachedName="transportista_key"
+                      externalMetadataColumnId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[transportista_key]"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[transportista_key]" />
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[fecha_envio_key]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="fecha_envio_key"
+                      externalMetadataColumnId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fecha_envio_key]"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[fecha_envio_key]" />
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[fecha_orden_key]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="fecha_orden_key"
+                      externalMetadataColumnId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fecha_orden_key]"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[fecha_orden_key]" />
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cantidad]"
+                      cachedDataType="i2"
+                      cachedName="Cantidad"
+                      externalMetadataColumnId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cantidad]"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[Cantidad]" />
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Descuento]"
+                      cachedDataType="r4"
+                      cachedName="Descuento"
+                      externalMetadataColumnId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[descuento]"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[Descuento]" />
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[total]"
+                      cachedDataType="r4"
+                      cachedName="total"
+                      externalMetadataColumnId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[total]"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[total]" />
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ciudadEnvio_key]"
+                      cachedDataType="i4"
+                      cachedName="ciudadEnvio_key"
+                      externalMetadataColumnId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ciudad_envio_key]"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[ciudadEnvio_key]" />
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[paisEnvio_key]"
+                      cachedDataType="i4"
+                      cachedName="paisEnvio_key"
+                      externalMetadataColumnId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[pais_envio_key]"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[paisEnvio_key]" />
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PrecioUnitario]"
+                      cachedDataType="cy"
+                      cachedName="PrecioUnitario"
+                      externalMetadataColumnId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[precio_unitario]"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[PrecioUnitario]" />
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[db_fact_id]"
+                      cachedDataType="wstr"
+                      cachedLength="14"
+                      cachedName="db_fact_id"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DetalleID]"
+                      lineageId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output].Columns[db_fact_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DetalleID]"
+                      dataType="wstr"
+                      length="25"
+                      name="DetalleID" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[orden_key]"
+                      dataType="i4"
+                      name="orden_key" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[producto_key]"
+                      dataType="i4"
+                      name="producto_key" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cliente_key]"
+                      dataType="wstr"
+                      length="5"
+                      name="cliente_key" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[empleado_key]"
+                      dataType="i4"
+                      name="empleado_key" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[transportista_key]"
+                      dataType="i4"
+                      name="transportista_key" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fecha_envio_key]"
+                      dataType="wstr"
+                      length="255"
+                      name="fecha_envio_key" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fecha_orden_key]"
+                      dataType="wstr"
+                      length="255"
+                      name="fecha_orden_key" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ciudad_envio_key]"
+                      dataType="i4"
+                      name="ciudad_envio_key" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[pais_envio_key]"
+                      dataType="i4"
+                      name="pais_envio_key" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[precio_unitario]"
+                      dataType="cy"
+                      name="precio_unitario" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cantidad]"
+                      dataType="i2"
+                      name="cantidad" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[descuento]"
+                      dataType="r4"
+                      name="descuento" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[total]"
+                      dataType="i4"
+                      name="total" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\FACT Detalle Orden\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\FACT Detalle Orden\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">WITH FE_UNICAS AS (
+    SELECT DISTINCT 
+        CAST(SUBSTRING(fecha_envio_key, 5, 8) AS VARCHAR(8)) AS fecha_yyyymmdd,
+        MIN(fecha_envio_key) AS fecha_envio_key
+    FROM DW_KENTFOODS.dbo.DimFechaEnvio
+    GROUP BY CAST(SUBSTRING(fecha_envio_key, 5, 8) AS VARCHAR(8))
+),
+FO_UNICAS AS (
+    SELECT DISTINCT 
+        CAST(SUBSTRING(fecha_orden_key, 5, 8) AS VARCHAR(8)) AS fecha_yyyymmdd,
+        MIN(fecha_orden_key) AS fecha_orden_key
+    FROM DW_KENTFOODS.dbo.DimFechaOrden
+    GROUP BY CAST(SUBSTRING(fecha_orden_key, 5, 8) AS VARCHAR(8))
+)
+SELECT
+    -- ✅ Clave compuesta con formato 001_10248
+    CONCAT(
+        RIGHT('000' + CAST(ROW_NUMBER() OVER (PARTITION BY O.OrdenID ORDER BY DO.ProductoID) AS VARCHAR(3)), 3),
+        '_',
+        CAST(O.OrdenID AS VARCHAR(10))
+    ) AS fact_key,
+
+    O.OrdenID AS orden_key,
+    DO.ProductoID AS producto_key,
+    O.ClienteID AS cliente_key,
+    O.EmpleadoID AS empleado_key,
+    O.EnviadoPor AS transportista_key,
+
+    FE.fecha_envio_key,
+    FO.fecha_orden_key,
+    CE.ciudadEnvio_key,
+    PE.paisEnvio_key,
+
+    DO.PrecioUnitario,
+    DO.Cantidad,
+    DO.Descuento,
+    (DO.PrecioUnitario * DO.Cantidad) - (DO.PrecioUnitario * DO.Cantidad * DO.Descuento) AS total
+
+FROM KentFoods.dbo.DetalleOrden AS DO
+INNER JOIN KentFoods.dbo.Ordenes AS O
+    ON DO.OrdenID = O.OrdenID
+LEFT JOIN FE_UNICAS AS FE
+    ON FE.fecha_yyyymmdd = FORMAT(O.FechaEnvio, 'yyyyMMdd')
+LEFT JOIN FO_UNICAS AS FO
+    ON FO.fecha_yyyymmdd = FORMAT(O.FechaOrden, 'yyyyMMdd')
+LEFT JOIN DW_KENTFOODS.dbo.DimCiudadEnvio AS CE
+    ON CE.nombre_ciudad = O.CiudadEnvio
+LEFT JOIN DW_KENTFOODS.dbo.DimPaisEnvio AS PE
+    ON PE.nombre_pais = O.PaisEnvio
+ORDER BY O.OrdenID, fact_key;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\FACT Detalle Orden\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MAAWSA02LCXXXX.KentFoods]"
+                  connectionManagerRefId="Package.ConnectionManagers[MAAWSA02LCXXXX.KentFoods]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[fact_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[fact_key]"
+                      length="14"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[fact_id]"
+                      name="fact_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[orden_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[orden_key]"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[orden_key]"
+                      name="orden_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[producto_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[producto_key]"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[producto_key]"
+                      name="producto_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[cliente_key]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[cliente_key]"
+                      length="5"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[cliente_key]"
+                      name="cliente_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[empleado_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[empleado_key]"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[empleado_key]"
+                      name="empleado_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[transportista_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[transportista_key]"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[transportista_key]"
+                      name="transportista_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[fecha_envio_key]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[fecha_envio_key]"
+                      length="255"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[fecha_envio_key]"
+                      name="fecha_envio_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[fecha_orden_key]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[fecha_orden_key]"
+                      length="255"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[fecha_orden_key]"
+                      name="fecha_orden_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[ciudadEnvio_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ciudadEnvio_key]"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[ciudadEnvio_key]"
+                      name="ciudadEnvio_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[paisEnvio_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[paisEnvio_key]"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[paisEnvio_key]"
+                      name="paisEnvio_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[PrecioUnitario]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PrecioUnitario]"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[PrecioUnitario]"
+                      name="PrecioUnitario"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[Cantidad]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Cantidad]"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[Cantidad]"
+                      name="Cantidad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descuento]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Descuento]"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descuento]"
+                      name="Descuento"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[total]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[total]"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[total]"
+                      name="total"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[fact_key]"
+                      codePage="1252"
+                      dataType="str"
+                      length="14"
+                      name="fact_key" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[orden_key]"
+                      dataType="i4"
+                      name="orden_key" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[producto_key]"
+                      dataType="i4"
+                      name="producto_key" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[cliente_key]"
+                      dataType="wstr"
+                      length="5"
+                      name="cliente_key" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[empleado_key]"
+                      dataType="i4"
+                      name="empleado_key" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[transportista_key]"
+                      dataType="i4"
+                      name="transportista_key" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[fecha_envio_key]"
+                      dataType="wstr"
+                      length="255"
+                      name="fecha_envio_key" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[fecha_orden_key]"
+                      dataType="wstr"
+                      length="255"
+                      name="fecha_orden_key" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ciudadEnvio_key]"
+                      dataType="i4"
+                      name="ciudadEnvio_key" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[paisEnvio_key]"
+                      dataType="i4"
+                      name="paisEnvio_key" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PrecioUnitario]"
+                      dataType="cy"
+                      name="PrecioUnitario" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Cantidad]"
+                      dataType="i2"
+                      name="Cantidad" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Descuento]"
+                      dataType="r4"
+                      name="Descuento" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[total]"
+                      dataType="r4"
+                      name="total" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[fact_key]"
+                      codePage="1252"
+                      dataType="str"
+                      length="14"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[fact_key]"
+                      name="fact_key" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[orden_key]"
+                      dataType="i4"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[orden_key]"
+                      name="orden_key" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[producto_key]"
+                      dataType="i4"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[producto_key]"
+                      name="producto_key" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[cliente_key]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[cliente_key]"
+                      name="cliente_key" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[empleado_key]"
+                      dataType="i4"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[empleado_key]"
+                      name="empleado_key" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[transportista_key]"
+                      dataType="i4"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[transportista_key]"
+                      name="transportista_key" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[fecha_envio_key]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[fecha_envio_key]"
+                      name="fecha_envio_key" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[fecha_orden_key]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[fecha_orden_key]"
+                      name="fecha_orden_key" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ciudadEnvio_key]"
+                      dataType="i4"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ciudadEnvio_key]"
+                      name="ciudadEnvio_key" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[paisEnvio_key]"
+                      dataType="i4"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[paisEnvio_key]"
+                      name="paisEnvio_key" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PrecioUnitario]"
+                      dataType="cy"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PrecioUnitario]"
+                      name="PrecioUnitario" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Cantidad]"
+                      dataType="i2"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Cantidad]"
+                      name="Cantidad" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Descuento]"
+                      dataType="r4"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Descuento]"
+                      name="Descuento" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[total]"
+                      dataType="r4"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[total]"
+                      name="total" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\FACT Detalle Orden\OLE DB Source 1"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source 1"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FactDetalleOrden]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\FACT Detalle Orden\OLE DB Source 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MAAWSA02LCXXXX.dw_kentfoods]"
+                  connectionManagerRefId="Package.ConnectionManagers[MAAWSA02LCXXXX.dw_kentfoods]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\FACT Detalle Orden\OLE DB Source 1.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[DetalleID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FACT Detalle Orden\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[DetalleID]"
+                      length="25"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[DetalleID]"
+                      name="DetalleID"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[DetalleID]"
+                      dataType="wstr"
+                      length="25"
+                      name="DetalleID" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[orden_key]"
+                      dataType="i4"
+                      name="orden_key" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[producto_key]"
+                      dataType="i4"
+                      name="producto_key" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[cliente_key]"
+                      dataType="wstr"
+                      length="5"
+                      name="cliente_key" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[empleado_key]"
+                      dataType="i4"
+                      name="empleado_key" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[transportista_key]"
+                      dataType="i4"
+                      name="transportista_key" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[fecha_envio_key]"
+                      dataType="wstr"
+                      length="255"
+                      name="fecha_envio_key" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[fecha_orden_key]"
+                      dataType="wstr"
+                      length="255"
+                      name="fecha_orden_key" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[ciudad_envio_key]"
+                      dataType="i4"
+                      name="ciudad_envio_key" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[pais_envio_key]"
+                      dataType="i4"
+                      name="pais_envio_key" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[precio_unitario]"
+                      dataType="cy"
+                      name="precio_unitario" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[cantidad]"
+                      dataType="i2"
+                      name="cantidad" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[descuento]"
+                      dataType="r4"
+                      name="descuento" />
+                    <externalMetadataColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[total]"
+                      dataType="i4"
+                      name="total" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\FACT Detalle Orden\OLE DB Source 1.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[DetalleID]"
+                      dataType="wstr"
+                      length="25"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[DetalleID]"
+                      name="DetalleID" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\FACT Detalle Orden\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\FACT Detalle Orden\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Sort.Inputs[Sort Input].Columns[orden_key]"
+                      cachedDataType="i4"
+                      cachedName="orden_key"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[orden_key]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Sort.Inputs[Sort Input].Columns[producto_key]"
+                      cachedDataType="i4"
+                      cachedName="producto_key"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[producto_key]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Sort.Inputs[Sort Input].Columns[cliente_key]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="cliente_key"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[cliente_key]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Sort.Inputs[Sort Input].Columns[empleado_key]"
+                      cachedDataType="i4"
+                      cachedName="empleado_key"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[empleado_key]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Sort.Inputs[Sort Input].Columns[transportista_key]"
+                      cachedDataType="i4"
+                      cachedName="transportista_key"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[transportista_key]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Sort.Inputs[Sort Input].Columns[fecha_envio_key]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="fecha_envio_key"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[fecha_envio_key]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Sort.Inputs[Sort Input].Columns[fecha_orden_key]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="fecha_orden_key"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[fecha_orden_key]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Sort.Inputs[Sort Input].Columns[ciudadEnvio_key]"
+                      cachedDataType="i4"
+                      cachedName="ciudadEnvio_key"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[ciudadEnvio_key]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Sort.Inputs[Sort Input].Columns[paisEnvio_key]"
+                      cachedDataType="i4"
+                      cachedName="paisEnvio_key"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[paisEnvio_key]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Sort.Inputs[Sort Input].Columns[PrecioUnitario]"
+                      cachedDataType="cy"
+                      cachedName="PrecioUnitario"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[PrecioUnitario]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Sort.Inputs[Sort Input].Columns[Cantidad]"
+                      cachedDataType="i2"
+                      cachedName="Cantidad"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[Cantidad]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Sort.Inputs[Sort Input].Columns[Descuento]"
+                      cachedDataType="r4"
+                      cachedName="Descuento"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descuento]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Sort.Inputs[Sort Input].Columns[total]"
+                      cachedDataType="r4"
+                      cachedName="total"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[total]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Sort.Inputs[Sort Input].Columns[db_fact_id]"
+                      cachedDataType="wstr"
+                      cachedLength="14"
+                      cachedName="db_fact_id"
+                      lineageId="Package\FACT Detalle Orden\Data Conversion.Outputs[Data Conversion Output].Columns[db_fact_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[orden_key]"
+                      dataType="i4"
+                      lineageId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[orden_key]"
+                      name="orden_key">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[orden_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[producto_key]"
+                      dataType="i4"
+                      lineageId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[producto_key]"
+                      name="producto_key">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[producto_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[cliente_key]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[cliente_key]"
+                      name="cliente_key">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[cliente_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[empleado_key]"
+                      dataType="i4"
+                      lineageId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[empleado_key]"
+                      name="empleado_key">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[empleado_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[transportista_key]"
+                      dataType="i4"
+                      lineageId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[transportista_key]"
+                      name="transportista_key">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[transportista_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[fecha_envio_key]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[fecha_envio_key]"
+                      name="fecha_envio_key">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[fecha_envio_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[fecha_orden_key]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[fecha_orden_key]"
+                      name="fecha_orden_key">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[fecha_orden_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[ciudadEnvio_key]"
+                      dataType="i4"
+                      lineageId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[ciudadEnvio_key]"
+                      name="ciudadEnvio_key">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[ciudadEnvio_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[paisEnvio_key]"
+                      dataType="i4"
+                      lineageId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[paisEnvio_key]"
+                      name="paisEnvio_key">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[paisEnvio_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[PrecioUnitario]"
+                      dataType="cy"
+                      lineageId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[PrecioUnitario]"
+                      name="PrecioUnitario">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[PrecioUnitario]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[Cantidad]"
+                      dataType="i2"
+                      lineageId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[Cantidad]"
+                      name="Cantidad">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[Cantidad]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[Descuento]"
+                      dataType="r4"
+                      lineageId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[Descuento]"
+                      name="Descuento">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descuento]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[total]"
+                      dataType="r4"
+                      lineageId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[total]"
+                      name="total">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output].Columns[total]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[db_fact_id]"
+                      dataType="wstr"
+                      length="14"
+                      lineageId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output].Columns[db_fact_id]"
+                      name="db_fact_id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\FACT Detalle Orden\Data Conversion.Outputs[Data Conversion Output].Columns[db_fact_id]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\FACT Detalle Orden\Sort 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\FACT Detalle Orden\Sort 1.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\FACT Detalle Orden\Sort 1.Inputs[Sort Input].Columns[DetalleID]"
+                      cachedDataType="wstr"
+                      cachedLength="25"
+                      cachedName="DetalleID"
+                      lineageId="Package\FACT Detalle Orden\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[DetalleID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\FACT Detalle Orden\Sort 1.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\FACT Detalle Orden\Sort 1.Outputs[Sort Output].Columns[DetalleID]"
+                      dataType="wstr"
+                      length="25"
+                      lineageId="Package\FACT Detalle Orden\Sort 1.Outputs[Sort Output].Columns[DetalleID]"
+                      name="DetalleID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\FACT Detalle Orden\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[DetalleID]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\FACT Detalle Orden.Paths[Data Conversion Output]"
+              endId="Package\FACT Detalle Orden\Sort.Inputs[Sort Input]"
+              name="Data Conversion Output"
+              startId="Package\FACT Detalle Orden\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\FACT Detalle Orden.Paths[dw isnull]"
+              endId="Package\FACT Detalle Orden\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="dw isnull"
+              startId="Package\FACT Detalle Orden\Conditional Split.Outputs[dw isnull]" />
+            <path
+              refId="Package\FACT Detalle Orden.Paths[Merge Join Output]"
+              endId="Package\FACT Detalle Orden\Conditional Split.Inputs[Conditional Split Input]"
+              name="Merge Join Output"
+              startId="Package\FACT Detalle Orden\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\FACT Detalle Orden.Paths[OLE DB Source Output]"
+              endId="Package\FACT Detalle Orden\Sort 1.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\FACT Detalle Orden\OLE DB Source 1.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\FACT Detalle Orden.Paths[OLE DB Source Output1]"
+              endId="Package\FACT Detalle Orden\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\FACT Detalle Orden\OLE DB Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\FACT Detalle Orden.Paths[Sort Output]"
+              endId="Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\FACT Detalle Orden\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\FACT Detalle Orden.Paths[Sort Output1]"
+              endId="Package\FACT Detalle Orden\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\FACT Detalle Orden\Sort 1.Outputs[Sort Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -21715,6 +23619,14 @@ FROM (
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 10"
       DTS:To="Package\Dimension Producto" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 11]"
+      DTS:CreationName=""
+      DTS:DTSID="{0AD9805E-A60C-4CCE-95D0-30220A1F73F1}"
+      DTS:From="Package\Dimension Producto"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 11"
+      DTS:To="Package\FACT Detalle Orden" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
@@ -21803,58 +23715,58 @@ FROM (
         <NodeLayout
           Size="176,42"
           Id="Package\Dimension Categoria"
-          TopLeft="570,66" />
+          TopLeft="687,89" />
         <NodeLayout
           Size="163,42"
           Id="Package\Dimension Cliente"
-          TopLeft="805,60" />
+          TopLeft="922,83" />
         <NodeLayout
           Size="178,42"
           Id="Package\Dimension Empleado"
-          TopLeft="64,186" />
+          TopLeft="181,209" />
         <NodeLayout
           Size="188,42"
           Id="Package\Dimension Fecha Envio"
-          TopLeft="60,310" />
+          TopLeft="177,333" />
         <NodeLayout
           Size="191,42"
           Id="Package\Dimension Fecha Orden"
-          TopLeft="329,313" />
+          TopLeft="446,336" />
         <NodeLayout
           Size="160,42"
           Id="Package\Dimension Orden"
-          TopLeft="604,309" />
+          TopLeft="721,332" />
         <NodeLayout
           Size="173,42"
           Id="Package\Dimension Producto"
-          TopLeft="846,429" />
+          TopLeft="963,452" />
         <NodeLayout
           Size="179,42"
           Id="Package\Dimension Proveedor"
-          TopLeft="849,307" />
+          TopLeft="966,330" />
         <NodeLayout
           Size="164,42"
           Id="Package\Dimension Region"
-          TopLeft="538,183" />
+          TopLeft="655,206" />
         <NodeLayout
           Size="178,42"
           Id="Package\Dimension Territorio"
-          TopLeft="304,185" />
+          TopLeft="421,208" />
         <NodeLayout
           Size="193,42"
           Id="Package\Dimension Transportista"
-          TopLeft="791,179" />
+          TopLeft="908,202" />
         <NodeLayout
           Size="202,42"
           Id="Package\DIMENSIONES CIUDADES"
-          TopLeft="304,68" />
+          TopLeft="421,91" />
         <NodeLayout
           Size="186,42"
           Id="Package\DIMENSIONES PAISES"
-          TopLeft="76,68" />
+          TopLeft="193,91" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="262,89">
+          TopLeft="379,112">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -21876,7 +23788,7 @@ FROM (
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="506,88">
+          TopLeft="623,111">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -21898,7 +23810,7 @@ FROM (
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="935.5,349">
+          TopLeft="1052.5,372">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -21920,7 +23832,7 @@ FROM (
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="746,84">
+          TopLeft="863,107">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -21942,7 +23854,7 @@ FROM (
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="887,102">
+          TopLeft="1004,125">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -21964,7 +23876,7 @@ FROM (
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="791,202">
+          TopLeft="908,225">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -21986,7 +23898,7 @@ FROM (
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4 1]"
-          TopLeft="538,205">
+          TopLeft="655,228">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -22008,7 +23920,7 @@ FROM (
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="304,206.5">
+          TopLeft="421,229.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -22030,7 +23942,7 @@ FROM (
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="153.5,228">
+          TopLeft="270.5,251">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -22052,7 +23964,7 @@ FROM (
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="248,332.5">
+          TopLeft="365,355.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -22074,7 +23986,7 @@ FROM (
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="520,332">
+          TopLeft="637,355">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -22096,7 +24008,7 @@ FROM (
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="764,329">
+          TopLeft="881,352">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -22108,6 +24020,44 @@ FROM (
                   Capacity="5">
                   <mssgle:LineSegment
                     End="77.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="172,42"
+          Id="Package\FACT Detalle Orden"
+          TopLeft="615,491" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 11]"
+          TopLeft="963,473">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-176,39"
+              Start="0,0"
+              End="-168.5,39">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-84,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-84,0"
+                    Point2="-88,0"
+                    Point3="-88,4" />
+                  <mssgle:LineSegment
+                    End="-88,35" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-88,35"
+                    Point2="-88,39"
+                    Point3="-92,39" />
+                  <mssgle:LineSegment
+                    End="-168.5,39" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -25422,78 +27372,6 @@ FROM (
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DIMENSIONES CIUDADES.Paths[Sort Output6]"
-          TopLeft="2669.5,402.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-168.166666666667,37.4999999999999"
-              Start="0,0"
-              End="-168.166666666667,29.9999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.2439544807966" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.2439544807966"
-                    Point2="0,22.2439544807966"
-                    Point3="-4,22.2439544807966" />
-                  <mssgle:LineSegment
-                    End="-164.166666666667,22.2439544807966" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-164.166666666667,22.2439544807966"
-                    Point2="-168.166666666667,22.2439544807966"
-                    Point3="-168.166666666667,26.2439544807966" />
-                  <mssgle:LineSegment
-                    End="-168.166666666667,29.9999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DIMENSIONES CIUDADES.Paths[Sort Output5]"
-          TopLeft="169,347">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="116.666666666667,41"
-              Start="0,0"
-              End="116.666666666667,33.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.3009118541033" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.3009118541033"
-                    Point2="0,24.3009118541033"
-                    Point3="4,24.3009118541033" />
-                  <mssgle:LineSegment
-                    End="112.666666666667,24.3009118541033" />
-                  <mssgle:CubicBezierSegment
-                    Point1="112.666666666667,24.3009118541033"
-                    Point2="116.666666666667,24.3009118541033"
-                    Point3="116.666666666667,28.3009118541033" />
-                  <mssgle:LineSegment
-                    End="116.666666666667,33.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DIMENSIONES CIUDADES.Paths[Sort Output4]"
           TopLeft="1550.5,411">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25529,7 +27407,7 @@ FROM (
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DIMENSIONES CIUDADES.Paths[Sort Output3]"
+          Id="Package\DIMENSIONES CIUDADES.Paths[Sort Output5]"
           TopLeft="2313.5,401.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25565,7 +27443,7 @@ FROM (
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DIMENSIONES CIUDADES.Paths[Sort Output2]"
+          Id="Package\DIMENSIONES CIUDADES.Paths[Sort Output4]"
           TopLeft="1926,413">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25601,7 +27479,7 @@ FROM (
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DIMENSIONES CIUDADES.Paths[Sort Output1]"
+          Id="Package\DIMENSIONES CIUDADES.Paths[Sort Output3]"
           TopLeft="936,387">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25637,7 +27515,7 @@ FROM (
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DIMENSIONES CIUDADES.Paths[Sort Output]"
+          Id="Package\DIMENSIONES CIUDADES.Paths[Sort Output2]"
           TopLeft="1155,378">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25673,19 +27551,31 @@ FROM (
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output7]"
-          TopLeft="1200.5,113">
+          Id="Package\DIMENSIONES CIUDADES.Paths[Sort Output1]"
+          TopLeft="2669.5,402.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,244"
+              EndConnector="-168.166666666667,37.4999999999999"
               Start="0,0"
-              End="0,236.5">
+              End="-168.166666666667,29.9999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,236.5" />
+                    End="0,18.2439544807966" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.2439544807966"
+                    Point2="0,22.2439544807966"
+                    Point3="-4,22.2439544807966" />
+                  <mssgle:LineSegment
+                    End="-164.166666666667,22.2439544807966" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-164.166666666667,22.2439544807966"
+                    Point2="-168.166666666667,22.2439544807966"
+                    Point3="-168.166666666667,26.2439544807966" />
+                  <mssgle:LineSegment
+                    End="-168.166666666667,29.9999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -25697,7 +27587,43 @@ FROM (
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output6]"
+          Id="Package\DIMENSIONES CIUDADES.Paths[Sort Output]"
+          TopLeft="169,347">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="116.666666666667,41"
+              Start="0,0"
+              End="116.666666666667,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.3009118541033" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.3009118541033"
+                    Point2="0,24.3009118541033"
+                    Point3="4,24.3009118541033" />
+                  <mssgle:LineSegment
+                    End="112.666666666667,24.3009118541033" />
+                  <mssgle:CubicBezierSegment
+                    Point1="112.666666666667,24.3009118541033"
+                    Point2="116.666666666667,24.3009118541033"
+                    Point3="116.666666666667,28.3009118541033" />
+                  <mssgle:LineSegment
+                    End="116.666666666667,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output7]"
           TopLeft="472,119">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25710,6 +27636,30 @@ FROM (
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,174.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output6]"
+          TopLeft="1200.5,113">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,244"
+              Start="0,0"
+              End="0,236.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,236.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -25782,18 +27732,18 @@ FROM (
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output3]"
-          TopLeft="2290.58333333333,126.333333333333">
+          TopLeft="163,116">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,58.6666666666667"
+              EndConnector="0,44"
               Start="0,0"
-              End="0,51.1666666666667">
+              End="0,36.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.1666666666667" />
+                    End="0,36.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -25854,18 +27804,18 @@ FROM (
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DIMENSIONES CIUDADES.Paths[OLE DB Source Output]"
-          TopLeft="163,116">
+          TopLeft="2290.58333333333,126.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,44"
+              EndConnector="0,58.6666666666667"
               Start="0,0"
-              End="0,36.5">
+              End="0,51.1666666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.5" />
+                    End="0,51.1666666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -26462,78 +28412,6 @@ FROM (
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DIMENSIONES PAISES.Paths[Sort Output6]"
-          TopLeft="2649.90909090909,360.090909090909">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="59.181818181818,54.5454545454546"
-              Start="0,0"
-              End="51.681818181818,54.5454545454546">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="25.590909090909,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="25.590909090909,0"
-                    Point2="29.590909090909,0"
-                    Point3="29.590909090909,4" />
-                  <mssgle:LineSegment
-                    End="29.590909090909,50.5454545454546" />
-                  <mssgle:CubicBezierSegment
-                    Point1="29.590909090909,50.5454545454546"
-                    Point2="29.590909090909,54.5454545454546"
-                    Point3="33.590909090909,54.5454545454546" />
-                  <mssgle:LineSegment
-                    End="51.681818181818,54.5454545454546" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[Sort Output5]"
-          TopLeft="2900.90909090909,360.090909090909">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-52.818181818182,54.5454545454544"
-              Start="0,0"
-              End="-45.318181818182,54.5454545454544">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-22.409090909091,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-22.409090909091,0"
-                    Point2="-26.409090909091,0"
-                    Point3="-26.409090909091,4" />
-                  <mssgle:LineSegment
-                    End="-26.409090909091,50.5454545454544" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-26.409090909091,50.5454545454544"
-                    Point2="-26.409090909091,54.5454545454544"
-                    Point3="-30.409090909091,54.5454545454544" />
-                  <mssgle:LineSegment
-                    End="-45.318181818182,54.5454545454544" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[Sort Output4]"
           TopLeft="249,374.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -26569,7 +28447,7 @@ FROM (
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[Sort Output3]"
+          Id="Package\DIMENSIONES PAISES.Paths[Sort Output5]"
           TopLeft="1671.81818181818,384.636363636364">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -26605,7 +28483,7 @@ FROM (
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[Sort Output2]"
+          Id="Package\DIMENSIONES PAISES.Paths[Sort Output4]"
           TopLeft="559.5,372.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -26641,7 +28519,7 @@ FROM (
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[Sort Output1]"
+          Id="Package\DIMENSIONES PAISES.Paths[Sort Output3]"
           TopLeft="875,403.25">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -26677,7 +28555,7 @@ FROM (
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[Sort Output]"
+          Id="Package\DIMENSIONES PAISES.Paths[Sort Output2]"
           TopLeft="2027.27272727273,371.909090909091">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -26713,19 +28591,31 @@ FROM (
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output7]"
-          TopLeft="2535.84090909091,121.090909090909">
+          Id="Package\DIMENSIONES PAISES.Paths[Sort Output1]"
+          TopLeft="2649.90909090909,360.090909090909">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47.0909090909091"
+              EndConnector="59.181818181818,54.5454545454546"
               Start="0,0"
-              End="0,39.5909090909091">
+              End="51.681818181818,54.5454545454546">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.5909090909091" />
+                    End="25.590909090909,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25.590909090909,0"
+                    Point2="29.590909090909,0"
+                    Point3="29.590909090909,4" />
+                  <mssgle:LineSegment
+                    End="29.590909090909,50.5454545454546" />
+                  <mssgle:CubicBezierSegment
+                    Point1="29.590909090909,50.5454545454546"
+                    Point2="29.590909090909,54.5454545454546"
+                    Point3="33.590909090909,54.5454545454546" />
+                  <mssgle:LineSegment
+                    End="51.681818181818,54.5454545454546" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -26737,7 +28627,43 @@ FROM (
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output6]"
+          Id="Package\DIMENSIONES PAISES.Paths[Sort Output]"
+          TopLeft="2900.90909090909,360.090909090909">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-52.818181818182,54.5454545454544"
+              Start="0,0"
+              End="-45.318181818182,54.5454545454544">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-22.409090909091,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.409090909091,0"
+                    Point2="-26.409090909091,0"
+                    Point3="-26.409090909091,4" />
+                  <mssgle:LineSegment
+                    End="-26.409090909091,50.5454545454544" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-26.409090909091,50.5454545454544"
+                    Point2="-26.409090909091,54.5454545454544"
+                    Point3="-30.409090909091,54.5454545454544" />
+                  <mssgle:LineSegment
+                    End="-45.318181818182,54.5454545454544" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output7]"
           TopLeft="245.25,126.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -26750,6 +28676,30 @@ FROM (
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output6]"
+          TopLeft="2535.84090909091,121.090909090909">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.0909090909091"
+              Start="0,0"
+              End="0,39.5909090909091">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5909090909091" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -26810,18 +28760,18 @@ FROM (
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output3]"
-          TopLeft="2126.56818181818,127.454545454545">
+          TopLeft="1584.43181818182,125.636363636364">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,223.454545454546"
+              EndConnector="0,35.2727272727272"
               Start="0,0"
-              End="0,215.954545454546">
+              End="0,27.7727272727272">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,215.954545454546" />
+                    End="0,27.7727272727272" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -26882,18 +28832,18 @@ FROM (
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DIMENSIONES PAISES.Paths[OLE DB Source Output]"
-          TopLeft="1584.43181818182,125.636363636364">
+          TopLeft="2126.56818181818,127.454545454545">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35.2727272727272"
+              EndConnector="0,223.454545454546"
               Start="0,0"
-              End="0,27.7727272727272">
+              End="0,215.954545454546">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.7727272727272" />
+                    End="0,215.954545454546" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -27291,5 +29241,271 @@ FROM (
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <TaskHost
+    design-time-name="Package\FACT Detalle Orden">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\FACT Detalle Orden\OLE DB Source"
+          TopLeft="479,97" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\FACT Detalle Orden\Sort"
+          TopLeft="512,297" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\FACT Detalle Orden\OLE DB Source 1"
+          TopLeft="916,174" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\FACT Detalle Orden\Sort 1"
+          TopLeft="936,286" />
+        <EdgeLayout
+          Id="Package\FACT Detalle Orden.Paths[OLE DB Source Output]"
+          TopLeft="992.5,216">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,70"
+              Start="0,0"
+              End="0,62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="155,42"
+          Id="Package\FACT Detalle Orden\Conditional Split"
+          TopLeft="706,425" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\FACT Detalle Orden\Data Conversion"
+          TopLeft="481,190" />
+        <EdgeLayout
+          Id="Package\FACT Detalle Orden.Paths[OLE DB Source Output1]"
+          TopLeft="556.5,139">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51"
+              Start="0,0"
+              End="0,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FACT Detalle Orden.Paths[Data Conversion Output]"
+          TopLeft="560,232">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65"
+              Start="0,0"
+              End="0,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="130,42"
+          Id="Package\FACT Detalle Orden\Merge Join"
+          TopLeft="714,317" />
+        <EdgeLayout
+          Id="Package\FACT Detalle Orden.Paths[Sort Output]"
+          TopLeft="610,318">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="104,20"
+              Start="0,0"
+              End="96.5,20">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="48,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="48,0"
+                    Point2="52,0"
+                    Point3="52,4" />
+                  <mssgle:LineSegment
+                    End="52,16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="52,16"
+                    Point2="52,20"
+                    Point3="56,20" />
+                  <mssgle:LineSegment
+                    End="96.5,20" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FACT Detalle Orden.Paths[Sort Output1]"
+          TopLeft="936,307">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-92,31"
+              Start="0,0"
+              End="-84.5,31">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-42,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-42,0"
+                    Point2="-46,0"
+                    Point3="-46,4" />
+                  <mssgle:LineSegment
+                    End="-46,27" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-46,27"
+                    Point2="-46,31"
+                    Point3="-50,31" />
+                  <mssgle:LineSegment
+                    End="-84.5,31" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FACT Detalle Orden.Paths[Merge Join Output]"
+          TopLeft="781.25,359">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66"
+              Start="0,0"
+              End="0,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171,42"
+          Id="Package\FACT Detalle Orden\OLE DB Destination"
+          TopLeft="713,524" />
+        <EdgeLayout
+          Id="Package\FACT Detalle Orden.Paths[dw isnull]"
+          TopLeft="783.5,467">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15,57"
+              Start="0,0"
+              End="15,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.5"
+                    Point2="0,28.5"
+                    Point3="4,28.5" />
+                  <mssgle:LineSegment
+                    End="11,28.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11,28.5"
+                    Point2="15,28.5"
+                    Point3="15,32.5" />
+                  <mssgle:LineSegment
+                    End="15,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-12.29673828125,33.5,39.5934765625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\FACT Detalle Orden\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FACT Detalle Orden\OLE DB Source 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FACT Detalle Orden\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
